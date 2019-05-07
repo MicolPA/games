@@ -15,9 +15,11 @@ class AppAsset extends AssetBundle
         'css/site.css',
         'css/bootstrap.css',
         'css/main.css',
+        'https://fonts.googleapis.com/css?family=Oswald',
     ];
     public $js = [
         'js/bootstrap.js',
+        'js/sweetalert.min.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
