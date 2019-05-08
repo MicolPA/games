@@ -18,11 +18,9 @@ use frontend\models\Category
 
     <?= $form->field($model, 'resumen')->textarea(['rows' => 6])->label('Descripción') ?>
 
-     <?= $form->field($model, 'category_id')->dropDownList(
-            ArrayHelper::map(Category::find()->all(),'id', 'name'),
-            ['prompt'=>'Seleccionar una categoria']
-    )?>
+    <?php echo $form->field($model, 'category_id')->dropDownList(ArrayHelper::map(\frontend\models\Category::find()->orderBy(['name'=>SORT_ASC])->all(), 'id', 'name'),['prompt'=>'Seleccionar...'])->label('Categoria'); ?>
 
+   
     <?= $form->field($model, 'portada_out')->fileInput() ?>
 
     <?= $form->field($model, 'portada_in')->fileInput() ?>

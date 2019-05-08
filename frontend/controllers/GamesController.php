@@ -72,7 +72,6 @@ class GamesController extends Controller
             $data = Yii::$app->request->post();
             $model->load($data);
             $model->date = date('Y-m-d H:i:s');
-            $model->category_id = 1;
 
             $name = str_replace(' ', '-', $model->name);
             $name = preg_replace("/[^a-zA-Z0-9_-]+/", '', $name);
