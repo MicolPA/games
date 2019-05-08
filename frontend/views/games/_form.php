@@ -1,13 +1,15 @@
 <?php
 
+
 use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
+use frontend\models\Category
 
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Games */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
 <div class="mt-5">
 
     <?php $form = ActiveForm::begin([], ['enctype' => 'multipart/form-data']); ?>
@@ -16,7 +18,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'resumen')->textarea(['rows' => 6])->label('Descripción') ?>
 
-    <?= $form->field($model, 'category_id')->textInput() ?>
+     <?= $form->field($model, 'category_id')->dropDownList(
+            ArrayHelper::map(Category::find()->all(),'id', 'name'),
+            ['prompt'=>'Seleccionar una categoria']
+    )?>
 
     <?= $form->field($model, 'portada_out')->fileInput() ?>
 
