@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Games */
 
-$this->title = 'Registrar juegos';
+$this->title = 'JUEGOS';
 ?>
 <div class="games-create">
 

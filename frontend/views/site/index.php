@@ -6,13 +6,31 @@ $this->title = 'My Yii Application';
 ?>
 <div class="site-index">
 
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
-
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+    <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    
+    <div class="carousel-item active" data-interval="10000">
+      <img src="https://www.gannett-cdn.com/presto/2018/08/06/USAT/d7e9198a-b2fa-4ca6-b947-31c3751cc248-GettyImages-898660948.jpg?crop=5369,3020,x0,y0&width=3200&height=1680&fit=bounds" class="d-block w-100" alt="...">
     </div>
+    <?php foreach ($Games as $games): ?>
+        <div class="carousel-item" data-interval="10000">
+          <img src="<?php echo $_SERVER['DOCUMENT_ROOT'] . '/frontend/web/' . $games->portada_out; ?>" class="d-block w-100" alt="<?php echo $games->name ?>">
+        </div>
+    <?php endforeach ?>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+    <?php foreach ($Games as $games): ?>
+              <img src="<?php echo $games->portada_out ?>">
+    <?php endforeach ?>
 
     <div class="body-content">
 
