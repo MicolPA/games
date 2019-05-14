@@ -27,13 +27,13 @@ use frontend\models\Category
 
     <table>
         <tbody id="ListaImagenes">
-            <?= $form->field($model, 'imagenes')->fileInput(['id' => 'imagenes']) ?>
+            <?= $form->field($model, 'imagenes')->fileInput(['id' => 'imagen']) ?>
         </tbody>   
     </table>
  
 
     <div class="form-group">
-        <?= Html::button('Agregar Imagen', ['class' => 'btn btn-primary', 'onclick'=>'nuevaImagen();',]) ?>
+        <?= Html::button('Agregar Imagen', ['class' => 'btn btn-primary', 'id' => 'btnAgregarImagen' , 'onclick'=>'javascript:agregarImagen(1);',]) ?>
     </div>
 
     <?= $form->field($model, 'links')->textarea(['rows' => 6]) ?>
@@ -45,12 +45,6 @@ use frontend\models\Category
     <?php ActiveForm::end(); ?>
 
 </div>
-
-<textarea id="plantillaImagenes" style="display: none;">
-    <td>
-        <?= $form->field($model, 'imagenes')->fileInput(['id' => 'imagenes']) ?>
-    </td>
-</textarea>
 
 <?php if(Yii::$app->session->hasFlash('fail1')):?>
     <?php

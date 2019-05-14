@@ -92,7 +92,14 @@ class GamesController extends Controller
             $model->portada_in->saveAs($imagen);
             $model->portada_in = $imagen;
 
-            $model->imagenes = '0';
+
+            $model->imagenes = UploadedFile::getInstance($model, 'imagenes');
+            $imagen = $path . $name . '-portada.' . $model->imagenes->extension;
+            $model->imagenes->saveAs($imagen);
+            $model->imagenes = $imagen;
+            
+
+            
 
             if ($model->save()) {
                 Yii::$app->session->setFlash('fail1', "Juego registrado correctamente");

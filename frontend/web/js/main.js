@@ -1,18 +1,15 @@
-function nuevaImagen() {
-	obj = {};
-	obj.Imagen = "";
-	agregarFila(obj);
-}
+function agregarImagen(valor) {
+	div = document.getElementById('ListaImagenes');
+	button = document.getElementById('btnAgregarImagen');
 
-function agregarFila(obj) {
-	tr = document.createElement('tr');
-	cont = document.getElementById('plantillaImagenes').value;
+	input = document.createElement('input');
+	input.setAttribute("type", "file");
+	input.setAttribute('name', 'imagen['+valor+']');
+	$(input).attr("required", true);
 	
-	for (prop in obj) {
-		cont = cont.replace('{'+prop+'}', obj[prop]);
-	}
+	valor = valor + 1;
+	$(button).attr('onclick', 'agregarImagen('+valor+');');
 
-	tr.innerHTML = cont;
+	div.appendChild(input);
 
-	document.getElementById('ListaImagenes').appendChild(tr);
 }
