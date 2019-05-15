@@ -5,10 +5,12 @@ namespace frontend\controllers;
 use Yii;
 use frontend\models\Games;
 use frontend\models\GamesSeach;
+use frontend\models\Category;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
+use yii\data\Pagination;
 
 /**
  * GamesController implements the CRUD actions for Games model.
@@ -34,14 +36,24 @@ class GamesController extends Controller
      * Lists all Games models.
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex($id=0)
     {
-        $searchModel = new GamesSeach();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $query = Games::find()->orderBy(['name' => SORT_ASC]);
+        $category = null;
+        if ($id != 0) {
+            $category = Category::findOne($id);
+            $query = $query->andWhere(['category_id' => $id]);
+        }
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'model' => $query->all(),
+            'category' => $category,
+        ]);
+    }
+
+    public function actionDownload($id){
+        return $this->render('download', [
+            'model' => $this->findModel($id),
         ]);
     }
 
@@ -76,7 +88,7 @@ class GamesController extends Controller
             $name = str_replace(' ', '-', $model->name);
             $name = preg_replace("/[^a-zA-Z0-9_-]+/", '', $name);
             $name = strtolower($name);
-
+            $model->imagenes = '0';
             $path = "images/$name/";
             if (!file_exists($path)) {
                 mkdir($path, 0777, true);
@@ -91,13 +103,6 @@ class GamesController extends Controller
             $imagen = $path . $name . '-portada.' . $model->portada_in->extension;
             $model->portada_in->saveAs($imagen);
             $model->portada_in = $imagen;
-
-
-            $model->imagenes = UploadedFile::getInstance($model, 'imagenes');
-            $imagen = $path . $name . '-portada.' . $model->imagenes->extension;
-            $model->imagenes->saveAs($imagen);
-            $model->imagenes = $imagen;
-            
 
             
 

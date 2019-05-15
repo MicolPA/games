@@ -3,35 +3,19 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 
-/* @var $this yii\web\View */
-/* @var $searchModel frontend\models\GamesSeach */
-/* @var $dataProvider yii\data\ActiveDataProvider */
-
-$this->title = 'Games';
+$this->title = 'JUEGOS';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="games-index">
 
-    <h1><?= Html::encode($this->title) ?> <?= Html::a('Juego nuevo', ['create'], ['class' => 'btn btn-primary btn-sm']) ?></h1>
+    <h1 class="title display-3"><span class="text-primary font-weight-bold"><?= Html::encode($this->title) ?></span> <?php echo $category?strtoupper($category->name):'' ?></h1>
 
-
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        //'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'name',
-            'resumen:ntext',
-            'category_id',
-            'portada_out',
-            'date',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
-
-
+    <div class="row mt-5">
+        <?php foreach ($model as $m): ?>
+            <div class="col-md-4">
+                <img src="<?php echo Yii::getAlias("@web") .'/'. $m->portada_in; ?>" width='100%'>
+                <h3 class="text-primary display-4"><?= Html::a($m->name,['/games/download', 'id'=>$m->id], ['class' => 'link-no']) ?></h3>
+            </div>
+        <?php endforeach ?>
+    </div>
 </div>

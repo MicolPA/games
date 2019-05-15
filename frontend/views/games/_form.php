@@ -24,12 +24,7 @@ use frontend\models\Category
     <?= $form->field($model, 'portada_out')->fileInput() ?>
 
     <?= $form->field($model, 'portada_in')->fileInput() ?>
-
-    <table>
-        <tbody id="ListaImagenes">
-            <?= $form->field($model, 'imagenes')->fileInput(['id' => 'imagen']) ?>
-        </tbody>   
-    </table>
+<?= $form->field($model, 'imagenes')->fileInput() ?>
  
 
     <div class="form-group">

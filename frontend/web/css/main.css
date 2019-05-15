@@ -19,6 +19,10 @@ nav a:hover{
 	color:#0077e6 !important;
 }
 
+.link-no:hover{
+	text-decoration: none;
+}
+
 label{
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 14px;
