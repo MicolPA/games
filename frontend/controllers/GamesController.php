@@ -5,12 +5,10 @@ namespace frontend\controllers;
 use Yii;
 use frontend\models\Games;
 use frontend\models\GamesSeach;
-use frontend\models\Category;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
-use yii\data\Pagination;
 
 /**
  * GamesController implements the CRUD actions for Games model.
@@ -36,24 +34,14 @@ class GamesController extends Controller
      * Lists all Games models.
      * @return mixed
      */
-    public function actionIndex($id=0)
+    public function actionIndex()
     {
-        $query = Games::find()->orderBy(['name' => SORT_ASC]);
-        $category = null;
-        if ($id != 0) {
-            $category = Category::findOne($id);
-            $query = $query->andWhere(['category_id' => $id]);
-        }
+        $searchModel = new GamesSeach();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'model' => $query->all(),
-            'category' => $category,
-        ]);
-    }
-
-    public function actionDownload($id){
-        return $this->render('download', [
-            'model' => $this->findModel($id),
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
         ]);
     }
 
@@ -88,7 +76,7 @@ class GamesController extends Controller
             $name = str_replace(' ', '-', $model->name);
             $name = preg_replace("/[^a-zA-Z0-9_-]+/", '', $name);
             $name = strtolower($name);
-            $model->imagenes = '0';
+
             $path = "images/$name/";
             if (!file_exists($path)) {
                 mkdir($path, 0777, true);
@@ -104,8 +92,12 @@ class GamesController extends Controller
             $model->portada_in->saveAs($imagen);
             $model->portada_in = $imagen;
 
-            
 
+            $model->imagenes = UploadedFile::getInstance($model, 'imagenes');
+            $imagen = $path . $name[$i] . '-portada.' . $model->imagenes->extension;
+            $model->imagenes->saveAs($imagen);
+            $model->imagenes = $imagen;
+            
             if ($model->save()) {
                 Yii::$app->session->setFlash('fail1', "Juego registrado correctamente");
                 return $this->redirect(['games/create']);

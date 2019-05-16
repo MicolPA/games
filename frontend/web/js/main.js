@@ -4,7 +4,10 @@ function agregarImagen(valor) {
 
 	input = document.createElement('input');
 	input.setAttribute("type", "file");
-	input.setAttribute('name', 'imagen['+valor+']');
+	input.setAttribute('name', 'Imagenes['+valor+']');
+	input.setAttribute('id', 'games-imagenes');
+	input.setAttribute('aria-invalid', true);
+
 	$(input).attr("required", true);
 	
 	valor = valor + 1;
@@ -13,3 +16,4 @@ function agregarImagen(valor) {
 	div.appendChild(input);
 
 }
+

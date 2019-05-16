@@ -24,7 +24,10 @@ use frontend\models\Category
     <?= $form->field($model, 'portada_out')->fileInput() ?>
 
     <?= $form->field($model, 'portada_in')->fileInput() ?>
-<?= $form->field($model, 'imagenes')->fileInput() ?>
+    
+    <div id="ListaImagenes">
+        <?= $form->field($model, 'imagenes')->fileInput() ?>
+    </div>
  
 
     <div class="form-group">
