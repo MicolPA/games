@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
+use yii\data\ActiveDataProvider;
 
 /**
  * GamesController implements the CRUD actions for Games model.
@@ -36,12 +37,31 @@ class GamesController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new GamesSeach();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $get = Yii::$app->request->get();
+        $query = Games::find();
+        $searchModel = new \frontend\models\GamesSeach();
+        
+        if ($get) {
+            $dataProvider = new ActiveDataProvider([
+                'query' => $query,
+                'sort'=> ['defaultOrder' => ['date' => 'DESC']],
+                'pagination'=>['pageSize' => '10'],
+            ]);
+
+        }
+
+        $countQuery = clone $query;
+        $pages = new \yii\data\Pagination(['totalCount' => $countQuery->count()]);
+        $model = $query->offset($pages->offset)
+        ->limit($pages->limit)
+        ->all();
+
 
         return $this->render('index', [
+            'category' => null,
+            'model' => $model,
+            'pages' => $pages,
             'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
         ]);
     }
 
@@ -94,7 +114,7 @@ class GamesController extends Controller
 
 
             $model->imagenes = UploadedFile::getInstance($model, 'imagenes');
-            $imagen = $path . $name[$i] . '-portada.' . $model->imagenes->extension;
+            $imagen = $path . '-portada.' . $model->imagenes->extension;
             $model->imagenes->saveAs($imagen);
             $model->imagenes = $imagen;
             
