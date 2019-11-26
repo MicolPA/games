@@ -14,30 +14,32 @@ $this->title = 'Desarrolladores de Ideas';
     }
 </style>
 <div class="site-index">
-
- <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active" data-interval="10000">
-      <img src="https://www.gannett-cdn.com/presto/2018/08/06/USAT/d7e9198a-b2fa-4ca6-b947-31c3751cc248-GettyImages-898660948.jpg?crop=5369,3020,x0,y0&width=3200&height=1680&fit=bounds" class="d-block w-100" alt="...">
-    </div>
-    <?php foreach ($Games as $games): ?>
-        <div class="carousel-item" data-interval="10000">
-            <img src="<?php echo Yii::getAlias("@web") .'/'. $games->portada_in; ?>" class="d-block w-100" alt="<?php echo $games->name ?>">
-            <div class="carousel-caption d-none d-md-block">
-                <span class="display-3 font-weight-bold" style="text-shadow: 0px 1.5px #000"><?php echo $games->name ?></span>
-            </div>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="https://s.w-x.co/util/image/v/1572446970435_spa_PHOTO_OF_SUN_LOOKS_LIKE_FLAMING_JACK_O'_LANTERN.jpg?v=at&w=1280&h=720" alt="First slide">
         </div>
-    <?php endforeach ?>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="https://s.w-x.co/util/image/v/1572446970435_spa_PHOTO_OF_SUN_LOOKS_LIKE_FLAMING_JACK_O'_LANTERN.jpg?v=at&w=1280&h=720" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="https://s.w-x.co/util/image/v/1572446970435_spa_PHOTO_OF_SUN_LOOKS_LIKE_FLAMING_JACK_O'_LANTERN.jpg?v=at&w=1280&h=720" alt="Third slide">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
     <div class="body-content">
 
         <div class="row">
