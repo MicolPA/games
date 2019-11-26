@@ -28,7 +28,7 @@ AppAsset::register($this);
 
 <div class="wrap">
   <?php if (Yii::$app->user->isGuest): ?>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="border-radius: 0px">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed" style="border-radius: 0px">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -38,7 +38,7 @@ AppAsset::register($this);
             <?= Html::a('JUEGOS',['/games/index'], ['class' => 'nav-link']) ?>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CATEGORIAS </a>
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</a>
             <?php 
                 $Category = \frontend\models\Category::find()->orderBy(['name' => SORT_ASC])->all();
             ?>
@@ -49,13 +49,16 @@ AppAsset::register($this);
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link font-weight-bold title-home text-primary" href="#">DESARROLLADORES DE IDEAS</a>
+            <a class="nav-link font-weight-bold title-home text-primary" href="/frontend/web/">Desarrolladores de Ideas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">CONTACTANOS</a>
+            <a class="nav-link" href="/frontend/web/site/contact">Contactanos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">TUTORIALES</a>
+            <a class="nav-link" href="/frontend/web/site/noticias">Noticias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.youtube.com/channel/UCkwlaKe50JTTaop2JLJCIbA">Tutoriales</a>
           </li>
           
         </ul>
@@ -120,3 +123,4 @@ AppAsset::register($this);
 </body>
 </html>
 <?php $this->endPage() ?>
+
