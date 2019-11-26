@@ -37,9 +37,10 @@ class GamesController extends Controller
      */
     public function actionIndex()
     {
+        //Es lo mismo que $get = $_GET;
         $get = Yii::$app->request->get();
         $query = Games::find();
-        $searchModel = new \frontend\models\GamesSeach();
+        //$searchModel = new \frontend\models\GamesSeach();
         
         if ($get) {
             $dataProvider = new ActiveDataProvider([
