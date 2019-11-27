@@ -21,7 +21,7 @@ use frontend\models\Platform
 
     <?= $form->field($model, 'category_id')->dropDownList(ArrayHelper::map(Category::find()->orderBy(['name'=>SORT_ASC])->all(), 'id', 'name'),['prompt'=>'Seleccionar...'])->label('Categoria'); ?>
    
-    <?= $form->field($model, 'platform_id')->dropDownList(ArrayHelper::map(Platform::find()->orderBy(['name'=>SORT_ASC])->all(), 'platform_id', 'name'),['prompt'=>'Seleccionar...'])->label('Plataforma'); ?>
+    <?= $form->field($model, 'platform_id')->dropDownList(ArrayHelper::map(Platform::find()->orderBy(['name'=>SORT_ASC])->all(), 'id', 'name'),['prompt'=>'Seleccionar...'])->label('Plataforma'); ?>
 
     <?= $form->field($model, 'portada_out')->fileInput() ?>
 

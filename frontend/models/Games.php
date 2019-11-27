@@ -11,6 +11,7 @@ use Yii;
  * @property string $name
  * @property string $resumen
  * @property int $category_id
+ * @property int $platform_id
  * @property string $portada_out
  * @property string $portada_in
  * @property string $imagenes
@@ -33,12 +34,11 @@ class Games extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'resumen', 'category_id', 'platform_id', 'portada_out', 'portada_in', 'imagenes', 'links', 'date'], 'required'],
+            [['name', 'platform_id'], 'required'],
             [['resumen', 'imagenes', 'links'], 'string'],
-            [['category_id, platform_id'], 'integer'],
+            [['category_id', 'platform_id'], 'integer'],
             [['date'], 'safe'],
-            [['name'], 'string', 'max' => 150],
-            [['portada_out', 'portada_in'], 'string', 'max' => 100],
+            [['name', 'portada_out', 'portada_in'], 'string', 'max' => 255],
         ];
     }
 
