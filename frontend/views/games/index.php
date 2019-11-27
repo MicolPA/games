@@ -20,7 +20,6 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <div class="col-md-12" style="text-align: center;">
 			<?php 
-			echo 'hola';
 			// display pagination
 			echo \yii\widgets\LinkPager::widget([
 			    'pagination' => $pages,

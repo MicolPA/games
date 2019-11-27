@@ -33,9 +33,9 @@ class Games extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'resumen', 'category_id', 'portada_out', 'portada_in', 'imagenes', 'links', 'date'], 'required'],
+            [['name', 'resumen', 'category_id', 'platform_id', 'portada_out', 'portada_in', 'imagenes', 'links', 'date'], 'required'],
             [['resumen', 'imagenes', 'links'], 'string'],
-            [['category_id'], 'integer'],
+            [['category_id, platform_id'], 'integer'],
             [['date'], 'safe'],
             [['name'], 'string', 'max' => 150],
             [['portada_out', 'portada_in'], 'string', 'max' => 100],
@@ -52,6 +52,7 @@ class Games extends \yii\db\ActiveRecord
             'name' => 'Name',
             'resumen' => 'Resumen',
             'category_id' => 'Category ID',
+            'platform_id' => 'Platform ID',
             'portada_out' => 'Portada Out',
             'portada_in' => 'Portada In',
             'imagenes' => 'Imagenes',
