@@ -66,6 +66,16 @@ class GamesController extends Controller
         ]);
     }
 
+
+    public function actionJuego($id){
+
+        $model = Games::findOne($id);
+
+        return $this->render('juego', [
+            'model' => $model,
+        ]);
+    }
+
     /**
      * Displays a single Games model.
      * @param integer $id
