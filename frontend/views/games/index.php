@@ -9,9 +9,6 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="games-index">
 
-<<<<<<< Updated upstream
-    <h1 class="title display-3"><span class="text-primary font-weight-bold"><?= Html::encode($this->title) ?></span> <?php echo $category?strtoupper($category->name):'' ?></h1>
-=======
     <h1 class="title display-3"><span class="text-primary font-weight-bold"><?= Html::encode($this->title) ?> <?php 
             if (isset($_GET['id'])) {
                 $id = $_GET['id'];
@@ -20,7 +17,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 }
             }
      ?></span> </h1>
->>>>>>> Stashed changes
 
     <div class="row mt-5">
         <?php foreach ($model as $m): ?>
