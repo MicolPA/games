@@ -35,6 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <img src="" width='100%'>
                 <h3 class="text-primary display-4"></h3>
+
             </div>
         <?php endforeach ?>
     </div>
