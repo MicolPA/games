@@ -9,9 +9,7 @@ $this->title = 'Desarrolladores de Ideas';
     /*.container{
         padding: 0px 15px 20px !important;
     }*/
-    nav{
-        margin-bottom: 0px !important;
-    }
+    
 </style>
 <div class="site-index">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

@@ -5,6 +5,9 @@
 .mind-title{
 	font-size: 18px;
 }
+nav{
+    margin-bottom: 0px !important;
+}
 
 .badge-item {
     position:relative;

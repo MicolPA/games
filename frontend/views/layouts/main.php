@@ -9,6 +9,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
+use yii\widgets\ActiveForm;
 
 AppAsset::register($this);
 ?>
@@ -38,7 +39,7 @@ AppAsset::register($this);
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="border-radius: 0px">
       <div class="container">
-        <?= Html::a('DESARROLLADORES DE IDEAS', ['/home'], ['class' => 'navbar-brand pt-4 title-home text-primary font-weight-bold']) ?>
+        <?= Html::a('DESARROLLADORES DE IDEAS', ['/'], ['class' => 'navbar-brand pt-4 title-home text-primary font-weight-bold']) ?>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -76,12 +77,18 @@ AppAsset::register($this);
             </li>
             
           </ul>
-          <form class="form-inline my-2 my-md-0">
-            <input class="form-control" type="text" placeholder="Búscar Juego" aria-label="Search">
-          </form>
+          <?php $form = ActiveForm::begin(['action' => '/games', 'method' => 'get'], ['enctype' => 'multipart/form-data', 'class' => 'form-inline my-2 my-md-0']); ?>
+          <div class="input-group mt-2">
+            <input type="text" name="name" class="form-control" placeholder="Búscar Juego" aria-label="Búscar Juego" aria-describedby="button-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-primary" type="submit" id="button-addon2">Búscar</button>
+            </div>
+          </div>
+          <?php ActiveForm::end(); ?>
         </div>
       </div>
     </nav>
+
 
         <!-- <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],

@@ -35,7 +35,7 @@ class GamesController extends Controller
      * Lists all Games models.
      * @return mixed
      */
-    public function actionIndex($categoria = null)
+    public function actionIndex($categoria = null, $name = null)
     {
         //Es lo mismo que $get = $_GET;
         $get = Yii::$app->request->get();
@@ -53,13 +53,8 @@ class GamesController extends Controller
 
         }
         
-        if ($get) {
-            $dataProvider = new ActiveDataProvider([
-                'query' => $query,
-                'sort'=> ['defaultOrder' => ['date' => 'DESC']],
-                'pagination'=>['pageSize' => '10'],
-            ]);
-
+        if ($name) {
+            $query->andWhere(['like', 'name', $name]);
         }
 
         $countQuery = clone $query;
