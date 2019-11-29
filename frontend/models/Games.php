@@ -11,12 +11,15 @@ use Yii;
  * @property string $name
  * @property string $resumen
  * @property int $category_id
- * @property int $platform_id
  * @property string $portada_out
  * @property string $portada_in
  * @property string $imagenes
  * @property string $links
+ * @property int $platform_id
  * @property string $date
+ *
+ * @property Category $category
+ * @property Platform $platform
  */
 class Games extends \yii\db\ActiveRecord
 {
@@ -34,11 +37,13 @@ class Games extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'platform_id'], 'required'],
+            [['name'], 'required'],
             [['resumen', 'imagenes', 'links'], 'string'],
             [['category_id', 'platform_id'], 'integer'],
             [['date'], 'safe'],
             [['name', 'portada_out', 'portada_in'], 'string', 'max' => 255],
+            [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => Category::className(), 'targetAttribute' => ['category_id' => 'id']],
+            [['platform_id'], 'exist', 'skipOnError' => true, 'targetClass' => Platform::className(), 'targetAttribute' => ['platform_id' => 'id']],
         ];
     }
 
@@ -52,12 +57,28 @@ class Games extends \yii\db\ActiveRecord
             'name' => 'Name',
             'resumen' => 'Resumen',
             'category_id' => 'Category ID',
-            'platform_id' => 'Platform ID',
             'portada_out' => 'Portada Out',
             'portada_in' => 'Portada In',
             'imagenes' => 'Imagenes',
             'links' => 'Links',
+            'platform_id' => 'Platform ID',
             'date' => 'Date',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCategory()
+    {
+        return $this->hasOne(Category::className(), ['id' => 'category_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPlatform()
+    {
+        return $this->hasOne(Platform::className(), ['id' => 'platform_id']);
     }
 }

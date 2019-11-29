@@ -35,22 +35,22 @@ class GamesController extends Controller
      * Lists all Games models.
      * @return mixed
      */
-    public function actionIndex($id = null)
+    public function actionIndex($categoria = null)
     {
         //Es lo mismo que $get = $_GET;
         $get = Yii::$app->request->get();
         $query = Games::find();
         //$searchModel = new \frontend\models\GamesSeach();
 
-        if ($id >= 1) {
-            $query = new \yii\db\Query();
-            $query->select('id, name, portada_in')
-                ->from('games')
-                ->where(['category_id' => $id]);
-            $rows = $query->all();
+        if ($categoria >= 1) {
+            // $query = new \yii\db\Query();
+            // $query->select('id, name, portada_in')
+            //     ->from('games')
+            //     ->where(['category_id' => $categoria]);
+            // $rows = $query->all();
 
-        }else{
-            
+            $query->andWhere(['category_id' => $categoria]);
+
         }
         
         if ($get) {
@@ -70,7 +70,7 @@ class GamesController extends Controller
 
 
         return $this->render('index', [
-            'category' => null,
+            'categoria' => $categoria,
             'model' => $model,
             'pages' => $pages,
           //  'searchModel' => $searchModel,
@@ -79,7 +79,7 @@ class GamesController extends Controller
     }
 
 
-    public function actionJuego($id){
+    public function actionDescargar($id){
 
         $model = Games::findOne($id);
 
@@ -109,6 +109,7 @@ class GamesController extends Controller
     public function actionCreate()
     {
         $model = new Games();
+
 
         if (Yii::$app->request->post()) {
 

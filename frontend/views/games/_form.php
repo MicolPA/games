@@ -15,6 +15,8 @@ use frontend\models\Platform
 
     <?php $form = ActiveForm::begin([], ['enctype' => 'multipart/form-data']); ?>
 
+    <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
+
     <?= $form->field($model, 'name')->textInput(['maxlength' => true, 'id' => 'inp']) ?>
 
     <?= $form->field($model, 'resumen')->textarea(['rows' => 6])->label('Descripción') ?>

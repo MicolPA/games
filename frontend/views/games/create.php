@@ -7,7 +7,7 @@ use yii\helpers\Html;
 
 $this->title = 'JUEGOS';
 ?>
-<div class="games-create">
+<div class="container">
 
     <h1 class="title display-3"><span class=" text-primary font-weight-bold"><?= Html::encode($this->title) ?></span> CREAR</h1>
 

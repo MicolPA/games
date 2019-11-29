@@ -23,7 +23,7 @@ class m191127_133354_platform extends Migration
             'name' => $this->string()->notNull(),
         ], $tableOptions);
 
-        $this->addColumn('{{%games}}', 'platform_id', $this->int()->defaultValue(null));
+        $this->addColumn('{{%games}}', 'platform_id', $this->integer()->defaultValue(null));
 
     }
 

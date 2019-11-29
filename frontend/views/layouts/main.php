@@ -28,85 +28,66 @@ AppAsset::register($this);
 
 <div class="wrap">
   <?php if (Yii::$app->user->isGuest): ?>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed" style="border-radius: 0px">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <?= Html::a('JUEGOS',['/games/index'], ['class' => 'nav-link']) ?>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</a>
-            <?php 
-                $Category = \frontend\models\Category::find()->orderBy(['name' => SORT_ASC])->all();
-            ?>
-            <div class="dropdown-menu" aria-labelledby="dropdown08">
-              <?php foreach ($Category as $cat): ?>
-                <?= Html::a($cat->name,['/games/index', 'id'=>$cat->id], ['class' => 'dropdown-item']) ?>
-              <?php endforeach ?>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link font-weight-bold title-home text-primary" href="/frontend/web/">Desarrolladores de Ideas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/frontend/web/site/contact">Contactanos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/frontend/web/site/noticias">Noticias</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" target="_blank" href="https://www.youtube.com/channel/UCkwlaKe50JTTaop2JLJCIbA">Tutoriales</a>
-          </li>
-          
-        </ul>
-      </div>
-  </nav>
 
   <?php endif ?>
 
   <?php if (!Yii::$app->user->isGuest): ?>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-default">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">JUEGOS <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CATEGORIAS</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown08">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link font-weight-bold title-home text-primary" href="#">DESARROLLADORES DE IDEAS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">CONTACTANOS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">TUTORIALES</a>
-          </li>
-          
-        </ul>
-      </div>
-  </nav>
+    
+    
   <?php endif ?>
 
-    <div class="container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="border-radius: 0px">
+      <div class="container">
+        <?= Html::a('DESARROLLADORES DE IDEAS', ['/home'], ['class' => 'navbar-brand pt-4 title-home text-primary font-weight-bold']) ?>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample07">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <?= Html::a('JUEGOS', ['/games'], ['class' => 'nav-link']) ?>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CATEGORIAS</a>
+              <?php 
+                  $Category = \frontend\models\Category::find()->orderBy(['name' => SORT_ASC])->all();
+              ?>
+              <div class="dropdown-menu" aria-labelledby="dropdown08">
+                <?php foreach ($Category as $cat): ?>
+                  <?= Html::a($cat->name,['/games/index', 'categoria'=>$cat->id], ['class' => 'dropdown-item']) ?>
+                <?php endforeach ?>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">REQUISITOS</a>
+              
+              <div class="dropdown-menu" aria-labelledby="dropdown08">
+                  <?= Html::a('Requisitos Bajos',['/games/index', 'requisitos'=>1], ['class' => 'dropdown-item']) ?>
+                  <?= Html::a('Requisitos Medios',['/games/index', 'requisitos'=>2], ['class' => 'dropdown-item']) ?>
+                  <?= Html::a('Requisitos Altos',['/games/index', 'requisitos'=>3], ['class' => 'dropdown-item']) ?>
+              </div>
+            </li>
+            <li class="nav-item">
+              <?= Html::a('CONTÁCTANOS', ['/games'], ['class' => 'nav-link']) ?>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link font-weight-bold" href="https://www.youtube.com/channel/UCkwlaKe50JTTaop2JLJCIbA">CÓMO DESCARGAR</a>
+            </li>
+            
+          </ul>
+          <form class="form-inline my-2 my-md-0">
+            <input class="form-control" type="text" placeholder="Búscar Juego" aria-label="Search">
+          </form>
+        </div>
+      </div>
+    </nav>
+
         <!-- <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?> -->
         <?= Alert::widget() ?>
         <?= $content ?>
-    </div>
 </div>
 
 

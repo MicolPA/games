@@ -1,6 +1,25 @@
 .title{
 	font-family: 'Oswald', sans-serif;
 }
+
+.mind-title{
+	font-size: 18px;
+}
+
+.badge-item {
+    position:relative;
+    display:inline-block;
+}
+.notify-badge{
+    position: absolute;
+    right:10px;
+    top:10px;
+    text-align: center;
+    color:white;
+    padding:5px 10px;
+    font-size:14px;
+}
+
 nav a{
 	color:black;
 	font-size: 14px !important;
