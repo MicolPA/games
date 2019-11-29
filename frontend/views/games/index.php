@@ -21,8 +21,13 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="row mt-5">
         <?php foreach ($model as $m): ?>
             <div class="col-md-4">
+<<<<<<< HEAD
                 <img src="<?php echo Yii::getAlias("@web") .'/'. $m['portada_in']; ?>" width='100%'>
                 <h3 class="text-primary display-4"><?= Html::a($m['name'],['/games/download', 'id'=>$m['id'], ['class' => 'link-no']]) ?></h3>
+=======
+                <img src="<?php echo Yii::getAlias("@web") .'/'. $m->portada_in; ?>" width='100%'>
+                <h3 class="text-primary display-4"><?= Html::a($m->name,['/games/juego', 'nombre' => $m->name, 'id'=>$m->id], ['class' => 'link-no']) ?></h3>
+>>>>>>> master
             </div>
         <?php endforeach ?>
     </div>
