@@ -57,6 +57,11 @@ class GamesController extends Controller
             $query->andWhere(['like', 'name', $name]);
         }
 
+        if (isset($get['plataforma'])) {
+            $query->andWhere(['platform_id' => $get['plataforma']]);
+        }
+
+
         $countQuery = clone $query;
         $pages = new \yii\data\Pagination(['totalCount' => $countQuery->count()]);
         $model = $query->offset($pages->offset)
@@ -66,6 +71,7 @@ class GamesController extends Controller
 
         return $this->render('index', [
             'categoria' => $categoria,
+            'get' => $get,
             'model' => $model,
             'pages' => $pages,
           //  'searchModel' => $searchModel,
