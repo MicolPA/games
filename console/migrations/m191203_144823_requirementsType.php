@@ -1,6 +1,7 @@
 <?php
 
 use yii\db\Migration;
+use frontend\models\RequirementsType;
 
 /**
  * Class m191203_144823_requirementsType
@@ -18,11 +19,12 @@ class m191203_144823_requirementsType extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
 
-        $this->createTable('{{%requirements}}', [
+        $this->createTable('{{%requirementsType}}', [
             'id' => $this->primaryKey(),
             'name' => $this->string()->notNull(),
 
         ], $tableOptions);
+
     }
 
     /**
