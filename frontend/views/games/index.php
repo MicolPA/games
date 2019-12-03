@@ -61,8 +61,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="card badge-item">
 
                   <a href="<?= Yii::getAlias("@web") ?>/games/descargar?id=<?= $m->id ?>">
-                    <span class="notify-badge badge" style="background: <?php echo $m->platform->color ?>"><?php echo $m->platform->name ?></span>
-                    <!-- <span class="notify-badge badge" style="margin-top: 3rem"><?= $m->category->name ?></span> -->
+                    <span class="notify-badge badge" style="background: <?php echo $m->platform['color'] ?>"><?php echo $m->platform['name'] ?></span>
+                  <a href="">
+                    <span class="notify-badge badge"><?php echo $m->platform['name'] ?></span>
                     <img src="<?php echo Yii::getAlias("@web") .'/'. $m['portada_in']; ?>?v=2" class="card-img-top" alt="...">
                       <div class="card-body">
                         <h5 class="card-title mind-title"><?= Html::a($m['name'],['/games/descargar', 'id'=>$m['id'], ['class' => 'link-no']]) ?></h5>

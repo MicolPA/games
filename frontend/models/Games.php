@@ -11,6 +11,8 @@ use Yii;
  * @property string $name
  * @property string $resumen
  * @property int $category_id
+ * @property int $requirements_id
+ * @property int $requirementsType_id
  * @property string $portada_out
  * @property string $portada_in
  * @property string $imagenes
@@ -39,7 +41,7 @@ class Games extends \yii\db\ActiveRecord
         return [
             [['name'], 'required'],
             [['resumen', 'imagenes', 'links'], 'string'],
-            [['category_id', 'platform_id'], 'integer'],
+            [['category_id', 'platform_id', 'requirements_id', 'requirementsType_id'], 'integer'],
             [['date'], 'safe'],
             [['name', 'portada_out', 'portada_in'], 'string', 'max' => 255],
             [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => Category::className(), 'targetAttribute' => ['category_id' => 'id']],
@@ -57,6 +59,8 @@ class Games extends \yii\db\ActiveRecord
             'name' => 'Name',
             'resumen' => 'Resumen',
             'category_id' => 'Category ID',
+            'requirements_id' => 'Requirements ID',
+            'requirementsType_id' => 'RequirementsType ID',
             'portada_out' => 'Portada Out',
             'portada_in' => 'Portada In',
             'imagenes' => 'Imagenes',
@@ -81,4 +85,21 @@ class Games extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Platform::className(), ['id' => 'platform_id']);
     }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getRequirements()
+    {
+        return $this->hasOne(Requirements::className(), ['id' => 'requirements_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getRequirementsType()
+    {
+        return $this->hasOne(Platform::className(), ['id' => 'requirementsType_id']);
+    }
+
 }

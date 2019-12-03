@@ -13,6 +13,7 @@ $this->title = 'JUEGOS';
 
     <?= $this->render('_form', [
         'model' => $model,
+        'requirements' => $requirements,
     ]) ?>
 
 </div>

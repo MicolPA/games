@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 use Yii;
 use frontend\models\Games;
+use frontend\models\Requirements;
 use frontend\models\GamesSeach;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -37,17 +38,10 @@ class GamesController extends Controller
      */
     public function actionIndex($categoria = null, $name = null)
     {
-        //Es lo mismo que $get = $_GET;
         $get = Yii::$app->request->get();
         $query = Games::find();
-        //$searchModel = new \frontend\models\GamesSeach();
 
         if ($categoria >= 1) {
-            // $query = new \yii\db\Query();
-            // $query->select('id, name, portada_in')
-            //     ->from('games')
-            //     ->where(['category_id' => $categoria]);
-            // $rows = $query->all();
 
             $query->andWhere(['category_id' => $categoria]);
 
@@ -110,17 +104,20 @@ class GamesController extends Controller
     public function actionCreate()
     {
         $model = new Games();
+        $requirements = new Requirements();
 
 
         if (Yii::$app->request->post()) {
 
             $data = Yii::$app->request->post();
             $model->load($data);
+            $requirements->load($data);
             $model->date = date('Y-m-d H:i:s');
 
             $name = str_replace(' ', '-', $model->name);
             $name = preg_replace("/[^a-zA-Z0-9_-]+/", '', $name);
             $name = strtolower($name);
+
 
             $path = "images/$name/";
             if (!file_exists($path)) {
@@ -143,11 +140,12 @@ class GamesController extends Controller
             $model->imagenes->saveAs($imagen);
             $model->imagenes = $imagen;
             
-            if ($model->save()) {
+            if ($model->save() && $requirements->save()) {
                 Yii::$app->session->setFlash('fail1', "Juego registrado correctamente");
                 return $this->redirect(['games/create']);
             }else{
                 print_r($model->errors);
+                print_r($requirements->errors);
             }
         }
 
@@ -157,6 +155,7 @@ class GamesController extends Controller
 
         return $this->render('create', [
             'model' => $model,
+            'requirements' => $requirements,
         ]);
     }
 

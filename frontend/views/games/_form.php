@@ -5,10 +5,12 @@ use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 use frontend\models\Category;
-use frontend\models\Platform
+use frontend\models\Platform;
+use frontend\models\Requirements;
 
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Games */
+/* @var $requirements frontend\models\Requirements */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 <div class="mt-5">
@@ -24,6 +26,15 @@ use frontend\models\Platform
     <?= $form->field($model, 'category_id')->dropDownList(ArrayHelper::map(Category::find()->orderBy(['name'=>SORT_ASC])->all(), 'id', 'name'),['prompt'=>'Seleccionar...'])->label('Categoria'); ?>
    
     <?= $form->field($model, 'platform_id')->dropDownList(ArrayHelper::map(Platform::find()->orderBy(['name'=>SORT_ASC])->all(), 'id', 'name'),['prompt'=>'Seleccionar...'])->label('Plataforma'); ?>
+
+    <?= $form->field($model, 'requirements_id')->dropDownList(ArrayHelper::map(Requirements::find()->orderBy(['name'=>SORT_ASC])->all(), 'id', 'name'),['prompt'=>'Seleccionar...'])->label('Tipo de Requisitos'); ?>
+
+    <?= $form->field($requirements, 'sistemaOperativo')->textInput(['maxlength' => true, 'id' => 'inp']) ?>
+    <?= $form->field($requirements, 'procesador')->textInput(['maxlength' => true, 'id' => 'inp']) ?>
+    <?= $form->field($requirements, 'memoria')->textInput(['maxlength' => true, 'id' => 'inp']) ?>
+    <?= $form->field($requirements, 'graficos')->textInput(['maxlength' => true, 'id' => 'inp']) ?>
+    <?= $form->field($requirements, 'directX')->textInput(['maxlength' => true, 'id' => 'inp']) ?>
+    <?= $form->field($requirements, 'discoDuro')->textInput(['maxlength' => true, 'id' => 'inp']) ?>
 
     <?= $form->field($model, 'portada_out')->fileInput() ?>
 
