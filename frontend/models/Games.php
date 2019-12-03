@@ -56,7 +56,7 @@ class Games extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
+            'name' => 'Nombre',
             'resumen' => 'Resumen',
             'category_id' => 'Category ID',
             'requirements_id' => 'Requirements ID',

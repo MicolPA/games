@@ -8,7 +8,6 @@ use Yii;
  * This is the model class for table "requirements".
  *
  * @property int $id
- * @property string $name
  * @property string $sistemaOperativo
  * @property string $procesador
  * @property string $memoria
@@ -35,8 +34,8 @@ class Requirements extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'sistemaOperativo', 'procesador', 'memoria', 'graficos', 'directX', 'discoDuro', 'otros'], 'required'],
-            [['name', 'sistemaOperativo', 'procesador', 'memoria', 'graficos', 'directX', 'discoDuro', 'otros'], 'string', 'max' => 255],
+            [['sistemaOperativo', 'procesador', 'memoria', 'graficos', 'directX', 'discoDuro'], 'required'],
+            [['sistemaOperativo', 'procesador', 'memoria', 'graficos', 'directX', 'discoDuro', 'otros'], 'string', 'max' => 255],
         ];
     }
 
@@ -47,10 +46,9 @@ class Requirements extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
             'sistemaOperativo' => 'Sistema Operativo',
             'procesador' => 'Procesador',
-            'memoria' => 'Memoria Ram',
+            'memoria' => 'Memoria',
             'graficos' => 'Graficos',
             'directX' => 'Direct X',
             'discoDuro' => 'Disco Duro',

@@ -77,14 +77,6 @@ AppAsset::register($this);
             </li>
             
           </ul>
-          <?php $form = ActiveForm::begin(['action' => '/games', 'method' => 'get'], ['enctype' => 'multipart/form-data', 'class' => 'form-inline my-2 my-md-0']); ?>
-          <div class="input-group mt-2">
-            <input type="text" name="name" class="form-control" placeholder="Búscar Juego" aria-label="Búscar Juego" aria-describedby="button-addon2">
-            <div class="input-group-append">
-              <button class="btn btn-primary" type="submit" id="button-addon2">Búscar</button>
-            </div>
-          </div>
-          <?php ActiveForm::end(); ?>
         </div>
       </div>
     </nav>

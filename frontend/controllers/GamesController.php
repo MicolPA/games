@@ -5,6 +5,7 @@ namespace frontend\controllers;
 use Yii;
 use frontend\models\Games;
 use frontend\models\Requirements;
+use frontend\models\RequirementsType;
 use frontend\models\GamesSeach;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -36,10 +37,12 @@ class GamesController extends Controller
      * Lists all Games models.
      * @return mixed
      */
-    public function actionIndex($categoria = null, $name = null)
+    public function actionIndex($categoria = null, $name = null, $plataforma = null, $requisitos = null)
     {
         $get = Yii::$app->request->get();
         $query = Games::find();
+
+
 
         if ($categoria >= 1) {
 
@@ -53,6 +56,10 @@ class GamesController extends Controller
 
         if (isset($get['plataforma'])) {
             $query->andWhere(['platform_id' => $get['plataforma']]);
+        }
+
+        if (isset($get['requisitos'])) {
+            $query->andWhere(['requirementsType_id' => $get['requisitos']]);
         }
 
 
@@ -105,6 +112,7 @@ class GamesController extends Controller
     {
         $model = new Games();
         $requirements = new Requirements();
+        $requirementsType = new RequirementsType();
 
 
         if (Yii::$app->request->post()) {
@@ -117,7 +125,6 @@ class GamesController extends Controller
             $name = str_replace(' ', '-', $model->name);
             $name = preg_replace("/[^a-zA-Z0-9_-]+/", '', $name);
             $name = strtolower($name);
-
 
             $path = "images/$name/";
             if (!file_exists($path)) {
@@ -140,9 +147,12 @@ class GamesController extends Controller
             $model->imagenes->saveAs($imagen);
             $model->imagenes = $imagen;
             
-            if ($model->save() && $requirements->save()) {
-                Yii::$app->session->setFlash('fail1', "Juego registrado correctamente");
-                return $this->redirect(['games/create']);
+            if ($requirements->save()) {
+                    $model->requirements_id = $requirements->id;
+                if ($model->save()) {
+                    Yii::$app->session->setFlash('fail1', "Juego registrado correctamente");
+                    return $this->redirect(['games/create']);
+                }
             }else{
                 print_r($model->errors);
                 print_r($requirements->errors);
