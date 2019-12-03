@@ -14,7 +14,12 @@ class HomeController extends \yii\web\Controller
     public function actionIndex()
     {
         $games = Games::find()->orderBy(['date' => SORT_DESC])->limit(3)->all();
-        return $this->render('index',['games' => $games]);
+        $all_games = array();
+
+        foreach ($games as $g) {
+        	$all_games[] = $g;
+        }
+        return $this->render('index',['games' => $all_games]);
     }
 
 }

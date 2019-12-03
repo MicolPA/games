@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'Desarrolladores de Ideas';
+$this->title = 'Descargar Juegos Para PC, PS2, PS3 y Wii - Desarrolladores de Ideas';
 ?>
 
 <style>
@@ -13,24 +13,32 @@ $this->title = 'Desarrolladores de Ideas';
 </style>
 <div class="site-index">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-      </ol>
       <div class="carousel-inner">
-      	<?php foreach ($games as $g): ?>
       	<div class="carousel-item active">
-          <img class="d-block w-100" src="<?php echo Yii::getAlias('@web') ?>/<?php echo $g->portada_out ?>" alt="<?php echo $g->name ?>">
+          <img class="d-block w-100" src="<?php echo Yii::getAlias('@web') ?>/<?php echo $games[0]->portada_out ?>?v=2" alt="<?php echo $games[0]->name ?>">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="display-4"><?php echo $games[0]->name ?></h5>
+            <p class="h3"><?php echo $games[0]->resumen ?></p>
+          </div>
+ 
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100" src="<?php echo Yii::getAlias('@web') ?>/<?php echo $g->portada_out ?>" alt="<?php echo $g->name ?>">
+          <img class="d-block w-100" src="<?php echo Yii::getAlias('@web') ?>/<?php echo $games[1]->portada_out ?>" alt="<?php echo $games[1]->name ?>">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="display-4"><?php echo $games[1]->name ?></h5>
+            <p class="h3"><?php echo $games[1]->resumen ?></p>
+          </div>
+ 
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100" src="<?php echo Yii::getAlias('@web') ?>/<?php echo $g->portada_out ?>" alt="<?php echo $g->name ?>">
+          <img class="d-block w-100" src="<?php echo Yii::getAlias('@web') ?>/<?php echo $games[2]->portada_out ?>" alt="<?php echo $games[2]->name ?>">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="display-4"><?php echo $games[2]->name ?></h5>
+            <p class="h3"><?php echo $games[2]->resumen ?></p>
+          </div>
+ 
         </div>
-      	<?php endforeach ?>
-      	</div>
+      </div>
         
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

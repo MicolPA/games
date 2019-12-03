@@ -7,7 +7,8 @@ use yii\widgets\ActiveForm;
 
 $plataformas = \frontend\models\Platform::find()->all();;
 $p_selected = isset($get['plataforma'])?$get['plataforma']:'';
-$this->title = 'JUEGOS';
+echo $this->title ;
+$this->title = 'Descargar Juegos Para PC, PS2, PS3 y Wii';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
@@ -18,10 +19,14 @@ $this->params['breadcrumbs'][] = $this->title;
     .seleccionado{
         background: #ccc;
     }
+    .pagination{
+        font-size: 20px ;
+        vertical-align: middle;
+    }
 </style>
 <div class="container">
 
-    <h1 class="title display-2"><span class="text-primary font-weight-bold"><?= Html::encode($this->title) ?></span> <span class="title"><?php echo $categoria?Category::findOne($categoria)['name']:''; ?></span> </h1>
+    <h1 class="title display-2"><span class="text-primary font-weight-bold">JUEGOS</span> <span class="title"><?php echo $categoria?Category::findOne($categoria)['name']:''; ?></span> </h1>
     
     <div class="row">
         <div class="col-md-12 mt-5 mb-4">
