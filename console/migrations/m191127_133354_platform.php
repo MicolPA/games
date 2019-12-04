@@ -21,9 +21,10 @@ class m191127_133354_platform extends Migration
         $this->createTable('{{%platform}}', [
             'id' => $this->primaryKey(),
             'name' => $this->string()->notNull(),
+            'color' => $this->string()->defaultValue(null),
+            'icon' => $this->string()->defaultValue(null),
+                        
         ], $tableOptions);
-
-        $this->addColumn('{{%games}}', 'platform_id', $this->integer()->defaultValue(null));
 
     }
 

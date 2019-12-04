@@ -20,7 +20,6 @@ class m191202_141206_requirements extends Migration
 
         $this->createTable('{{%requirements}}', [
             'id' => $this->primaryKey(),
-            'name' => $this->string()->notNull(),
             'sistemaOperativo' => $this->string()->notNull(),
             'procesador' => $this->string()->notNull(),
             'memoria' => $this->string()->notNull(),
@@ -31,8 +30,6 @@ class m191202_141206_requirements extends Migration
 
         ], $tableOptions);
 
-        $this->addColumn('{{%games}}', 'requirements_id', $this->integer()->defaultValue(null));
-        $this->addColumn('{{%games}}', 'requirementsType_id', $this->integer()->defaultValue(null));
 
         $this->addForeignKey('requirements', '{{%games}}', 'requirements_id', '{{%requirements}}', 'id', 'CASCADE', 'CASCADE');
 

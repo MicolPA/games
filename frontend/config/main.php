@@ -38,6 +38,18 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        'mailer' => [
+            'class' => 'yii\swiftmailer\Mailer',
+            'useFileTransport' => true,
+           'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'localhost',
+                'username' => 'Desarrolladoresideas@gmail.com',
+                'password' => 'Buscando0818',
+                'port' => '587',
+                'encryption' => 'tls',
+            ]
+        ],
         
         'urlManager' => [
             'enablePrettyUrl' => true,
