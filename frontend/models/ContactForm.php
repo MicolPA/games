@@ -39,9 +39,9 @@ class ContactForm extends Model
     {
         return [
             'name' => 'Nombre',
-            'email' => 'Correo Electronico',
+            'email' => 'Correo Electrónico',
             'subject' => 'Tema',
-            'body' => 'Mensaje',
+            'body' => 'Mensaje(*)',
             'verifyCode' => 'Codigo de Verificacion',
         ];
     }
