@@ -26,17 +26,17 @@ $this->params['breadcrumbs'][] = $this->title;
 </style>
 <div class="container">
 
-    <h1 class="title display-2"><span class="text-primary font-weight-bold">JUEGOS</span> <span class="title"><?php echo $categoria?Category::findOne($categoria)['name']:''; ?></span> </h1>
+    <h1 class="title display-2"><span class="text-primary font-weight-bold title ">JUEGOS</span> <span class="title"><?php echo $categoria?Category::findOne($categoria)['name']:''; ?></span> </h1>
     
     <div class="row">
         <div class="col-md-12 mt-5 mb-4">
-            <p class="h2">Elegir Plataforma</p>
+            <p class="h2 font-weight-bold">Elegir Plataforma</p>
         </div>
         <div class="col-md-8 ">
         <?php foreach ($plataformas as $p): ?>
             <?php $disable = $p_selected==$p->id?'seleccionado':'' ?>
             <?php $icon = "<i class='$p->icon' style = 'color:$p->color'></i> " ?>
-                <?= Html::a($icon.$p->name,['/games/index', 'plataforma' => $p->id], ['class' => "btn btn-lg btn-default  btn-games mr-5 $disable"]) ?>
+                <?= Html::a($icon.$p->name,['/games/index', 'plataforma' => $p->id], ['class' => "btn btn-lg btn-default btn-lg btn-games mr-5 $disable"]) ?>
 
         <?php endforeach ?>
          </div>
@@ -62,11 +62,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
                   <a href="<?= Yii::getAlias("@web") ?>/games/descargar?id=<?= $m->id ?>">
                     <span class="notify-badge badge" style="background: <?php echo $m->platform['color'] ?>"><?php echo $m->platform['name'] ?></span>
-                  <a href="">
                     <span class="notify-badge badge"><?php echo $m->platform['name'] ?></span>
                     <img src="<?php echo Yii::getAlias("@web") .'/'. $m['portada_in']; ?>?v=2" class="card-img-top" alt="...">
                       <div class="card-body">
-                        <h5 class="card-title mind-title"><?= Html::a($m['name'],['/games/descargar', 'id'=>$m['id'], ['class' => 'link-no']]) ?></h5>
+                        <h5 class="card-title mind-title font-weight-bold"><?= Html::a($m['name'],['/games/descargar', 'id'=>$m['id'], ['class' => 'link-no']]) ?></h5>
                         <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
                       </div>
                   </a>

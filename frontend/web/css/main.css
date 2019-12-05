@@ -8,6 +8,9 @@
 nav{
     margin-bottom: 0px !important;
 }
+*{
+  font-family: 'Quicksand', sans-serif;
+}
 
 .badge-item {
     position:relative;

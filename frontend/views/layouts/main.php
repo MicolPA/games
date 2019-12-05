@@ -36,6 +36,7 @@ AppAsset::register($this);
     
     
   <?php endif ?>
+<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="border-radius: 0px">
       <div class="container">
@@ -91,11 +92,9 @@ AppAsset::register($this);
 
 
 
-<footer class="footer">
+<footer class="footer mt-5">
     <div class="container">
         <p class="pull-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
     </div>
 </footer>
 

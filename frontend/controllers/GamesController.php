@@ -37,15 +37,14 @@ class GamesController extends Controller
      * Lists all Games models.
      * @return mixed
      */
-    public function actionIndex($categoria = null, $name = null, $plataforma = null, $requisitos = null)
+    public function actionIndex($categoria = null, $name = null)
     {
         $get = Yii::$app->request->get();
-        $query = Games::find();
+        $query = Games::find()->orderBy(['date' => SORT_DESC]);
 
 
 
         if ($categoria >= 1) {
-
             $query->andWhere(['category_id' => $categoria]);
 
         }
@@ -84,9 +83,12 @@ class GamesController extends Controller
     public function actionDescargar($id){
 
         $model = Games::findOne($id);
+        $links = explode(',', $model->links);
+        //$requisitos = Requirements::find()->where
 
         return $this->render('juego', [
             'model' => $model,
+            'links' => $links,
         ]);
     }
 
@@ -120,7 +122,7 @@ class GamesController extends Controller
             $data = Yii::$app->request->post();
             $model->load($data);
             $requirements->load($data);
-            $model->date = date('Y-m-d H:i:s');
+            $model->date = date('d/m/Y H:i:s');
 
             $name = str_replace(' ', '-', $model->name);
             $name = preg_replace("/[^a-zA-Z0-9_-]+/", '', $name);
