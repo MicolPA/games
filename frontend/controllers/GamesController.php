@@ -42,8 +42,6 @@ class GamesController extends Controller
         $get = Yii::$app->request->get();
         $query = Games::find()->orderBy(['date' => SORT_DESC]);
 
-
-
         if ($categoria >= 1) {
             $query->andWhere(['category_id' => $categoria]);
 
@@ -77,6 +75,11 @@ class GamesController extends Controller
           //  'searchModel' => $searchModel,
         ]);
 
+    }
+
+    public function actionRequests()
+    {
+      # code...
     }
 
 

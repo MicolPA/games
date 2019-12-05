@@ -74,6 +74,9 @@ AppAsset::register($this);
               <?= Html::a('CONTÁCTANOS', ['/site/contact'], ['class' => 'nav-link']) ?>
             </li>
             <li class="nav-item">
+              <?= Html::a('SOLICITAR JUEGOS', ['/home/pedir-juegos'], ['class' => 'nav-link']) ?>
+            </li>
+            <li class="nav-item">
               <a class="nav-link font-weight-bold" href="https://www.youtube.com/channel/UCkwlaKe50JTTaop2JLJCIbA">CÓMO DESCARGAR</a>
             </li>
             
