@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
         <div class="col-md-6 col-lg-6">
-            <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
+            <?php $form = ActiveForm::begin(['id' => 'contact-form','options' => ['autocomplete' => 'off'],]); ?>
 
                 <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
 

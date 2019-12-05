@@ -14,9 +14,9 @@ use frontend\models\RequirementsType;
 /* @var $requirements frontend\models\Requirements */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-<div class="mt-5">
+<div class="m-5">
 
-    <?php $form = ActiveForm::begin([], ['enctype' => 'multipart/form-data']); ?>
+    <?php $form = ActiveForm::begin(['options' => ['autocomplete' => 'off'],], ['enctype' => 'multipart/form-data']); ?>
 
     <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
 
@@ -30,6 +30,7 @@ use frontend\models\RequirementsType;
 
     <?= $form->field($model, 'requirementsType_id')->dropDownList(ArrayHelper::map(RequirementsType::find()->orderBy(['id'=>SORT_ASC])->all(), 'id', 'name'),['prompt'=>'Seleccionar...'])->label('Tipo de Requisitos'); ?>
 
+    <?= $form->field($model, 'size')->textInput(['maxlength' => true, 'id' => 'inp']) ?>
 
     <?= $form->field($requirements, 'sistemaOperativo')->textInput(['maxlength' => true, 'id' => 'inp']) ?>
     <?= $form->field($requirements, 'procesador')->textInput(['maxlength' => true, 'id' => 'inp']) ?>

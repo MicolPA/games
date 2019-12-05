@@ -2,6 +2,7 @@
 
 namespace frontend\models;
 
+
 use Yii;
 
 /**
@@ -14,6 +15,7 @@ use Yii;
  * @property int $status
  * @property string $statusDescription
  * @property string $date
+ * @property string $comment
  */
 class Requests extends \yii\db\ActiveRecord
 {
@@ -31,10 +33,10 @@ class Requests extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'platform', 'email', 'status', 'statusDescription', 'date'], 'required'],
+            [['name', 'platform', 'email', 'status', 'statusDescription', 'date', 'comment'], 'required'],
             [['status'], 'integer'],
             [['date'], 'safe'],
-            [['name', 'platform', 'email', 'statusDescription'], 'string', 'max' => 255],
+            [['name', 'platform', 'email', 'statusDescription', 'comment'], 'string', 'max' => 255],
         ];
     }
 
@@ -45,12 +47,13 @@ class Requests extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'platform' => 'Platform',
+            'name' => 'Nombre del Juego',
+            'platform' => 'Plataforma',
             'email' => 'Email',
-            'status' => 'Status',
-            'statusDescription' => 'Status Description',
-            'date' => 'Date',
+            'status' => 'Estado',
+            'statusDescription' => 'Estado Descripcion',
+            'date' => 'Fecha',
+            'comment' => 'Comentario',
         ];
     }
 }

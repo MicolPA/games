@@ -68,7 +68,7 @@ class CategoryController extends Controller
         if (Yii::$app->request->post()) {
             $data = Yii::$app->request->post();
             $model->load($data);
-            $model->date = date('d/m/Y H:i:s');
+            $model->date = new \yii\db\Expression('NOW()');
 
             if ($model->save()) {
                 Yii::$app->session->setFlash('success', "Categoria registrada correctamente");

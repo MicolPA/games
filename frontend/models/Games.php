@@ -67,6 +67,7 @@ class Games extends \yii\db\ActiveRecord
             'links' => 'Links',
             'platform_id' => 'Platform ID',
             'date' => 'Date',
+            'size' => 'Peso',
         ];
     }
 
