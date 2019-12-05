@@ -1,20 +1,27 @@
 <?php
 
-use yii\helpers\Html;
+	use yii\helpers\Html;
 
-/* @var $this yii\web\View */
-/* @var $model frontend\models\Games */
-
-$this->title = 'JUEGOS';
+	$this->title = 'JUEGOS';
 ?>
-<div class="container">
+<div class="container p-4">
 
-    <h1 class="title display-3"><span class=" text-primary font-weight-bold"><?= Html::encode($this->title) ?></span> CREAR</h1>
+    <div class="row">
+        <div class="col-md-12 col-lg-12">
+    
+            <h1 class="title display-3"><span class=" text-primary font-weight-bold">Formulario</span> </h1>
+            <h3 class="title display-5"><span class=" font-weight-bold"><?= Html::encode($this->title) ?></span></h3>
+            <hr class="hr col-md-12 col-lg-12"></hr>
+        </div>
+    </div>
 
-    <?= $this->render('_form', [
-        'model' => $model,
-        'requirements' => $requirements,
-        'requirementsType' => $requirements,
-    ]) ?>
-
+	<div class="row">
+		<div class="col-md-12 col-lg-12">
+			<?= $this->render('_form', [
+			    'model' => $model,
+			    'requirements' => $requirements,
+			    'requirementsType' => $requirements,
+			]) ?>
+		</div>
+	</div>
 </div>

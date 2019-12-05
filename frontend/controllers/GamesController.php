@@ -125,7 +125,7 @@ class GamesController extends Controller
             $data = Yii::$app->request->post();
             $model->load($data);
             $requirements->load($data);
-            $model->date = date('d/m/Y H:i:s');
+            $model->date = new \yii\db\Expression('NOW()');
 
             $name = str_replace(' ', '-', $model->name);
             $name = preg_replace("/[^a-zA-Z0-9_-]+/", '', $name);

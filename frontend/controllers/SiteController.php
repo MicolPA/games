@@ -124,19 +124,26 @@ class SiteController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             $email = $model['email'];
             $name = $model['name'];
-            $subject = $model['subject'];
             $body = $model['body'];
+            $date = new \yii\db\Expression('NOW()');
         
             Yii::$app->mailer->compose()
                 ->setTo('DesarrolladoresIdeas@gmail.com')
                 ->setFrom($email)
-                ->setSubject($name . ' - ' . $subject)
+                ->setSubject($name)
                 ->setTextBody($body)
                 ->send();
+        $this->redirect(['site/contact']);
+
         }
+
         return $this->render('contact', [
                 'model' => $model,
+
                ]);
+
+           
+
     }
 
     /**

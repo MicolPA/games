@@ -8,6 +8,7 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use frontend\models\Requests;
 use frontend\models\Platform;
+use frontend\models\Games;
 
 
 class HomeController extends \yii\web\Controller

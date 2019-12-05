@@ -1,20 +1,16 @@
 <?php
 
+    use yii\helpers\Html;
+    use yii\helpers\ArrayHelper;
+    use yii\widgets\ActiveForm;
+    use frontend\models\Category;
+    use frontend\models\Platform;
+    use frontend\models\Requirements;
+    use frontend\models\RequirementsType;
 
-use yii\helpers\Html;
-use yii\helpers\ArrayHelper;
-use yii\widgets\ActiveForm;
-use frontend\models\Category;
-use frontend\models\Platform;
-use frontend\models\Requirements;
-use frontend\models\RequirementsType;
-
-/* @var $this yii\web\View */
-/* @var $model frontend\models\Games */
-/* @var $requirements frontend\models\Requirements */
-/* @var $form yii\widgets\ActiveForm */
 ?>
-<div class="m-5">
+
+<div class="">
 
     <?php $form = ActiveForm::begin(['options' => ['autocomplete' => 'off'],], ['enctype' => 'multipart/form-data']); ?>
 
