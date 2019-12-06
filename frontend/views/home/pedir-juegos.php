@@ -55,10 +55,10 @@
 
 <?php if(Yii::$app->session->hasFlash('fail1')):?>
     <?php
-    $msj = Yii::$app->session->getFlash('fail1');
-    echo '<script type="text/javascript">';
-    echo "setTimeout(function () { swal('Juego registrado','$msj','success');";
-    echo '}, 1000);</script>';
+        $msj = Yii::$app->session->getFlash('fail1');
+        echo '<script type="text/javascript">';
+        echo "setTimeout(function () { swal('Solicitud enviada correctamente.','$msj','success');";
+        echo '}, 1000);</script>';
     ?>
 <?php endif; ?>  
 

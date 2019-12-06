@@ -130,7 +130,7 @@ class SiteController extends Controller
             Yii::$app->mailer->compose()
                 ->setTo('DesarrolladoresIdeas@gmail.com')
                 ->setFrom($email)
-                ->setSubject($name)
+                ->setSubject($name . ' - Contacto')
                 ->setTextBody($body)
                 ->send();
         $this->redirect(['site/contact']);

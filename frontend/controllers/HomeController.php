@@ -17,14 +17,18 @@ class HomeController extends \yii\web\Controller
     {
         $games = Games::find()->orderBy(['date' => SORT_DESC])->limit(3)->all();
         $all_games = array();
+        $model = new Requests();
 
         foreach ($games as $g) {
         	$all_games[] = $g;
         }
-        return $this->render('index',['games' => $all_games]);
+        return $this->render('index',
+            ['games' => $all_games,
+             'model' => $model,
+        ]);
     }
 
-    public function actionPedirJuegos ()
+    public function actionPedirJuegos()
     {
         $model = new Requests();
 
@@ -44,6 +48,15 @@ class HomeController extends \yii\web\Controller
         }
 
     	return $this->render('pedir-juegos', [
+            'model' => $model,
+        ]);
+    }
+
+    public function actionListaSolicitudes()
+    {
+        $model = new Requests();
+
+        return $this->render('lista-solicitudes', [
             'model' => $model,
         ]);
     }
