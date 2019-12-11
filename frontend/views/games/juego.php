@@ -17,7 +17,7 @@ $this->title = $model->name . ' | Desarolladores de Ideas';
 			
 			<img src="<?php echo Yii::getAlias("@web") .'/'. $model->portada_in; ?>" class="d-block w-100" alt="<?php echo $model->name ?>" width='100%'>
 			<div class="mt-4">
-				<h2 class="font-weight-normal"><?php echo $model->resumen ?></h2>
+				<h2 class="font-weight-normal">Descargar <?= $model->name ?> - <?php echo $model->resumen ?></h2>
 				<ul class="list-unstyled p-0 h3 mt-5"  style="font-family: 'Quicksand', sans-serif;">
 					<li><span class="font-weight-bold">Peso:</span> 4GB</li>
 					<li><span class="font-weight-bold">Plataforma:</span> <?php echo $model->platform->name ?></li>

@@ -15,16 +15,16 @@ class HomeController extends \yii\web\Controller
 {
     public function actionIndex()
     {
-        $games = Games::find()->orderBy(['date' => SORT_DESC])->limit(3)->all();
+        $games = Games::find()->orderBy(['date' => SORT_DESC])->limit(8)->all();
         $all_games = array();
         $model = new Requests();
 
         foreach ($games as $g) {
         	$all_games[] = $g;
         }
-        return $this->render('index',
-            ['games' => $all_games,
-             'model' => $model,
+        return $this->render('index',[
+            'games' => $all_games,
+            'model' => $model,
         ]);
     }
 

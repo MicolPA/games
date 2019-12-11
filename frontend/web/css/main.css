@@ -64,3 +64,38 @@ input[type=text], textarea {
    	font-size: 14px;
    	height: 40px;
 }
+
+/* INDEX */
+
+.card-mine{
+  /*border:1px solid black;*/
+  box-shadow: 0 1px 5px #ccc, 0 1px 2px #ccc;
+  font-size: 14px;
+  color:black;
+  border-radius: 3px;
+}
+
+.card-mine:hover{
+  background: rgb(52,58,64);
+  border-radius: 15px;
+  color: white;
+}
+
+.display-5{
+  font-size: 2.5rem;
+}
+
+.display-6{
+  font-size: 1.8rem;
+}
+
+.no-link{
+  text-decoration: none;
+}
+.no-link:hover{
+  text-decoration: none;
+}
+
+.tooltip {
+  font-size: 20px;
+}

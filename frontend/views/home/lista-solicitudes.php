@@ -35,11 +35,11 @@
                 <?php if ($solicitudes): ?>
                     <?php foreach ($solicitudes as $requests): ?>
                         <tr>
-                            <td><?php echo $requests?Requests::findOne($requests)['name']:''; ?></td>
-                            <td><?php echo $requests?Requests::findOne($requests)['platform']:''; ?></td>
-                            <td><?php echo $requests?Requests::findOne($requests)['date']:''; ?></td>
-                            <td><?php echo $requests?Requests::findOne($requests)['statusDescription']:''; ?></td>
-                            <td><?php echo $requests?Requests::findOne($requests)['comment']:''; ?></td>
+                            <td><?php echo $requests['name']; ?></td>
+                            <td><?php echo $requests['platform']; ?></td>
+                            <td><?php echo $requests['date']; ?></td>
+                            <td><?php echo $requests['statusDescription']; ?></td>
+                            <td><?php echo $requests['comment']; ?></td>
                         </tr>
                     <?php endforeach ?>
                 <?php endif ?>

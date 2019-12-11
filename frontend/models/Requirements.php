@@ -34,7 +34,6 @@ class Requirements extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['sistemaOperativo', 'procesador', 'memoria', 'graficos', 'directX', 'discoDuro'], 'required'],
             [['sistemaOperativo', 'procesador', 'memoria', 'graficos', 'directX', 'discoDuro', 'otros'], 'string', 'max' => 255],
         ];
     }
