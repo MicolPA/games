@@ -19,7 +19,7 @@ $this->title = $model->name . ' | Desarolladores de Ideas';
 			<div class="mt-4">
 				<h2 class="font-weight-normal">Descargar <?= $model->name ?> - <?php echo $model->resumen ?></h2>
 				<ul class="list-unstyled p-0 h3 mt-5"  style="font-family: 'Quicksand', sans-serif;">
-					<li><span class="font-weight-bold">Peso:</span> 4GB</li>
+					<li><span class="font-weight-bold">Peso:</span> <?php echo $model->size ?></li>
 					<li><span class="font-weight-bold">Plataforma:</span> <?php echo $model->platform->name ?></li>
 					<li><span class="font-weight-bold">Fecha de subida:</span> <?php echo substr(str_replace('-', '/', $model->date), 0,10) ?></li>
 				</ul>

@@ -38,7 +38,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <div class="form-group">
                     <?= Html::submitButton('Enviar', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
-                    <?= Html::resetButton('Limpiar', ['class' => 'btn btn-warning', 'name' => 'contact-button']) ?>
                 </div>
 
             <?php ActiveForm::end(); ?>

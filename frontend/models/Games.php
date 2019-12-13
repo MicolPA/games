@@ -10,6 +10,7 @@ use Yii;
  * @property int $id
  * @property string $name
  * @property string $resumen
+ * @property string $size
  * @property int $category_id
  * @property int $requirements_id
  * @property int $requirementsType_id
@@ -40,7 +41,7 @@ class Games extends \yii\db\ActiveRecord
     {
         return [
             [['name'], 'required'],
-            [['resumen', 'imagenes', 'links'], 'string'],
+            [['resumen', 'imagenes', 'links', 'size'], 'string'],
             [['category_id', 'platform_id', 'requirements_id', 'requirementsType_id'], 'integer'],
             [['date'], 'safe'],
             [['name', 'portada_out', 'portada_in'], 'string', 'max' => 255],
