@@ -21,6 +21,7 @@
     <?= $form->field($model, 'resumen')->textarea(['rows' => 6])->label('Descripción') ?>
 
     <?= $form->field($model, 'category_id')->dropDownList(ArrayHelper::map(Category::find()->orderBy(['name'=>SORT_ASC])->all(), 'id', 'name'),['prompt'=>'Seleccionar...'])->label('Categoria'); ?>
+    <?= $form->field($model, 'category_id2')->dropDownList(ArrayHelper::map(Category::find()->orderBy(['name'=>SORT_ASC])->all(), 'id', 'name'),['prompt'=>'Seleccionar...'])->label('Categoria #2'); ?>
    
     <?= $form->field($model, 'platform_id')->dropDownList(ArrayHelper::map(Platform::find()->orderBy(['name'=>SORT_ASC])->all(), 'id', 'name'),['prompt'=>'Seleccionar...'])->label('Plataforma'); ?>
 

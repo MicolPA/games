@@ -1,9 +1,19 @@
 <?php 
-$this->title = $model->name . ' | Desarolladores de Ideas';
-
-
+	$this->title = $model->name . ' | Desarolladores de Ideas';
 ?>
-
+<script type="text/javascript">
+	function reportar() {
+	    swal({
+	        title: "Are you sure?",
+	        text: "You will not be able to recover this imaginary file!",
+	        type: "warning",
+	        showCancelButton: true,
+	        confirmButtonColor: "#DD6B55",
+	        confirmButtonText: "Yes, delete it!",
+	        closeOnConfirm: false
+	    });
+	}
+</script>
 <div class="container">
 	<div class="row">
 		<div class="col-md-12 mb-4">
@@ -59,15 +69,6 @@ $this->title = $model->name . ' | Desarolladores de Ideas';
 				    </tr>
 				  </tbody>
 				</table>
-				<!-- <ul class="list-unstyled p-0 h3 mt-5 font-weight-normal">
-					<li><span class="font-weight-bold">Sistema Operativo: </span><?php //echo $model->requirements->sistemaOperativo ?></li>
-					<li><span class="font-weight-bold">Procesador: </span><?php //echo $model->requirements->procesador ?></li>
-					<li><span class="font-weight-bold">Memoria: </span><?php //echo $model->requirements->memoria ?></li>
-					<li><span class="font-weight-bold">Gráficos: </span><?php //echo $model->requirements->graficos ?></li>
-					<li><span class="font-weight-bold">DirectX: </span><?php //echo $model->requirements->directX ?></li>
-					<li><span class="font-weight-bold">Disco Duro: </span><?php //echo $model->requirements->discoDuro ?></li>
-				</ul> -->
-
 				<p class="display-4 mt-4 text-primary  title" style="margin-top: 5rem !important">Links de descarga</p>
 
 				<div class="links">
@@ -79,8 +80,21 @@ $this->title = $model->name . ' | Desarolladores de Ideas';
 						<?php endFor ?>
 					</ul>
 				</div>
+
+<!--
+				<div class="card">
+					<div class="card-header display-4 text-primary">
+					    Reportar
+					</div>
+					<div class="card-body">
+					    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					    <a href="#" onclick="reportar()" class="btn btn-danger">Go somewhere</a>
+					</div>
+					
+				</div>
 			</div>
 		</div>
+-->
 		<!-- col-md-9 ends -->
 
 		<div class="col-md-3" style="padding: 0px 0px 0px 4rem">
@@ -88,3 +102,4 @@ $this->title = $model->name . ' | Desarolladores de Ideas';
 		</div>
 	</div>
 </div>
+

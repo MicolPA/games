@@ -12,6 +12,7 @@ use Yii;
  * @property string $resumen
  * @property string $size
  * @property int $category_id
+ * @property int $category_id2
  * @property int $requirements_id
  * @property int $requirementsType_id
  * @property string $portada_out
@@ -42,7 +43,7 @@ class Games extends \yii\db\ActiveRecord
         return [
             [['name'], 'required'],
             [['resumen', 'imagenes', 'links', 'size'], 'string'],
-            [['category_id', 'platform_id', 'requirements_id', 'requirementsType_id'], 'integer'],
+            [['category_id','category_id2', 'platform_id', 'requirements_id', 'requirementsType_id'], 'integer'],
             [['date'], 'safe'],
             [['name', 'portada_out', 'portada_in'], 'string', 'max' => 255],
             [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => Category::className(), 'targetAttribute' => ['category_id' => 'id']],
@@ -60,6 +61,7 @@ class Games extends \yii\db\ActiveRecord
             'name' => 'Nombre',
             'resumen' => 'Resumen',
             'category_id' => 'Category ID',
+            'category_id' => 'Category ID 2',
             'requirements_id' => 'Requirements ID',
             'requirementsType_id' => 'RequirementsType ID',
             'portada_out' => 'Portada Out',
