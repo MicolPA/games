@@ -40,7 +40,7 @@ AppAsset::register($this);
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="border-radius: 0px">
       <div class="container">
-        <?= Html::a('DESARROLLADORES DE IDEAS', ['/'], ['class' => 'navbar-brand pt-4 title-home text-primary font-weight-bold']) ?>
+        <a class="navbar-brand pt-4 title-home text-primary font-weight-bold" href="/">DESARROLLADORES DE IDEAS</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -48,7 +48,8 @@ AppAsset::register($this);
         <div class="collapse navbar-collapse" id="navbarsExample07">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <?= Html::a('JUEGOS', ['/games'], ['class' => 'nav-link']) ?>
+              <a href="/games" class="nav-link">JUEGOS</a>
+              <!-- <?//= Html::a('JUEGOS', ['/games'], ['class' => 'nav-link']) ?> -->
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CATEGORIAS</a>
@@ -57,7 +58,8 @@ AppAsset::register($this);
               ?>
               <div class="dropdown-menu" aria-labelledby="dropdown08">
                 <?php foreach ($Category as $cat): ?>
-                  <?= Html::a($cat->name,['/games/index', 'categoria'=>$cat->id], ['class' => 'dropdown-item']) ?>
+                  <a href="/games/index?categoria=<?php echo $cat->id ?>" class='dropdown-item'><?php echo $cat->name ?></a>
+                 <!--  <?//= Html::a($cat->name,['/games/index', 'categoria'=>], ['class' => '']) ?> -->
                 <?php endforeach ?>
               </div>
             </li>
@@ -71,10 +73,12 @@ AppAsset::register($this);
               </div>
             </li>
             <li class="nav-item">
-              <?= Html::a('CONTÁCTANOS', ['/site/contact'], ['class' => 'nav-link']) ?>
+              <a href="/site/contact" class="nav-link">CONTÁCTANOS</a>
+              <!-- <?//= Html::a('CONTÁCTANOS', ['/site/contact'], ['class' => 'nav-link']) ?> -->
             </li>
             <li class="nav-item">
-              <?= Html::a('SOLICITAR JUEGOS', ['/home/pedir-juegos'], ['class' => 'nav-link']) ?>
+              <a href="/home/pedir-juegos" class="nav-link">SOLICITAR JUEGOS</a>
+              <!-- <?//= Html::a('SOLICITAR JUEGOS', ['/home/pedir-juegos'], ['class' => 'nav-link']) ?> -->
             </li>
             <li class="nav-item">
               <a class="nav-link font-weight-bold" href="https://www.youtube.com/channel/UCkwlaKe50JTTaop2JLJCIbA">CÓMO DESCARGAR</a>

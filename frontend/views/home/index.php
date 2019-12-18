@@ -16,7 +16,7 @@ $this->title = 'Descargar Juegos Para PC, PS2, PS3 y Wii - Desarrolladores de Id
       max-height: 550px;
     }
 </style>
-<div class="site-index">
+<div class="">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
       	<div class="carousel-item active" >
@@ -77,6 +77,18 @@ $this->title = 'Descargar Juegos Para PC, PS2, PS3 y Wii - Desarrolladores de Id
             
         </div>
 
+    </div>
+
+    <div class="container-fluid mb-5 mt-5"> 
+      <div class="row shadow align-items-center" style="background-image: url(<?php echo Yii::getAlias('@web') ?>/images/stock/stock-3.jpg);height: 450px;background-repeat: no-repeat;background-size: cover;">
+        <div class="container">
+          <div class="col-md-12">
+          <h3 class="text-white text-center mb-4 display display-3" style="text-shadow: 2px 2px 4px #000000;">Aprende a Descargar</h3>
+          <p class="text-white text-center display mb-4" style="text-shadow: 2px 2px 4px #000000;font-size: 22px">Entra a nuestro <span class="text-danger font-weight-bold">Canal de Youtube</span> y descubre diferentes tutoriales para aprender como descargar todos los juegos de esta página y <span class="text-danger font-weight-bold">más</span> !!</p>
+          <p class="text-center mt-4" style="margin-top: 4rem !important"><a href="https://www.youtube.com/channel/UCkwlaKe50JTTaop2JLJCIbA" class="btn btn-danger btn-lg big-btn" target="_blank"><i class="fab fa-youtube mr-1"></i> Ir al Canal</a></p>
+        </div>
+        </div>
+      </div>
     </div>
 </div>
 <style>

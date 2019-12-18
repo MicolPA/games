@@ -12,6 +12,11 @@ nav{
   font-family: 'Quicksand', sans-serif;
 }
 
+.big-btn{
+  padding: 1rem 8rem;
+  font-weight: bold;
+  font-size: 16px;
+}
 .badge-item {
     position:relative;
     display:inline-block;
