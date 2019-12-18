@@ -174,6 +174,21 @@ class GamesController extends Controller
         ]);
     }
 
+
+    public function actionReport()
+    {
+        $game = new Games();
+        $game->load($data);
+
+        $report = new Reports();
+        $report->date = new \yii\db\Expression('NOW()');
+
+        return $this->render('juego', [
+            'game' => $game,
+            'report' => $report,
+        ]);
+    }
+
     /**
      * Updates an existing Games model.
      * If update is successful, the browser will be redirected to the 'view' page.
