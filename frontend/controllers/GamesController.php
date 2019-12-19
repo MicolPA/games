@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 use Yii;
 use frontend\models\Games;
+use frontend\models\Category;
 use frontend\models\Requirements;
 use frontend\models\RequirementsType;
 use frontend\models\GamesSeach;
@@ -86,11 +87,13 @@ class GamesController extends Controller
     public function actionDescargar($id){
 
         $model = Games::findOne($id);
+        $model2 = new Category();
         $links = explode(',', $model->links);
         //$requisitos = Requirements::find()->where
 
         return $this->render('juego', [
             'model' => $model,
+            'model2' => $model2,
             'links' => $links,
         ]);
     }
@@ -178,10 +181,22 @@ class GamesController extends Controller
     public function actionReport()
     {
         $game = new Games();
+        $report = new Reports();
+
+        $data = Yii::$app->request->post();
         $game->load($data);
 
-        $report = new Reports();
+        $report->game_id = $game->id;
+        $report->game_name = $game->name;
+        $report->status = 0;
         $report->date = new \yii\db\Expression('NOW()');
+
+        if ($report->save()) {
+            Yii::$app->session->setFlash('fail1', "Reporte enviado correctamente");
+            return $this->redirect(['games/index']);
+        }else{
+            print_r($report->errors);
+        }
 
         return $this->render('juego', [
             'game' => $game,
