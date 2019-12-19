@@ -2,86 +2,6 @@
 	$this->title = $model->name . ' | Desarolladores de Ideas';
 
 ?>
-<script type="text/javascript">
-
-
-	function reportar() {
-
-		var contenedor = document.createElement("div");
-		contenedor.setAttribute('id', 'contenedor');
-
-		var contenedor2 = document.createElement("div");
-		contenedor2.setAttribute('class', 'form-group');
-
-		var contenedor3 = document.createElement("div");
-		contenedor3.setAttribute('class', 'form-group');
-
-		var labelCorreo = document.createElement("Label");
-		$(labelCorreo).text("Escriba su Correo aqui:" );
-
-		var labelError = document.createElement("Label");
-		$(labelError).text("Por favor, describa el error que presenta:");
-
-		var inputCorreo = document.createElement("input");
-		inputCorreo.setAttribute('type', 'text');
-		inputCorreo.setAttribute('id', 'inputCorreo');
-		inputCorreo.setAttribute('class', 'form-control');
-
-		var inputError = document.createElement("textarea");
-		inputError.setAttribute('type', 'text');
-		inputError.setAttribute('id', 'inputError');
-		inputError.setAttribute('class', 'form-control');
-		inputError.setAttribute('rows', '6');
-
-
-		contenedor2.appendChild(labelCorreo);
-		contenedor2.appendChild(inputCorreo);
-
-		contenedor3.appendChild(labelError);
-		contenedor3.appendChild(inputError);
-
-		contenedor.appendChild(contenedor2);
-		contenedor.appendChild(contenedor3);
-
-	    swal({
-	    	buttons: {
-	    		cancel: {
-				    text: "Cancelar",
-				    value: true,
-				    visible: true,
-				    className: "btn btn-danger",
-				    closeModal: true,
-			 	 },
-				confirm: {
-				    text: "Enviar",
-			    	value: true,
-			    	visible: true,
-			    	className: "btn btn-primary",
-			    	closeModal: true
-			  }
-	    	},
-	        title: "¿Sucedio algo?",
-	        text: "Escriba aqui una descripcio",
-	        type: "warning",
-	        content: contenedor,
-	    })
-	    .then((EnviarReporte) => {
-			if (EnviarReporte) {
-				var correo = $("#inputCorreo").val();
-				var error = $("#inputError").val();
-
-				console.log(correo);
-				console.log(error);
-
-				<?php 
-					
-				?>
-			} else {
-				console.log("La cagaste wey.");
-			}
-		});
-	}
-</script>
 <div class="container">
 	<div class="row">
 		<div class="col-md-12 mb-4">
@@ -161,7 +81,7 @@
 					    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 					    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 					    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					    <a href="#" onclick="reportar()" class="btn btn-danger">Reportar Juego</a>
+					    <a href="#" onclick="javascript:reportarJuego(<?php echo $model->id; ?>)" class="btn btn-danger">Reportar Juego</a>
 					</div>
 					
 				</div>
