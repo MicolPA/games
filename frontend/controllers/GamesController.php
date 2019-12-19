@@ -45,7 +45,7 @@ class GamesController extends Controller
 
         if ($categoria >= 1) {
             $query->andWhere(['category_id' => $categoria]);
-
+            $query->orWhere(['category_id2' => $categoria]);
         }
         
         if ($name) {
