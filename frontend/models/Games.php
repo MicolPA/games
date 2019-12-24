@@ -81,6 +81,10 @@ class Games extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Category::className(), ['id' => 'category_id']);
     }
+    public function getCategory2()
+    {
+        return $this->hasOne(Category::className(), ['id' => 'category_id2']);
+    }
 
     /**
      * @return \yii\db\ActiveQuery

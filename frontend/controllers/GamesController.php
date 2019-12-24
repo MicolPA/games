@@ -204,6 +204,50 @@ class GamesController extends Controller
         ]);
     }
 
+    public function actionSaveReport(){
+
+        $datos = false;
+
+        if (Yii::$app->request->isAjax) {
+            $post = Yii::$app->request->post();
+            if ($post) {
+                $model = new \frontend\models\Reports();
+                $model->game_id = $post['game_id'];
+                $model->game_name = $post['game_name'];
+                $model->date = date("Y-m-d H:i:s");
+
+                if ($model->save(false)) {
+                    $datos = $model->id;
+                }else{
+                    $datos = false;
+                }
+            }
+        }
+        return \yii\helpers\Json::encode($datos);
+    }
+
+    public function actionCompleteReport(){
+
+        $datos = false;
+
+        if (Yii::$app->request->isAjax) {
+            $post = Yii::$app->request->post();
+            if ($post) {
+                $model = \frontend\models\Reports::findOne($post['report_id']);
+                
+                if ($model) {
+                    $model->error = $post['msg'];
+                    $model->email = $post['correo'];
+                    $model->status = 0;
+                    $model->date = date("Y-m-d H:i:s");
+
+                    $datos = $model->save(false)?true:false;
+                }
+            }
+        }
+        return \yii\helpers\Json::encode($datos);
+    }
+
     /**
      * Updates an existing Games model.
      * If update is successful, the browser will be redirected to the 'view' page.

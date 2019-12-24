@@ -31,7 +31,7 @@ class Reports extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['email', 'game_id', 'game_name', 'error', 'status', 'date'], 'required'],
+            [['game_id', 'date'], 'required'],
             [['game_id', 'status'], 'integer'],
             [['date'], 'safe'],
             [['email', 'game_name', 'error'], 'string', 'max' => 255],

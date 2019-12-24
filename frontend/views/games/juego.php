@@ -95,3 +95,6 @@
 	</div>
 </div>
 
+<input type="hidden" id="game_id" value="<?= $model->id ?>">
+<input type="hidden" id="game_name" value="<?= $model->name ?>">
+<input type="hidden" id="report_id">
