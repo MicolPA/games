@@ -65,7 +65,7 @@
 						<?php $count = 0 ?>
 						<?php for ($i=0;$i<count($links);$i++): ?>
 							<?php $count++; ?>
-						<li><a href="<?php echo $links[$i] ?>">Parte <?php echo $count ?></a></li>
+						<li><a href="/<?php echo $links[$i] ?>" target='_blank'>Parte <?php echo $count ?></a></li>
 						<?php endFor ?>
 					</ul>
 				</div>
