@@ -42,7 +42,6 @@ function reportarJuego(id) {
 	inputError.setAttribute('class', 'form-control');
 	inputError.setAttribute('rows', '6');
 
-
 	contenedor.appendChild(labelCorreo);
 	contenedor.appendChild(inputCorreo);
 	contenedor.appendChild(labelError);
@@ -75,7 +74,7 @@ function reportarJuego(id) {
 			var error = $("#inputError").val();
 
 			completeReport(correo, error);
-			swal('Juego Reportado', 'Se ha reportado el juego satisfactoriamente, le enviaremos un correo cuando se corrija la falla', 'success');
+			swal('Juego Reportado', 'Se ha reportado el juego satisfactoriamente, le enviaremos un correo cuando se corrija la falla.', 'success');
 
 			console.log(correo);
 			console.log(error);
