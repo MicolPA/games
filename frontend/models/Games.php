@@ -107,7 +107,7 @@ class Games extends \yii\db\ActiveRecord
      */
     public function getRequirementsType()
     {
-        return $this->hasOne(Platform::className(), ['id' => 'requirementsType_id']);
+        return $this->hasOne(RequirementsType::className(), ['id' => 'requirementsType_id']);
     }
 
 }

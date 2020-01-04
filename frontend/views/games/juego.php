@@ -19,14 +19,14 @@
 				<ul class="list-unstyled p-0 h3 mt-5"  style="font-family: 'Quicksand', sans-serif;">
 					<li><span class="font-weight-bold">Peso:</span> <?php echo $model->size ?></li>
 					<li><span class="font-weight-bold">Categoria:</span> 
-						<a href="/games/index?categoria=<?php echo $model->category->id ?>"><?php echo $model->category->name . ", "?></a>
-						<a href="/games/index?categoria=<?php echo $model->category_id2 ?>"><?php echo $model->category_id2 . "."?></a>
+						<a href="http://localhost:8080/frontend/web/games/index?categoria=<?php echo $model->category->id ?>"><?php echo $model->category->name . ", "?></a>
+						<a href="http://localhost:8080/frontend/web/games/index?categoria=<?php echo $model->category_id2 ?>"><?php echo $model->category_id2 . "."?></a>
 					</li>
 					<li><span class="font-weight-bold">Plataforma:</span> 
-						<a href="/games/index?plataforma=<?php echo $model->platform_id ?>"><?php echo $model->platform->name . "."?></a>
+						<a href="http://localhost:8080/frontend/web/games/index?plataforma=<?php echo $model->platform->id ?>"><?php echo $model->platform->name . "."?></a>
 					</li>
 					<li><span class="font-weight-bold">Requisitos:</span> 
-						<a href="/games/index?requisitos=<?php echo $model->requirementsType_id ?>"><?php echo $model->requirementsType_id ?></a>
+						<a href="http://localhost:8080/frontend/web/games/index?requisitos=<?php echo $model->requirementsType->id ?>"><?php echo $model->requirementsType->name . "."?></a>
 					</li>
 					<li><span class="font-weight-bold">Fecha de subida:</span> <?php echo substr(str_replace('-', '/', $model->date), 0,10) ?></li>
 				</ul>

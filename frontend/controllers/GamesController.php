@@ -38,7 +38,7 @@ class GamesController extends Controller
      * Lists all Games models.
      * @return mixed
      */
-    public function actionIndex($categoria = null, $name = null)
+    public function actionIndex($categoria = null, $plataforma = null, $requisitos = null, $name = null)
     {
         $get = Yii::$app->request->get();
         $query = Games::find()->orderBy(['date' => SORT_DESC]);
@@ -52,11 +52,11 @@ class GamesController extends Controller
             $query->andWhere(['like', 'name', $name]);
         }
 
-        if (isset($get['plataforma'])) {
+        if ($plataforma >= 1) {
             $query->andWhere(['platform_id' => $get['plataforma']]);
         }
 
-        if (isset($get['requisitos'])) {
+        if ($requisitos >= 1) {
             $query->andWhere(['requirementsType_id' => $get['requisitos']]);
         }
 
