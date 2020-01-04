@@ -5,17 +5,15 @@
 	use yii\widgets\ActiveForm;
     use frontend\models\Requests;
     
-    $this->title = 'Solicitar Juego';
+    $this->title = 'Solicitar Juego | Desarrolladores de Ideas';
 
 ?>
 
 <div class="container p-4 ">
 
-    <div class="row">
+    <div class="row" style="margin-top: 4rem">
         <div class="col-md-12 col-lg-12">
-    
-            <h1 class="title display-3"><span class=" text-primary font-weight-bold">Formulario</span> </h1>
-            <h3 class="title display-5"><span class=" font-weight-bold"><?= Html::encode($this->title) ?></span></h3>
+            <h1 class="title display-3"><span class=" text-primary font-weight-bold">Solicitar Juego</span> </h1>
             <hr class="hr col-md-12 col-lg-12"></hr>
         </div>
     </div>

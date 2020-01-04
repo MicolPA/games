@@ -4,7 +4,8 @@
 ?>
 <style>
 	.swal-modal{
-		width: 70%
+		width: 70%;
+		padding:0px !important;
 	}
 </style>
 
@@ -21,18 +22,19 @@
 			
 			<img src="<?php echo Yii::getAlias("@web") .'/'. $model->portada_in; ?>" class="d-block w-100" alt="<?php echo $model->name ?>" width='100%'>
 			<div class="mt-4">
-				<h2 class="font-weight-normal">Descargar <?= $model->name ?> - <?php echo $model->resumen ?></h2>
+				<p class="display-4 mt-2 text-primary font-weight-b title" style="margin-top: 3rem !important">Descripción</p>
+				<h2 class="font-weight-normal"><?php echo $model->resumen ?></h2>
 				<ul class="list-unstyled p-0 h3 mt-5"  style="font-family: 'Quicksand', sans-serif;">
 					<li><i class="fas fa-caret-right text-purple"></i> <span class="font-weight-bold">Peso:</span> <?php echo $model->size ?></li>
 					<li><i class="fas fa-caret-right text-purple"></i> <span class="font-weight-bold">Categoria:</span> 
-						<a class="btn-tag" href="http://localhost:8080/frontend/web/games/index?categoria=<?php echo $model->category->id ?>"><?php echo $model->category->name?></a>,
-						<a  class="btn-tag" href="http://localhost:8080/frontend/web/games/index?categoria=<?php echo $model->category_id2 ?>"><?php echo $model->category2->name?></a>
+						<a class="btn-tag" href="/games/index?categoria=<?php echo $model->category->id ?>"><?php echo $model->category->name?></a>,
+						<a  class="btn-tag" href="/games/index?categoria=<?php echo $model->category_id2 ?>"><?php echo $model->category2->name?></a>
 					</li>
 					<li><i class="fas fa-caret-right text-purple"></i> <span class="font-weight-bold">Plataforma:</span> 
-						<a class="btn-tag" href="http://localhost:8080/frontend/web/games/index?plataforma=<?php echo $model->platform->id ?>"><?php echo $model->platform->name;?></a>
+						<a class="btn-tag" href="/games/index?plataforma=<?php echo $model->platform->id ?>"><?php echo $model->platform->name;?></a>
 					</li>
 					<li><i class="fas fa-caret-right text-purple"></i> <span class="font-weight-bold">Requisitos:</span> 
-						<a class="btn-tag" href="http://localhost:8080/frontend/web/games/index?requisitos=<?php echo $model->requirementsType->id ?>"><?php echo $model->requirementsType->name; ?></a>
+						<a class="btn-tag" href="/games/index?requisitos=<?php echo $model->requirementsType->id ?>"><?php echo $model->requirementsType->name; ?></a>
 					</li>
 					<li><i class="fas fa-caret-right text-purple"></i> <span class="font-weight-bold">Fecha de subida:</span> <?php echo substr(str_replace('-', '/', $model->date), 0,10) ?></li>
 				</ul>
@@ -72,12 +74,12 @@
 				    </tr>
 				  </tbody>
 				</table>
-				<p class="display-4 mt-4 text-primary  title" style="margin-top: 5rem !important">Links de descarga</p>
+				<p class="display-4 mt-4 text-primary  title" style="margin-top: 5rem !important">Links de descarga <a href="#" onclick="javascript:reportarJuego(<?php echo $model->id; ?>)" class="btn btn-danger font-weight-bold" style='float: right;margin-top: 2rem'><i class="fas fa-exclamation-triangle" style="color:white"></i> Reportar Problema</a></p>
 
 				<div class="links">
 					<ul class="list-unstyled p-0 h3 mt-5 font-weight-normal">
 						<?php if (count($links) == 1): ?>
-						<li><i class="fas fa-caret-right text-purple"></i> <a class='btn-tag' href="/<?php echo $links[0] ?>" target='_blank'>Parte Unica</a></li>
+						<li><i class="fas fa-caret-right text-purple"></i> <a class='btn-tag' href="/<?php echo $links[0] ?>" target='_blank'>Parte Única</a></li>
 						<?php else: ?>
 						<?php $count = 0 ?>
 						<?php for ($i=0;$i<count($links);$i++): ?>
@@ -95,16 +97,6 @@
 					<div class="col-md-4"><a href="javascript:imgBigger(3)" id="3"><img src="<?php echo Yii::getAlias("@web") .'/'. $model->portada_in; ?>" class="d-block w-100" alt="<?php echo $model->name ?>" width='100%'></a></div>
 				</div>
 
-				<div class="card mt-5">
-					<div class="card-header display-4 text-primary">
-					    Reportar
-					</div>
-					<div class="card-body">
-					    <p class="h4">Si el juego tiene algun link roto, no funciona correctamente, está incompleto o cualquier otro problema, reportalo aquí.</p>
-					    <a href="#" onclick="javascript:reportarJuego(<?php echo $model->id; ?>)" class="btn btn-danger">Reportar Juego</a>
-					</div>
-					
-				</div>
 			</div>
 		</div>
 		<!-- col-md-9 ends -->
