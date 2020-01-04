@@ -68,21 +68,25 @@ AppAsset::register($this);
               <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">REQUISITOS</a>
               
               <div class="dropdown-menu" aria-labelledby="dropdown08">
-                  <?= Html::a('Requisitos Bajos',['/games/index', 'requisitos'=>1], ['class' => 'dropdown-item']) ?>
-                  <?= Html::a('Requisitos Medios',['/games/index', 'requisitos'=>2], ['class' => 'dropdown-item']) ?>
-                  <?= Html::a('Requisitos Altos',['/games/index', 'requisitos'=>3], ['class' => 'dropdown-item']) ?>
+                <a href="/games/index/?requisitos=1" class="dropdown-item">Requisitos Bajos</a>
+                <a href="/games/index/?requisitos=2" class="dropdown-item">Requisitos Medios</a>
+                <a href="/games/index/?requisitos=3" class="dropdown-item">Requisitos Altos</a>
+                  <!-- <?//= Html::a('Requisitos Bajos',['/games/index', 'requisitos'=>1], ['class' => 'dropdown-item']) ?>
+                  <?//= Html::a('Requisitos Medios',['/games/index', 'requisitos'=>2], ['class' => 'dropdown-item']) ?>
+                  <?//= Html::a('Requisitos Altos',['/games/index', 'requisitos'=>3], ['class' => 'dropdown-item']) ?> -->
               </div>
+            </li>
+            
+            <li class="nav-item">
+              <a href="/home/pedir-juegos" class="nav-link">SOLICITAR JUEGOS</a>
+              <!-- <?//= Html::a('SOLICITAR JUEGOS', ['/home/pedir-juegos'], ['class' => 'nav-link']) ?> -->
             </li>
             <li class="nav-item">
               <a href="/site/contact" class="nav-link">CONTÁCTANOS</a>
               <!-- <?//= Html::a('CONTÁCTANOS', ['/site/contact'], ['class' => 'nav-link']) ?> -->
             </li>
             <li class="nav-item">
-              <a href="/home/pedir-juegos" class="nav-link">SOLICITAR JUEGOS</a>
-              <!-- <?//= Html::a('SOLICITAR JUEGOS', ['/home/pedir-juegos'], ['class' => 'nav-link']) ?> -->
-            </li>
-            <li class="nav-item">
-              <a class="nav-link font-weight-bold" href="https://www.youtube.com/channel/UCkwlaKe50JTTaop2JLJCIbA">CÓMO DESCARGAR</a>
+              <a class="nav-link text-danger font-weight-bold" href="https://www.youtube.com/channel/UCkwlaKe50JTTaop2JLJCIbA" target='_blank'>CÓMO DESCARGAR</a>
             </li>
             
           </ul>

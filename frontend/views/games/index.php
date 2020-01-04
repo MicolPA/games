@@ -66,6 +66,10 @@ $this->params['breadcrumbs'][] = $this->title;
                     <img src="<?php echo Yii::getAlias("@web") .'/'. $m['portada_in']; ?>?v=2" class="card-img-top" alt="...">
                       <div class="card-body">
                         <h5 class="card-title mind-title font-weight-bold"><?= Html::a($m['name'],['/games/descargar', 'id'=>$m['id'], ['class' => 'link-no']]) ?></h5>
+                        <div class="row h4">
+                            <div class="col-md-5"><span class="text-dark font-weight-bold">Peso:</span> <?= $m->size ?></div>
+                            <div class="col-md-7"><span class="text-dark font-weight-bold"><?= $m->requirementsType->name ?></span></div>
+                        </div>
                         <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
                       </div>
                   </a>

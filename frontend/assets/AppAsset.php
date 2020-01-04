@@ -14,14 +14,14 @@ class AppAsset extends AssetBundle
     public $css = [
         'css/site.css',
         'css/bootstrap.css',
-        'css/main.css?v=4',
+        'css/main.css?v=5',
         'https://fonts.googleapis.com/css?family=Oswald',
         'css/fontawesome.min.css',
     ];
     public $js = [
         'js/bootstrap.js',
         'js/sweetalert.min.js',
-        'js/main.js?v=3',
+        'js/main.js?v=4',
         'js/fontawesome.min.js',
     ];
     public $depends = [

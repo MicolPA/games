@@ -130,3 +130,15 @@ function saveReport(){
         }
     });
 }
+
+function imgBigger(id){
+    img = $("#"+id);
+    url = img.children().attr('src');
+    swal({
+        title: "",
+        text: '',
+        icon: url,
+        buttons: false
+      });
+
+}

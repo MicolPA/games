@@ -2,6 +2,12 @@
 	$this->title = $model->name . ' | Desarolladores de Ideas';
 
 ?>
+<style>
+	.swal-modal{
+		width: 70%
+	}
+</style>
+
 <div class="container">
 	<div class="row">
 		<div class="col-md-12 mb-4">
@@ -17,18 +23,18 @@
 			<div class="mt-4">
 				<h2 class="font-weight-normal">Descargar <?= $model->name ?> - <?php echo $model->resumen ?></h2>
 				<ul class="list-unstyled p-0 h3 mt-5"  style="font-family: 'Quicksand', sans-serif;">
-					<li><span class="font-weight-bold">Peso:</span> <?php echo $model->size ?></li>
-					<li><span class="font-weight-bold">Categoria:</span> 
-						<a href="http://localhost:8080/frontend/web/games/index?categoria=<?php echo $model->category->id ?>"><?php echo $model->category->name . ", "?></a>
-						<a href="http://localhost:8080/frontend/web/games/index?categoria=<?php echo $model->category_id2 ?>"><?php echo $model->category_id2 . "."?></a>
+					<li><i class="fas fa-caret-right text-purple"></i> <span class="font-weight-bold">Peso:</span> <?php echo $model->size ?></li>
+					<li><i class="fas fa-caret-right text-purple"></i> <span class="font-weight-bold">Categoria:</span> 
+						<a class="btn-tag" href="http://localhost:8080/frontend/web/games/index?categoria=<?php echo $model->category->id ?>"><?php echo $model->category->name?></a>,
+						<a  class="btn-tag" href="http://localhost:8080/frontend/web/games/index?categoria=<?php echo $model->category_id2 ?>"><?php echo $model->category2->name?></a>
 					</li>
-					<li><span class="font-weight-bold">Plataforma:</span> 
-						<a href="http://localhost:8080/frontend/web/games/index?plataforma=<?php echo $model->platform->id ?>"><?php echo $model->platform->name . "."?></a>
+					<li><i class="fas fa-caret-right text-purple"></i> <span class="font-weight-bold">Plataforma:</span> 
+						<a class="btn-tag" href="http://localhost:8080/frontend/web/games/index?plataforma=<?php echo $model->platform->id ?>"><?php echo $model->platform->name;?></a>
 					</li>
-					<li><span class="font-weight-bold">Requisitos:</span> 
-						<a href="http://localhost:8080/frontend/web/games/index?requisitos=<?php echo $model->requirementsType->id ?>"><?php echo $model->requirementsType->name . "."?></a>
+					<li><i class="fas fa-caret-right text-purple"></i> <span class="font-weight-bold">Requisitos:</span> 
+						<a class="btn-tag" href="http://localhost:8080/frontend/web/games/index?requisitos=<?php echo $model->requirementsType->id ?>"><?php echo $model->requirementsType->name; ?></a>
 					</li>
-					<li><span class="font-weight-bold">Fecha de subida:</span> <?php echo substr(str_replace('-', '/', $model->date), 0,10) ?></li>
+					<li><i class="fas fa-caret-right text-purple"></i> <span class="font-weight-bold">Fecha de subida:</span> <?php echo substr(str_replace('-', '/', $model->date), 0,10) ?></li>
 				</ul>
 
 				<p class="display-4 mt-4 text-primary font-weight-b title" style="margin-top: 5rem !important">Requisitos Recomendados</p>
@@ -70,12 +76,23 @@
 
 				<div class="links">
 					<ul class="list-unstyled p-0 h3 mt-5 font-weight-normal">
+						<?php if (count($links) == 1): ?>
+						<li><i class="fas fa-caret-right text-purple"></i> <a class='btn-tag' href="/<?php echo $links[0] ?>" target='_blank'>Parte Unica</a></li>
+						<?php else: ?>
 						<?php $count = 0 ?>
 						<?php for ($i=0;$i<count($links);$i++): ?>
 							<?php $count++; ?>
-						<li><a href="/<?php echo $links[$i] ?>" target='_blank'>Parte <?php echo $count ?></a></li>
-						<?php endFor ?>
+						<li><i class="fas fa-caret-right text-purple"></i> <a class='btn-tag' href="/<?php echo $links[$i] ?>" target='_blank'>Parte <?php echo $count ?></a></li>
+						<?php endFor ?>	
+						<?php endif ?>
+						
 					</ul>
+				</div>
+
+				<div class="row" style="margin-top: 4rem">
+					<div class="col-md-4"><a id='1' href="javascript:imgBigger(1)"><img src="<?php echo Yii::getAlias("@web") .'/'. $model->imagenes; ?>" class="d-block w-100" alt="<?php echo $model->name ?>" width='100%'></a></div>
+					<div class="col-md-4"><a href="javascript:imgBigger(2)" id="2"><img src="<?php echo Yii::getAlias("@web") .'/'. $model->portada_out; ?>" class="d-block w-100" alt="<?php echo $model->name ?>" width='100%'></a></div>
+					<div class="col-md-4"><a href="javascript:imgBigger(3)" id="3"><img src="<?php echo Yii::getAlias("@web") .'/'. $model->portada_in; ?>" class="d-block w-100" alt="<?php echo $model->name ?>" width='100%'></a></div>
 				</div>
 
 				<div class="card mt-5">
@@ -83,12 +100,7 @@
 					    Reportar
 					</div>
 					<div class="card-body">
-					    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					    <p class="h4">Si el juego tiene algun link roto, no funciona correctamente, está incompleto o cualquier otro problema, reportalo aquí.</p>
 					    <a href="#" onclick="javascript:reportarJuego(<?php echo $model->id; ?>)" class="btn btn-danger">Reportar Juego</a>
 					</div>
 					
@@ -98,7 +110,8 @@
 		<!-- col-md-9 ends -->
 
 		<div class="col-md-3" style="padding: 0px 0px 0px 4rem">
-			<img src="<?php echo Yii::getAlias("@web");?>/images/banner1.png" class="d-block w-100"  width='100%'>
+			<!-- Aside -->
+			<?= $this->render('_aside', ['model' => $model]); ?>
 		</div>
 	</div>
 </div>
