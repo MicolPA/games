@@ -38,7 +38,7 @@ class GamesController extends Controller
      * Lists all Games models.
      * @return mixed
      */
-    public function actionIndex($categoria = null, $name = null)
+    public function actionIndex($categoria = null, $plataforma = null, $requisitos = null, $name = null)
     {
         $get = Yii::$app->request->get();
         $query = Games::find()->orderBy(['date' => SORT_DESC]);
@@ -52,11 +52,11 @@ class GamesController extends Controller
             $query->andWhere(['like', 'name', $name]);
         }
 
-        if (isset($get['plataforma'])) {
+        if ($plataforma >= 1) {
             $query->andWhere(['platform_id' => $get['plataforma']]);
         }
 
-        if (isset($get['requisitos'])) {
+        if ($requisitos >= 1) {
             $query->andWhere(['requirementsType_id' => $get['requisitos']]);
         }
 
@@ -178,32 +178,6 @@ class GamesController extends Controller
     }
 
 
-    public function actionReport()
-    {
-        $game = new Games();
-        $report = new Reports();
-
-        $data = Yii::$app->request->post();
-        $game->load($data);
-
-        $report->game_id = $game->id;
-        $report->game_name = $game->name;
-        $report->status = 0;
-        $report->date = new \yii\db\Expression('NOW()');
-
-        if ($report->save()) {
-            Yii::$app->session->setFlash('fail1', "Reporte enviado correctamente");
-            return $this->redirect(['games/index']);
-        }else{
-            print_r($report->errors);
-        }
-
-        return $this->render('juego', [
-            'game' => $game,
-            'report' => $report,
-        ]);
-    }
-
     public function actionSaveReport(){
 
         $datos = false;
@@ -214,7 +188,7 @@ class GamesController extends Controller
                 $model = new \frontend\models\Reports();
                 $model->game_id = $post['game_id'];
                 $model->game_name = $post['game_name'];
-                $model->date = date("Y-m-d H:i:s");
+                $model->date = new \yii\db\Expression('NOW()');
 
                 if ($model->save(false)) {
                     $datos = $model->id;
@@ -239,7 +213,7 @@ class GamesController extends Controller
                     $model->error = $post['msg'];
                     $model->email = $post['correo'];
                     $model->status = 0;
-                    $model->date = date("Y-m-d H:i:s");
+                    $model->date = new \yii\db\Expression('NOW()');
 
                     $datos = $model->save(false)?true:false;
                 }
