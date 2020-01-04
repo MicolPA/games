@@ -14,7 +14,7 @@ class AppAsset extends AssetBundle
     public $css = [
         'css/site.css',
         'css/bootstrap.css',
-        'css/main.css?v=5',
+        'css/main.css?v=6',
         'https://fonts.googleapis.com/css?family=Oswald',
         'css/fontawesome.min.css',
     ];
