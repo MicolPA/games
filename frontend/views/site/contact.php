@@ -33,17 +33,20 @@ $this->params['breadcrumbs'][] = $this->title . ' | Desarolladores de Ideas';
     <div class="row mt-5">
         <div class="col-md-6 col-lg-6">
             <?php $form = ActiveForm::begin(['id' => 'contact-form','options' => ['autocomplete' => 'off'],]); ?>
+                
+                <p class="display-5" style="font-size: 18px">Nombre</p>
+                <?= $form->field($model, 'name')->textInput([])->label(false) ?>
 
-                <?= $form->field($model, 'name')->textInput([]) ?>
+                <p class="display-5 mt-5" style="font-size: 18px">Email</p>
+                <?= $form->field($model, 'email')->label(false) ?>
 
-                <?= $form->field($model, 'email') ?>
+                <p class="display-5 mt-5" style="font-size: 18px">Mensaje</p>
+                <?= $form->field($model, 'body')->textarea(['rows' => 6])->label(false) ?>
 
-                <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
-
+                <p class="mt-5 display-5" style="font-size: 18px">Captcha</p>
                 <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
                     'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
-                ]) ?>
-
+                ])->label(false) ?>
                 <div class="form-group">
                     <?= Html::submitButton('Enviar', ['class' => 'btn btn-primary btn-lg mt-5 h5', 'name' => 'contact-button']) ?>
                 </div>
