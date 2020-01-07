@@ -48,7 +48,7 @@ $this->params['breadcrumbs'][] = $this->title . ' | Desarolladores de Ideas';
                     'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
                 ])->label(false) ?>
                 <div class="form-group">
-                    <?= Html::submitButton('Enviar', ['class' => 'btn btn-primary btn-lg mt-5 h5', 'name' => 'contact-button']) ?>
+                    <?= Html::submitButton('Enviar', ['class' => 'btn btn-primary btn-lg mt-5 h5 btn-block big-btn', 'name' => 'contact-button']) ?>
                 </div>
 
             <?php ActiveForm::end(); ?>
