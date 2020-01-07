@@ -16,11 +16,11 @@ nav{
   font-weight: bold;
   color:black;
   font-size: 16px;
-  border-bottom: 2px solid purple;
+  border-bottom: 2px solid green;
 }
 .btn-tag:hover{
   text-decoration: none;
-  background:purple;
+  background:green;
   color:white;
   padding:4px;
   border-bottom: 0px;
@@ -30,6 +30,9 @@ li{
 }
 .text-red{
   color:#CD3B3B;
+}
+.text-green{
+  color:green;
 }
 .text-purple{
   color: purple
