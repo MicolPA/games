@@ -3,16 +3,16 @@
 use yii\db\Migration;
 
 /**
- * Class m191223_154747_collections
+ * Class m200107_215332_collections
  */
-class m191223_154747_collections extends Migration
+class m200107_215332_collections extends Migration
 {
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-         $tableOptions = null;
+        $tableOptions = null;
             if ($this->db->driverName === 'mysql') {
                 // http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
                 $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
@@ -32,7 +32,7 @@ class m191223_154747_collections extends Migration
      */
     public function safeDown()
     {
-        echo "m191223_154747_collections cannot be reverted.\n";
+        echo "m200107_215332_collections cannot be reverted.\n";
 
         return false;
     }
@@ -46,7 +46,7 @@ class m191223_154747_collections extends Migration
 
     public function down()
     {
-        echo "m191223_154747_collections cannot be reverted.\n";
+        echo "m200107_215332_collections cannot be reverted.\n";
 
         return false;
     }

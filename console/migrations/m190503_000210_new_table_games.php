@@ -18,7 +18,6 @@ class m190503_000210_new_table_games extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
 
-
         $this->createTable('{{%games}}', [
             'id' => $this->primaryKey(),
             'name' => $this->string()->notNull(),
