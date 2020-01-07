@@ -11,6 +11,7 @@
 <style>
     input, select{
         height: 50px !important;
+        font-size: 14px !important;
     }
     .icon{
         font-size: 54px;
@@ -49,11 +50,11 @@
                             3 => 'PlayStation 3', 
                             4 => 'Nintendo Wii'
                         ],
-                        ['prompt'=>'Seleccionar Plataforma']
+                        ['prompt'=>'Seleccionar Plataforma', 'style' => 'font-size:14px']
                     );
                  ?>
                 <?= $form->field($model, 'email')->input('email') ?>
-                <?= $form->field($model, 'comment')->textarea(['rows' => 6]) ?>
+                <?= $form->field($model, 'comment')->textarea(['rows' => 6, 'style' => 'font-size:14px']) ?>
 
                 <div class="form-group">
                     <?= Html::submitButton('Pedir Juego', ['class' => 'btn btn-success btn-lg big-btn']) ?>

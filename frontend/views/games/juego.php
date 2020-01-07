@@ -7,6 +7,7 @@
 		width: 70%;
 		padding:0px !important;
 	}
+	
 </style>
 
 <div class="container">
@@ -25,18 +26,18 @@
 				<p class="display-4 mt-2 text-primary font-weight-b title" style="margin-top: 3rem !important">Descripción</p>
 				<h2 class="font-weight-normal"><?php echo $model->resumen ?></h2>
 				<ul class="list-unstyled p-0 h3 mt-5"  style="font-family: 'Quicksand', sans-serif;">
-					<li><i class="fas fa-caret-right text-purple"></i> <span class="font-weight-bold">Peso:</span> <?php echo $model->size ?></li>
-					<li><i class="fas fa-caret-right text-purple"></i> <span class="font-weight-bold">Categoria:</span> 
+					<li><i class="fas fa-caret-right text-green"></i> <span class="font-weight-bold">Peso:</span> <?php echo $model->size ?></li>
+					<li><i class="fas fa-caret-right text-green"></i> <span class="font-weight-bold">Categoria:</span> 
 						<a class="btn-tag" href="/games/index?categoria=<?php echo $model->category->id ?>"><?php echo $model->category->name?></a>,
 						<a  class="btn-tag" href="/games/index?categoria=<?php echo $model->category_id2 ?>"><?php echo $model->category2->name?></a>
 					</li>
-					<li><i class="fas fa-caret-right text-purple"></i> <span class="font-weight-bold">Plataforma:</span> 
+					<li><i class="fas fa-caret-right text-green"></i> <span class="font-weight-bold">Plataforma:</span> 
 						<a class="btn-tag" href="/games/index?plataforma=<?php echo $model->platform->id ?>"><?php echo $model->platform->name;?></a>
 					</li>
-					<li><i class="fas fa-caret-right text-purple"></i> <span class="font-weight-bold">Requisitos:</span> 
+					<li><i class="fas fa-caret-right text-green"></i> <span class="font-weight-bold">Requisitos:</span> 
 						<a class="btn-tag" href="/games/index?requisitos=<?php echo $model->requirementsType->id ?>"><?php echo $model->requirementsType->name; ?></a>
 					</li>
-					<li><i class="fas fa-caret-right text-purple"></i> <span class="font-weight-bold">Fecha de subida:</span> <?php echo substr(str_replace('-', '/', $model->date), 0,10) ?></li>
+					<li><i class="fas fa-caret-right text-green"></i> <span class="font-weight-bold">Fecha de subida:</span> <?php echo substr(str_replace('-', '/', $model->date), 0,10) ?></li>
 				</ul>
 
 				<p class="display-4 mt-4 text-primary font-weight-b title" style="margin-top: 5rem !important">Requisitos Recomendados</p>
@@ -79,12 +80,12 @@
 				<div class="links">
 					<ul class="list-unstyled p-0 h3 mt-5 font-weight-normal">
 						<?php if (count($links) == 1): ?>
-						<li><i class="fas fa-caret-right text-purple"></i> <a class='btn-tag' href="/<?php echo $links[0] ?>" target='_blank'>Parte Única</a></li>
+						<li><i class="fas fa-caret-right text-green"></i> <a class='btn-tag' href="/<?php echo $links[0] ?>" target='_blank'>Parte Única</a></li>
 						<?php else: ?>
 						<?php $count = 0 ?>
 						<?php for ($i=0;$i<count($links);$i++): ?>
 							<?php $count++; ?>
-						<li><i class="fas fa-caret-right text-purple"></i> <a class='btn-tag' href="/<?php echo $links[$i] ?>" target='_blank'>Parte <?php echo $count ?></a></li>
+						<li><i class="fas fa-caret-right text-green"></i> <a class='btn-tag' href="/<?php echo $links[$i] ?>" target='_blank'>Parte <?php echo $count ?></a></li>
 						<?php endFor ?>	
 						<?php endif ?>
 						
