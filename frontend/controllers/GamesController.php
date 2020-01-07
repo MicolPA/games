@@ -232,6 +232,21 @@ class GamesController extends Controller
             $model->load($data);
             $model->date = new \yii\db\Expression('NOW()');
 
+            $name = str_replace(' ', '-', $model->name);
+            $name = preg_replace("/[^a-zA-Z0-9_-]+/", '', $name);
+            $name = strtolower($name);
+
+            $path = "images/$name/";
+            if (!file_exists($path)) {
+                mkdir($path, 0777, true);
+            }
+
+            $model->portada = UploadedFile::getInstance($model, 'portada');
+            $imagen = $path . $name . '-portada-collection - Desarrolladores de Ideas.' . $model->portada->extension;
+            $model->portada->saveAs($imagen);
+            $model->portada = $imagen;
+
+
             if ($model->save()) {
                 Yii::$app->session->setFlash('success', "Saga registrada correctamente");
                 return $this->redirect(['collection']);
