@@ -5,6 +5,7 @@ namespace frontend\controllers;
 use Yii;
 use frontend\models\Games;
 use frontend\models\Category;
+use frontend\models\Collections;
 use frontend\models\Requirements;
 use frontend\models\RequirementsType;
 use frontend\models\GamesSeach;
@@ -220,6 +221,28 @@ class GamesController extends Controller
             }
         }
         return \yii\helpers\Json::encode($datos);
+    }
+
+    public function actionCollection()
+    {
+        $model = new Collections();
+
+        if (Yii::$app->request->post()) {
+            $data = Yii::$app->request->post();
+            $model->load($data);
+            $model->date = new \yii\db\Expression('NOW()');
+
+            if ($model->save()) {
+                Yii::$app->session->setFlash('success', "Saga registrada correctamente");
+                return $this->redirect(['collection']);
+            }else{
+                print_r($model->errors);
+            }
+        }
+
+        return $this->render('collection', [
+            'model' => $model,
+        ]);
     }
 
     /**

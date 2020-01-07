@@ -28,8 +28,8 @@ class m191223_154824_collections_Games extends Migration
 
         ], $tableOptions);
 
-             $this->addForeignKey('game_id', '{{%collections_Games}}', 'game_id', '{{%games}}', 'id', 'CASCADE', 'CASCADE');
-             $this->addForeignKey('game_name', '{{%collections_Games}}', 'game_name', '{{%games}}', 'id', 'CASCADE', 'CASCADE');
+            $this->addForeignKey('collectionsGames', '{{%collections_Games}}', 'game_id', '{{%games}}', 'id', 'CASCADE', 'CASCADE');
+             
     }
 
     /**
