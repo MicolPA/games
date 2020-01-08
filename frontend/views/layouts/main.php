@@ -41,7 +41,7 @@ AppAsset::register($this);
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="border-radius: 0px">
       <div class="container">
-        <a class="navbar-brand pt-4 title-home text-primary font-weight-bold" href="/">DESARROLLADORES DE IDEAS</a>
+        <ul class="pl-0"><li><a class="navbar-brand pt-4 title-home text-primary font-weight-bold" href="/"style="font-size: 16px !important">DESARROLLADORES DE IDEAS</a></li></ul>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -76,7 +76,6 @@ AppAsset::register($this);
                   <?//= Html::a('Requisitos Altos',['/games/index', 'requisitos'=>3], ['class' => 'dropdown-item']) ?> -->
               </div>
             </li>
-            
             <li class="nav-item">
               <a href="/home/pedir-juegos" class="nav-link">SOLICITAR JUEGOS</a>
               <!-- <?//= Html::a('SOLICITAR JUEGOS', ['/home/pedir-juegos'], ['class' => 'nav-link']) ?> -->
@@ -86,7 +85,7 @@ AppAsset::register($this);
               <!-- <?//= Html::a('CONTÁCTANOS', ['/site/contact'], ['class' => 'nav-link']) ?> -->
             </li>
             <li class="nav-item">
-              <a class="nav-link text-danger font-weight-bold" href="https://www.youtube.com/channel/UCkwlaKe50JTTaop2JLJCIbA" target='_blank'>CÓMO DESCARGAR</a>
+              <a class="nav-link text-success font-weight-bold" href="https://www.youtube.com/channel/UCkwlaKe50JTTaop2JLJCIbA" target='_blank' >CÓMO DESCARGAR</a>
             </li>
             
           </ul>
@@ -95,11 +94,11 @@ AppAsset::register($this);
     </nav>
 
 
-        <!-- <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?> -->
-        <?= Alert::widget() ?>
-        <?= $content ?>
+      <!-- <?= Breadcrumbs::widget([
+          'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+      ]) ?> -->
+      <?= Alert::widget() ?>
+      <?= $content ?>
 </div>
 
 
