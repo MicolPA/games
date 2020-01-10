@@ -78,9 +78,85 @@ $this->title = 'Descargar Juegos Para PC, PS2, PS3 y Wii | Desarrolladores de Id
         </div>
 
     </div>
+    <style>
+      .card-2{
+        min-height: 200px;
+        background: transparent;
+        font-size: 60px;
+        color: white;
+        padding-top: 2rem;
+        border: 1px solid white
+      }
+       .card-2:hover{
+        background: #000;
+       }
+      .card-2 p{
+        margin-top: 1rem
+      }
+    </style>
+    <div class="container-fluid mb-5 mt-5"> 
+      <div class="row shadow align-items-center" style="background-image: url(<?php echo Yii::getAlias('@web') ?>/images/stock/stock-5.jpg);height: 500px;background-repeat: no-repeat;background-size: cover">
+        <div class="container">
+          <div class="col-md-12">
+          <h3 class="text-white text-center mb-4 display display-3" style="text-shadow: 2px 2px 4px #000000;">Requerimientos</h3>
+          <div class="row mt-5">
+            <div class="col-md-4 mt-4">
+              <a href="" class="no-link">
+                <div class="card-2 text-center">
+                <i class="fas fa-laptop"></i>
+                <p class="h1">Requerimientos Bajos</p>
+              </div>
+              </a>
+            </div>
+            <div class="col-md-4 mt-4">
+              <a href="" class="no-link">
+                <div class="card-2 text-center">
+                <i class="fas fa-laptop"></i>
+                <p class="h1">Requerimientos Medios</p>
+              </div>
+              </a>
+            </div>
+            <div class="col-md-4 mt-4">
+              <a href="" class="no-link">
+                <div class="card-2 text-center">
+                <i class="fas fa-laptop"></i>
+                <p class="h1">Requerimientos Altos</p>
+              </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-5 pt-5">
+
+      <div class="row mt-5">
+        <div class="col-md-12">
+          <h3 class="display-2 text-center">Últimos Juegos</h3>
+          <hr class="bg-primary" style="height: 2px;">
+        </div>
+      </div>
+
+        <div class="row mt-5">
+            <?php foreach ($games as $g): ?>
+              <div class="col-lg-3 mt-5 mb-5 ">
+                <a class="no-link" href="/games/descargar/?id=<?= $g->id ?>" data-toggle="tooltip" data-placement="top" title="<?= $g->name ?>">
+                  <div class="card-mine pt-4" style="height:300;min-height: 300px">
+                    <p class="display-6 font-weight-bold text-center" style="height: 25px"><?=  strlen($g->name)>22?substr($g->name, 0, 22)."...":$g->name; ?></p>
+                    <img src="<?= Yii::getAlias('@web') . '/'. $g->portada_out ?>" alt="<?= $g->name ?>" width='100%'>
+                    <p class="font-weight-bold text-center pt-3"><?= substr($g->resumen, 0,150) ?>...</p>
+                  </div>
+                </a>
+              </div>
+            <?php endforeach ?>
+            
+        </div>
+
+    </div>
 
     <div class="container-fluid mb-5 mt-5"> 
-      <div class="row shadow align-items-center" style="background-image: url(<?php echo Yii::getAlias('@web') ?>/images/stock/stock-3.jpg);height: 450px;background-repeat: no-repeat;background-size: cover;">
+      <div class="row shadow align-items-center" style="background-image: url(<?php echo Yii::getAlias('@web') ?>/images/stock/stock-2.jpg?v=5);height: 450px;background-repeat: no-repeat;background-size: cover;">
         <div class="container">
           <div class="col-md-12">
           <h3 class="text-white text-center mb-4 display display-3" style="text-shadow: 2px 2px 4px #000000;">Aprende a Descargar</h3>
