@@ -51,7 +51,7 @@ class Requirements extends \yii\db\ActiveRecord
             'graficos' => 'Graficos',
             'directX' => 'Direct X',
             'discoDuro' => 'Disco Duro',
-            'otros' => 'Otros',
+            'otros' => 'Comentario',
         ];
     }
 

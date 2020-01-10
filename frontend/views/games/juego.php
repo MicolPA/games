@@ -37,7 +37,13 @@
 					<li><i class="fas fa-caret-right text-green"></i> <span class="font-weight-bold">Requisitos:</span> 
 						<a class="btn-tag" href="/games/index?requisitos=<?php echo $model->requirementsType->id ?>"><?php echo $model->requirementsType->name; ?></a>
 					</li>
+
+					<li><i class="fas fa-caret-right text-green"></i> <span class="font-weight-bold">Saga:</span><?php if ($collection): ?>
+						<a class="btn-tag" href="/games/index?saga=<?php echo $collection->saga_id; ?>"><?php echo $collection->saga->name; ?></a>
+					<?php endif ?>
+					</li>
 					<li><i class="fas fa-caret-right text-green"></i> <span class="font-weight-bold">Fecha de subida:</span> <?php echo substr(str_replace('-', '/', $model->date), 0,10) ?></li>
+
 				</ul>
 
 				<p class="display-4 mt-4 text-primary font-weight-b title" style="margin-top: 5rem !important">Requisitos Recomendados</p>
@@ -89,13 +95,19 @@
 						<?php endFor ?>	
 						<?php endif ?>
 						
+
 					</ul>
+
+				</div>
+				<div>
+					<h3 class="font-weight-bold">Comentario</h3><?php echo $model->requirements->otros ?>
 				</div>
 
 				<div class="row" style="margin-top: 4rem">
 					<div class="col-md-4"><a id='1' href="javascript:imgBigger(1)"><img src="<?php echo Yii::getAlias("@web") .'/'. $model->imagenes; ?>" class="d-block w-100" alt="<?php echo $model->name ?>" width='100%'></a></div>
 					<div class="col-md-4"><a href="javascript:imgBigger(2)" id="2"><img src="<?php echo Yii::getAlias("@web") .'/'. $model->portada_out; ?>" class="d-block w-100" alt="<?php echo $model->name ?>" width='100%'></a></div>
 					<div class="col-md-4"><a href="javascript:imgBigger(3)" id="3"><img src="<?php echo Yii::getAlias("@web") .'/'. $model->portada_in; ?>" class="d-block w-100" alt="<?php echo $model->name ?>" width='100%'></a></div>
+
 				</div>
 
 			</div>

@@ -6,6 +6,7 @@ use Yii;
 use frontend\models\Games;
 use frontend\models\Category;
 use frontend\models\Collections;
+use frontend\models\CollectionsGames;
 use frontend\models\Requirements;
 use frontend\models\RequirementsType;
 use frontend\models\GamesSeach;
@@ -39,10 +40,11 @@ class GamesController extends Controller
      * Lists all Games models.
      * @return mixed
      */
-    public function actionIndex($categoria = null, $plataforma = null, $requisitos = null, $name = null)
+    public function actionIndex($categoria = null, $plataforma = null, $requisitos = null, $name = null, $saga = null)
     {
         $get = Yii::$app->request->get();
         $query = Games::find()->orderBy(['date' => SORT_DESC]);
+        $collection = Collections::find()->where(['id' => "$saga"])->one();
 
         if ($categoria >= 1) {
             $query->andWhere(['category_id' => $categoria]);
@@ -61,13 +63,16 @@ class GamesController extends Controller
             $query->andWhere(['requirementsType_id' => $get['requisitos']]);
         }
 
+        if ($collection >= 1) {
+            $query->andWhere(['id' => $get['saga']]);
+        }
+
 
         $countQuery = clone $query;
         $pages = new \yii\data\Pagination(['totalCount' => $countQuery->count()]);
         $model = $query->offset($pages->offset)
         ->limit(21)
         ->all();
-
 
         return $this->render('index', [
             'categoria' => $categoria,
@@ -89,12 +94,15 @@ class GamesController extends Controller
 
         $model = Games::findOne($id);
         $model2 = new Category();
+        $collection = CollectionsGames::find()->where(['game_id' => "$id"])->one();
+
         $links = explode(',', $model->links);
         //$requisitos = Requirements::find()->where
 
         return $this->render('juego', [
             'model' => $model,
             'model2' => $model2,
+            'collection' => $collection,
             'links' => $links,
         ]);
     }

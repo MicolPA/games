@@ -3,22 +3,22 @@
 use yii\db\Migration;
 
 /**
- * Class m191223_154824_collections_Games
+ * Class m200108_172952_collectionGames
  */
-class m191223_154824_collections_Games extends Migration
+class m200108_172952_collectionGames extends Migration
 {
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-        $tableOptions = null;
+         $tableOptions = null;
             if ($this->db->driverName === 'mysql') {
                 // http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
                 $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
             }
 
-            $this->createTable('{{%collections_Games}}', [
+            $this->createTable('{{%collectionsGames}}', [
                 'id' => $this->primaryKey(),
                 'game_id' => $this->integer()->notNull(),
                 'game_name' => $this->string(),
@@ -29,7 +29,6 @@ class m191223_154824_collections_Games extends Migration
         ], $tableOptions);
 
             $this->addForeignKey('collectionsGames', '{{%collections_Games}}', 'game_id', '{{%games}}', 'id', 'CASCADE', 'CASCADE');
-             
     }
 
     /**
@@ -37,7 +36,7 @@ class m191223_154824_collections_Games extends Migration
      */
     public function safeDown()
     {
-        echo "m191223_154824_collections_Games cannot be reverted.\n";
+        echo "m200108_172952_collectionGames cannot be reverted.\n";
 
         return false;
     }
@@ -51,7 +50,7 @@ class m191223_154824_collections_Games extends Migration
 
     public function down()
     {
-        echo "m191223_154824_collections_Games cannot be reverted.\n";
+        echo "m200108_172952_collectionGames cannot be reverted.\n";
 
         return false;
     }
