@@ -12,14 +12,17 @@ $this->params['breadcrumbs'][] = $this->title;
 </style>
 <div class="container">
 	<div class="row ">
-		<div class="col-md-12">
+		<div class="col-md-6 pl-0">
 			<h1 class="font-weight-bold display-3 title">Panel de Administración</h1>
+		</div>
+		<div class="col-md-6 text-right mt-4 pr-0">
+			<a href="/home" class="btn btn-success btn-lg"><i class="fas fa-user mr-1"></i> VER COMO USUARIO</a>
 		</div>
 	</div>
 
 
 	<div class="row" style="margin-top: 4rem">
-		<div class="col-md-3">
+		<div class="col-md-3 pl-0">
 			<a href="/admin/create-game" class="no-link">
 				<div class="admin-card text-center display-2 bg-danger text-white">
 				<i class="fas fa-gamepad mb-3"></i>
@@ -27,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			</div>
 			</a>
 		</div>
-		<div class="col-md-3">
+		<div class="col-md-3 pl-0">
 			<a href="/admin/create-collection" class="no-link">
 				<div class="admin-card text-center display-2 bg-primary text-white">
 					<i class="fas fa-layer-group mb-3"></i>
@@ -35,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				</div>	
 			</a>
 		</div>
-		<div class="col-md-3">
+		<div class="col-md-3 pl-0">
 			<a href="/admin/add-collection-game" class="no-link">
 				<div class="admin-card text-center display-2 bg-warning text-white">
 					<i class="fas fa-layer-group mb-3"></i>
@@ -44,7 +47,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			</a>
 		</div>
 		
-		<div class="col-md-3">
+		<div class="col-md-3 p-0">
 			<a href="/admin/ver-solicitudes" class="no-link">
 				<div class="admin-card text-center display-2 bg-dark text-white">
 					<i class="fas fa-users mb-3"></i>
@@ -54,12 +57,16 @@ $this->params['breadcrumbs'][] = $this->title;
 		</div>
 	</div>
 
-	<div class="row" style="padding-top: 4rem">
-		<div class="col-md-12">
-			<p class="h1 font-weight-bold">JUEGOS PUBLICADOS</p>
+	<div class="row" style="padding-top: 8rem">
+		<div class=" bg-white shadow p-4">
+			<div class="col-md-12">
+				<h1 class="font-weight-bold display-3 title">JUEGOS PUBLICADOS</h1>
+			</div>
+			<canvas id="myChart" width="400" height="150"></canvas>	
 		</div>
-		<canvas id="myChart" width="400" height="150"></canvas>
 	</div>
+
+
 </div>
 
 <script>

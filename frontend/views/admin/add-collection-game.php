@@ -10,7 +10,7 @@
 	.admin-contenedor{
 		min-height: 400px
 	}
-    select{
+    select, input{
     	font-size: 18px !important;
     }
     .number{
