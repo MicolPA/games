@@ -24,6 +24,7 @@ class AdminController extends \yii\web\Controller
 	public function behaviors()
     {
         $this->layout = '@app/views/layouts/admin';
+
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
@@ -33,7 +34,8 @@ class AdminController extends \yii\web\Controller
             ],
         ];
     }
-    
+
+
     public function actionIndex()
     {
         $this->layout = '@app/views/layouts/admin';
@@ -175,5 +177,29 @@ class AdminController extends \yii\web\Controller
             'model' => $model,
         ]);
     }
+
+    public function actionAddCollectionGame(){
+
+    	$sagas = Collections::find()->all();
+
+    	return $this->render('add-collection-game', [
+            'sagas' => $sagas,
+        ]);
+
+    }
+
+    public function actionObtenerJuegos(){
+
+        $datos = null;
+
+        if (Yii::$app->request->isAjax) {
+            $post = Yii::$app->request->post();
+            if ($post) {
+                $datos = Games::find()->where(['in_collection' => 0])->all();
+            }
+        }
+        return \yii\helpers\Json::encode($datos);
+    }
+
 
 }

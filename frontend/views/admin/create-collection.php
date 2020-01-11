@@ -34,7 +34,7 @@
 		     	<?= $form->field($model, 'portada')->fileInput() ?>
 		    
 		        <div class="form-group" style="margin-top: 5rem">
-		            <?= Html::submitButton('Crear', ['class' => 'btn big-btn btn-primary btn-block btn-lg']) ?>
+		            <?= Html::submitButton('Crear', ['class' => 'btn big-btn btn-success btn-block btn-lg']) ?>
 		        </div>
 		    <?php ActiveForm::end(); ?>
 		</div>

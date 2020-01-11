@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			</a>
 		</div>
 		<div class="col-md-3">
-			<a href="/admin/add-colletion-game" class="no-link">
+			<a href="/admin/add-collection-game" class="no-link">
 				<div class="admin-card text-center display-2 bg-warning text-white">
 					<i class="fas fa-layer-group mb-3"></i>
 					<p class="h3 font-weight-bold">AGRUPAR JUEGOS</p>
