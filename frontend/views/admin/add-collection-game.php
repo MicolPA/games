@@ -13,6 +13,16 @@
     select{
     	font-size: 18px !important;
     }
+    .number{
+    	width: 10px !important;
+	    height: 10px !important;
+	    background: black;
+	    padding: 0 1rem;
+	    font-size: 14px !important;
+	    color: white !important;
+	    margin-right: 1rem;
+	}	
+    }
 </style>
 <div class="container p-4">
 
@@ -55,9 +65,7 @@
 						</select>
 					</div>
 					<div class="col-md-2">
-						<select name="" id="orden" class="form-control">
-							<option value="">Orden...</option>
-						</select>
+						<input name="" id="orden" class="form-control" placeholder="Orden">
 					</div>
 					<div class="col-md-2">
 						<a href="javascript:agregarJuego()" class="btn btn-success btn-lg">Añadir</a>
@@ -119,7 +127,8 @@
 
 		nombre = document.createElement('p');
 		$(nombre).attr('class', 'h4');
-		$(nombre).html(name);
+		span = "<small class='number'>" + orden + "</small>";
+		$(nombre).html(span + name);
 		$("#juegos").append(nombre);
 
 		$('#juego_id').empty();
