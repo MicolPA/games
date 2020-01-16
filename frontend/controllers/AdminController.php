@@ -181,7 +181,27 @@ class AdminController extends \yii\web\Controller
     public function actionAddCollectionGame(){
 
     	$sagas = Collections::find()->all();
+        if (Yii::$app->request->post()) {
+            $data = Yii::$app->request->post();
+            $juegos = explode(',', $data['juegos']);
+            $orden = explode(',', $data['orden']);
+            $name = explode(',', $data['juego']);
 
+            for ($i=0; $i < count($juegos); $i++) { 
+                print_r($juegos[$i]);
+                print_r($orden[$i]);
+                print_r($name[$i]);
+
+            }
+               
+            exit();
+            if ($modelGames->save()) {
+                Yii::$app->session->setFlash('success', "Lista registrada correctamente");
+                return $this->redirect(['add-collection-game']);
+            }else{
+                
+            }
+        }
     	return $this->render('add-collection-game', [
             'sagas' => $sagas,
         ]);

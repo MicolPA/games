@@ -76,7 +76,8 @@
 
 		    <input type="hidden" name="juegos" id="juegos_all">	
 		    <input type="hidden" name="orden" id="orden_all">	
-	        <div class="form-group" style="margin-top: 5rem;display: none">
+		    <input type="hidden" name="name" id="name_all">	
+	        <div class="form-group" style="margin-top: 5rem;">
 	            <?= Html::submitButton('Crear', ['class' => 'btn big-btn btn-success btn-block btn-lg']) ?>
 	        </div>
 		    <?php ActiveForm::end(); ?>
@@ -104,7 +105,7 @@
                 _csrf: '<?=Yii::$app->request->getCsrfToken()?>'
             },
             success: function (data) {
-            	console.log(data);0
+            	console.log(data);
                 $.each(data, function (key, value) {
                     $('#juego_id').append('<option value="' + value.id + '">' + value.name + '</option>');
                     
@@ -117,19 +118,24 @@
 
 		juego_id = $('#juego_id').val();
 		orden = $('#orden').val();
+		name = $('select[name="juego"] option:selected').text();
+
 
 		$("#juegos_all").val($("#juegos_all").val()+juego_id+",");
 		$("#orden_all").val($("#orden_all").val()+orden+",");
+		$("#name_all").val($("#name_all").val()+name+",");
+
 		console.log($("#orden_all").val());
 		console.log($("#juegos_all").val());
+		console.log($("#name_all").val());
 
-		name = $('select[name="juego"] option:selected').text();
 
 		nombre = document.createElement('p');
 		$(nombre).attr('class', 'h4');
 		span = "<small class='number'>" + orden + "</small>";
 		$(nombre).html(span + name);
 		$("#juegos").append(nombre);
+		$("#juego").append(name);
 
 		$('#juego_id').empty();
         $('#juego_id').append('<option value="">Seleccionar...</option>');
