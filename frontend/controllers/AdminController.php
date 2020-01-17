@@ -61,8 +61,9 @@ class AdminController extends \yii\web\Controller
         			$juegos['ps2']++;
         			break;
 
-        		case 3:
+        		case $g->platform_id == 3:
         			$juegos['ps3']++;
+                    exit();
         			break;
 
         		case 4:
