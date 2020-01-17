@@ -118,7 +118,7 @@
 
 		juego_id = $('#juego_id').val();
 		orden = $('#orden').val();
-		name = $('select[name="juego"] option:selected').text();
+		name = $('select[name="juego"] option:selected').val();
 
 
 		$("#juegos_all").val($("#juegos_all").val()+juego_id+",");
@@ -135,10 +135,10 @@
 		span = "<small class='number'>" + orden + "</small>";
 		$(nombre).html(span + name);
 		$("#juegos").append(nombre);
-		$("#juego").append(name);
 
 		$('#juego_id').empty();
         $('#juego_id').append('<option value="">Seleccionar...</option>');
+		$("#name").append(name);
 
         obtenerJuegos();
 	}
