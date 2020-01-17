@@ -188,13 +188,14 @@ class AdminController extends \yii\web\Controller
             $name = explode(',', $data['juego']);
 
             for ($i=0; $i < count($juegos); $i++) { 
-                print_r($juegos[$i]);
-                print_r($orden[$i]);
-                print_r($name[$i]);
-
+                $modelGames = new CollectionsGames();
+                $modelGames->game_id = $juegos[$i];
+                $modelGames->game_name = $name[$i];
+                $modelGames->orden = $orden[$i];
+                $modelGames->saga_id = $data['saga_id'];
+                $modelGames->date = new \yii\db\Expression('NOW()');
             }
                
-            exit();
             if ($modelGames->save()) {
                 Yii::$app->session->setFlash('success', "Lista registrada correctamente");
                 return $this->redirect(['add-collection-game']);
