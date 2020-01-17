@@ -63,11 +63,6 @@ class GamesController extends Controller
             $query->andWhere(['requirementsType_id' => $get['requisitos']]);
         }
 
-        if ($collection >= 1) {
-            $query->andWhere(['id' => $get['saga']]);
-        }
-
-
         $countQuery = clone $query;
         $pages = new \yii\data\Pagination(['totalCount' => $countQuery->count()]);
         $model = $query->offset($pages->offset)
@@ -88,7 +83,6 @@ class GamesController extends Controller
     {
       # code...
     }
-
 
     public function actionDescargar($id){
 
