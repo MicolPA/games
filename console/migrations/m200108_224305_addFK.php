@@ -12,9 +12,9 @@ class m200108_224305_addFK extends Migration
      */
     public function safeUp()
     {
-        $this->alterColumn('collectionsGames', 'saga_id', $this->integer()->notNull());
+        $this->alterColumn('collections_games', 'saga_id', $this->integer()->notNull());
 
-        $this->addForeignKey('collections', '{{%collectionsGames}}', 'saga_id', '{{%collections}}', 'id', 'CASCADE', 'CASCADE');
+        $this->addForeignKey('collections', '{{%collections_games}}', 'saga_id', '{{%collections}}', 'id', 'CASCADE', 'CASCADE');
 
     }
 

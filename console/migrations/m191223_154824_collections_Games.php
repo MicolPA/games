@@ -18,7 +18,7 @@ class m191223_154824_collections_Games extends Migration
                 $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
             }
 
-            $this->createTable('{{%collections_Games}}', [
+            $this->createTable('{{%collections_games}}', [
                 'id' => $this->primaryKey(),
                 'game_id' => $this->integer()->notNull(),
                 'game_name' => $this->string(),
@@ -28,7 +28,7 @@ class m191223_154824_collections_Games extends Migration
 
         ], $tableOptions);
 
-            $this->addForeignKey('collectionsGames', '{{%collections_Games}}', 'game_id', '{{%games}}', 'id', 'CASCADE', 'CASCADE');
+            $this->addForeignKey('collectionsGames', '{{%collections_games}}', 'game_id', '{{%games}}', 'id', 'CASCADE', 'CASCADE');
              
     }
 
