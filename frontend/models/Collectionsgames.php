@@ -17,7 +17,7 @@ use Yii;
  * @property Games $game
  * @property Collections $saga
  */
-class Collectionsgames extends \yii\db\ActiveRecord
+class CollectionsGames extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
