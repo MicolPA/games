@@ -17,7 +17,7 @@ class RequirementsType extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'RequirementsType';
+        return 'requirementsType';
     }
 
     /**
