@@ -190,28 +190,38 @@ class AdminController extends \yii\web\Controller
 
     public function actionAddCollectionGame(){
 
+<<<<<<< Updated upstream
         $this->checkLogin();
     	$sagas = Collections::find()->all();
+=======
+        $sagas = Collections::find()->all();
+>>>>>>> Stashed changes
         if (Yii::$app->request->post()) {
+
             $data = Yii::$app->request->post();
             $juegos = explode(',', $data['juegos']);
             $orden = explode(',', $data['orden']);
             $name = explode(',', $data['juego']);
 
-            for ($i=0; $i < count($juegos); $i++) { 
+            for ($i=1; $i < count($juegos); $i++) { 
                 $modelGames = new CollectionsGames();
+                $model = Games::find()
+                ->where(['id' => "$juegos[$i]"])
+                ->all();
+
                 $modelGames->game_id = $juegos[$i];
-                $modelGames->game_name = $name[$i];
+                $modelGames->game_name = 
                 $modelGames->orden = $orden[$i];
                 $modelGames->saga_id = $data['saga_id'];
                 $modelGames->date = new \yii\db\Expression('NOW()');
             }
                
-            if ($modelGames->save()) {
+            if ($modelGames->save() && $model->save()) {
                 Yii::$app->session->setFlash('success', "Lista registrada correctamente");
                 return $this->redirect(['add-collection-game']);
             }else{
-                
+                print_r($modelGames->errors);
+                print_r($model->errors);
             }
         }
     	return $this->render('add-collection-game', [
