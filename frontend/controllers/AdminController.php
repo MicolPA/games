@@ -35,9 +35,16 @@ class AdminController extends \yii\web\Controller
         ];
     }
 
+    private function checkLogin(){
+        if (Yii::$app->user->isGuest) {
+            return $this->redirect(['/home/index']);
+        }
+    }
+
 
     public function actionIndex()
     {
+        $this->checkLogin();
         $this->layout = '@app/views/layouts/admin';
 
         $juegos = array();
@@ -83,6 +90,7 @@ class AdminController extends \yii\web\Controller
 
     public function actionCreateGame()
     {
+        $this->checkLogin();
         $model = new Games();
         $requirements = new Requirements();
         $requirementsType = new RequirementsType();
@@ -144,6 +152,7 @@ class AdminController extends \yii\web\Controller
 
     public function actionCreateCollection()
     {
+        $this->checkLogin();
         $model = new Collections();
 
         if (Yii::$app->request->post()) {
@@ -181,6 +190,7 @@ class AdminController extends \yii\web\Controller
 
     public function actionAddCollectionGame(){
 
+        $this->checkLogin();
     	$sagas = Collections::find()->all();
         if (Yii::$app->request->post()) {
             $data = Yii::$app->request->post();

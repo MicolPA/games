@@ -49,8 +49,8 @@ AppAsset::register($this);
         <div class="collapse navbar-collapse" id="navbarsExample07">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a href="/games" class="nav-link">JUEGOS</a>
-              <!-- <?//= Html::a('JUEGOS', ['/games'], ['class' => 'nav-link']) ?> -->
+              <a href="/frontend/web/games" class="nav-link">JUEGOS</a>
+              <!-- <?//= Html::a('JUEGOS', ['/frontend/web/games'], ['class' => 'nav-link']) ?> -->
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CATEGORIAS</a>
@@ -59,8 +59,8 @@ AppAsset::register($this);
               ?>
               <div class="dropdown-menu" aria-labelledby="dropdown08">
                 <?php foreach ($Category as $cat): ?>
-                  <a href="/games/index?categoria=<?php echo $cat->id ?>" class='dropdown-item'><?php echo $cat->name ?></a>
-                 <!--  <?//= Html::a($cat->name,['/games/index', 'categoria'=>], ['class' => '']) ?> -->
+                  <a href="/frontend/web/games/index?categoria=<?php echo $cat->id ?>" class='dropdown-item'><?php echo $cat->name ?></a>
+                 <!--  <?//= Html::a($cat->name,['/frontend/web/games/index', 'categoria'=>], ['class' => '']) ?> -->
                 <?php endforeach ?>
               </div>
             </li>
@@ -68,20 +68,20 @@ AppAsset::register($this);
               <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">REQUISITOS</a>
               
               <div class="dropdown-menu" aria-labelledby="dropdown08">
-                <a href="/games/index/?requisitos=1" class="dropdown-item">Requisitos Bajos</a>
-                <a href="/games/index/?requisitos=2" class="dropdown-item">Requisitos Medios</a>
-                <a href="/games/index/?requisitos=3" class="dropdown-item">Requisitos Altos</a>
-                  <!-- <?//= Html::a('Requisitos Bajos',['/games/index', 'requisitos'=>1], ['class' => 'dropdown-item']) ?>
-                  <?//= Html::a('Requisitos Medios',['/games/index', 'requisitos'=>2], ['class' => 'dropdown-item']) ?>
-                  <?//= Html::a('Requisitos Altos',['/games/index', 'requisitos'=>3], ['class' => 'dropdown-item']) ?> -->
+                <a href="/frontend/web/games/index/?requisitos=1" class="dropdown-item">Requisitos Bajos</a>
+                <a href="/frontend/web/games/index/?requisitos=2" class="dropdown-item">Requisitos Medios</a>
+                <a href="/frontend/web/games/index/?requisitos=3" class="dropdown-item">Requisitos Altos</a>
+                  <!-- <?//= Html::a('Requisitos Bajos',['/frontend/web/games/index', 'requisitos'=>1], ['class' => 'dropdown-item']) ?>
+                  <?//= Html::a('Requisitos Medios',['/frontend/web/games/index', 'requisitos'=>2], ['class' => 'dropdown-item']) ?>
+                  <?//= Html::a('Requisitos Altos',['/frontend/web/games/index', 'requisitos'=>3], ['class' => 'dropdown-item']) ?> -->
               </div>
             </li>
             <li class="nav-item">
-              <a href="/home/pedir-juegos" class="nav-link">SOLICITAR JUEGOS</a>
+              <a href="/frontend/web/home/pedir-juegos" class="nav-link">SOLICITAR JUEGOS</a>
               <!-- <?//= Html::a('SOLICITAR JUEGOS', ['/home/pedir-juegos'], ['class' => 'nav-link']) ?> -->
             </li>
             <li class="nav-item">
-              <a href="/site/contact" class="nav-link">CONTÁCTANOS</a>
+              <a href="/frontend/web/site/contact" class="nav-link">CONTÁCTANOS</a>
               <!-- <?//= Html::a('CONTÁCTANOS', ['/site/contact'], ['class' => 'nav-link']) ?> -->
             </li>
             <li class="nav-item">
