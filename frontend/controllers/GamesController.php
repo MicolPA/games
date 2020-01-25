@@ -88,8 +88,8 @@ class GamesController extends Controller
 
         $model = Games::findOne($id);
         $model2 = new Category();
-        $collection = \frontend\models\CollectionsGames::find()->where(['game_id' => "$id"])->one();
-
+        // $collection = \frontend\models\CollectionsGames::find()->where(['game_id' => "$id"])->one();
+        $collection = null;
         $links = explode(',', $model->links);
         //$requisitos = Requirements::find()->where
 
