@@ -190,12 +190,8 @@ class AdminController extends \yii\web\Controller
 
     public function actionAddCollectionGame(){
 
-<<<<<<< Updated upstream
         $this->checkLogin();
     	$sagas = Collections::find()->all();
-=======
-        $sagas = Collections::find()->all();
->>>>>>> Stashed changes
         if (Yii::$app->request->post()) {
 
             $data = Yii::$app->request->post();
