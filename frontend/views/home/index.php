@@ -101,7 +101,7 @@ $this->title = 'Descargar Juegos Para PC, PS2, PS3 y Wii | Desarrolladores de Id
           <h3 class="text-white text-center mb-4 display display-3" style="text-shadow: 2px 2px 4px #000000;">Requerimientos</h3>
           <div class="row mt-5">
             <div class="col-md-4 mt-4">
-              <a href="" class="no-link">
+              <a href="/frontend/web/games/index/?requisitos=1" class="no-link">
                 <div class="card-2 text-center">
                 <i class="fas fa-laptop"></i>
                 <p class="h1">Requerimientos Bajos</p>
@@ -109,7 +109,7 @@ $this->title = 'Descargar Juegos Para PC, PS2, PS3 y Wii | Desarrolladores de Id
               </a>
             </div>
             <div class="col-md-4 mt-4">
-              <a href="" class="no-link">
+              <a href="/frontend/web/games/index/?requisitos=2" class="no-link">
                 <div class="card-2 text-center">
                 <i class="fas fa-laptop"></i>
                 <p class="h1">Requerimientos Medios</p>
@@ -117,7 +117,7 @@ $this->title = 'Descargar Juegos Para PC, PS2, PS3 y Wii | Desarrolladores de Id
               </a>
             </div>
             <div class="col-md-4 mt-4">
-              <a href="" class="no-link">
+              <a href="/frontend/web/games/index/?requisitos=3" class="no-link">
                 <div class="card-2 text-center">
                 <i class="fas fa-laptop"></i>
                 <p class="h1">Requerimientos Altos</p>

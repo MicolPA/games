@@ -71,18 +71,13 @@ AppAsset::register($this);
                 <a href="/frontend/web/games/index/?requisitos=1" class="dropdown-item">Requisitos Bajos</a>
                 <a href="/frontend/web/games/index/?requisitos=2" class="dropdown-item">Requisitos Medios</a>
                 <a href="/frontend/web/games/index/?requisitos=3" class="dropdown-item">Requisitos Altos</a>
-                  <!-- <?//= Html::a('Requisitos Bajos',['/frontend/web/games/index', 'requisitos'=>1], ['class' => 'dropdown-item']) ?>
-                  <?//= Html::a('Requisitos Medios',['/frontend/web/games/index', 'requisitos'=>2], ['class' => 'dropdown-item']) ?>
-                  <?//= Html::a('Requisitos Altos',['/frontend/web/games/index', 'requisitos'=>3], ['class' => 'dropdown-item']) ?> -->
               </div>
             </li>
             <li class="nav-item">
               <a href="/frontend/web/home/pedir-juegos" class="nav-link">SOLICITAR JUEGOS</a>
-              <!-- <?//= Html::a('SOLICITAR JUEGOS', ['/home/pedir-juegos'], ['class' => 'nav-link']) ?> -->
             </li>
             <li class="nav-item">
               <a href="/frontend/web/site/contact" class="nav-link">CONTÁCTANOS</a>
-              <!-- <?//= Html::a('CONTÁCTANOS', ['/site/contact'], ['class' => 'nav-link']) ?> -->
             </li>
             <li class="nav-item">
               <a class="nav-link text-success font-weight-bold" href="https://www.youtube.com/channel/UCkwlaKe50JTTaop2JLJCIbA" target='_blank' >CÓMO DESCARGAR</a>

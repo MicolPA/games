@@ -28,18 +28,18 @@
 				<ul class="list-unstyled p-0 h3 mt-5"  style="font-family: 'Quicksand', sans-serif;">
 					<li><i class="fas fa-caret-right text-green"></i> <span class="font-weight-bold">Peso:</span> <?php echo $model->size ?></li>
 					<li><i class="fas fa-caret-right text-green"></i> <span class="font-weight-bold">Categoria:</span> 
-						<a class="btn-tag" href="/games/index?categoria=<?php echo $model->category->id ?>"><?php echo $model->category->name?></a>,
-						<a  class="btn-tag" href="/games/index?categoria=<?php echo $model->category_id2 ?>"><?php echo $model->category2->name?></a>
+						<a class="btn-tag" href="/frontend/web/games/index?categoria=<?php echo $model->category->id ?>"><?php echo $model->category->name?></a>,
+						<a  class="btn-tag" href="/frontend/web/games/index?categoria=<?php echo $model->category_id2 ?>"><?php echo $model->category2->name?></a>
 					</li>
 					<li><i class="fas fa-caret-right text-green"></i> <span class="font-weight-bold">Plataforma:</span> 
-						<a class="btn-tag" href="/games/index?plataforma=<?php echo $model->platform->id ?>"><?php echo $model->platform->name;?></a>
+						<a class="btn-tag" href="/frontend/web/games/index?plataforma=<?php echo $model->platform->id ?>"><?php echo $model->platform->name;?></a>
 					</li>
 					<li><i class="fas fa-caret-right text-green"></i> <span class="font-weight-bold">Requisitos:</span> 
-						<a class="btn-tag" href="/games/index?requisitos=<?php echo $model->requirementsType->id ?>"><?php echo $model->requirementsType->name; ?></a>
+						<a class="btn-tag" href="/frontend/web/games/index?requisitos=<?php echo $model->requirementsType->id ?>"><?php echo $model->requirementsType->name; ?></a>
 					</li>
 
 					<li><i class="fas fa-caret-right text-green"></i> <span class="font-weight-bold">Saga:</span><?php if ($collection): ?>
-						<a class="btn-tag" href="/games/index?saga=<?php echo $collection->saga_id; ?>"><?php echo $collection->saga->name; ?></a>
+						<a class="btn-tag" href="/frontend/web/games/index?saga=<?php echo $collection->saga_id; ?>"><?php echo $collection->saga->name; ?></a>
 					<?php endif ?>
 					</li>
 					<li><i class="fas fa-caret-right text-green"></i> <span class="font-weight-bold">Fecha de subida:</span> <?php echo substr(str_replace('-', '/', $model->date), 0,10) ?></li>

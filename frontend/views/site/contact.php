@@ -69,7 +69,7 @@ $this->params['breadcrumbs'][] = $this->title . ' | Desarolladores de Ideas';
                 </div>
                 <div class="col-md-10">
                    <p class="text-danger font-weight-bold"> Canal de Youtube</p>   
-                    desarrolladoresideas@gmail.com
+                    <a href="https://www.youtube.com/channel/UCkwlaKe50JTTaop2JLJCIbA?view_as=subscriber">Desarrolladores de Ideas</a>
                 </div>
             </div>
             <div class="row align-items-center h4 mb-5 mt-5">

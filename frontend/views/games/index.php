@@ -40,7 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php foreach ($plataformas as $p): ?>
             <?php $disable = $p_selected==$p->id?'seleccionado':'' ?>
             <?php $icon = "<i class='$p->icon' style = 'color:$p->color'></i> " ?>
-                <?= Html::a($icon.$p->name,['/games/index', 'plataforma' => $p->id], ['class' => "btn btn-lg btn-default btn-lg btn-games mr-5 $disable"]) ?>
+                <?= Html::a($icon.$p->name,['/frontend/web/games/index', 'plataforma' => $p->id], ['class' => "btn btn-lg btn-default btn-lg btn-games mr-5 $disable"]) ?>
 
         <?php endforeach ?>
          </div>
@@ -64,15 +64,15 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="col-md-4">
                 <div class="card badge-item">
 
-                  <a href="/games/descargar?id=<?= $m->id ?>">
+                  <a href="/frontend/web/games/descargar?id=<?= $m->id ?>">
                     <span class="notify-badge badge" style="background: <?php echo $m->platform['color'] ?>"><?php echo $m->platform['name'] ?></span>
                     <span class="notify-badge badge"><?php echo $m->platform['name'] ?></span>
-                  <a href="/games/descargar?id=<?= $m->id ?>">
+                  <a href="/frontend/web/games/descargar?id=<?= $m->id ?>">
                     <span class="notify-badge badge"><?php echo $m->platform['name'] ?></span>
                     <!-- <span class="notify-badge badge" style="margin-top: 3rem"><?= $m->category->name ?></span> -->
                     <img src="<?php echo Yii::getAlias("@web") .'/'. $m['portada_in']; ?>?v=2" class="card-img-top" alt="...">
                       <div class="card-body">
-                        <h5 class="card-title mind-title font-weight-bold"><?= Html::a($m['name'],['/games/descargar', 'id'=>$m['id'], ['class' => 'link-no']]) ?></h5>
+                        <h5 class="card-title mind-title font-weight-bold"><?= Html::a($m['name'],['/frontend/web/games/descargar', 'id'=>$m['id'], ['class' => 'link-no']]) ?></h5>
                         <div class="row h4">
                             <div class="col-md-5"><span class=" font-weight-bold">Peso:</span> <?= $m->size ?></div>
                             <div class="col-md-7"><span class=" font-weight-bold"><?= $m->requirementsType->name ?></span></div>
