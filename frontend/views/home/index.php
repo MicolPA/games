@@ -67,7 +67,7 @@ $this->title = 'Descargar Juegos Para PC, PS2, PS3 y Wii | Desarrolladores de Id
               <div class="col-lg-3 mt-5 mb-5 ">
                 <a class="no-link" href="/frontend/web/games/descargar/?id=<?= $g->id ?>" data-toggle="tooltip" data-placement="top" title="<?= $g->name ?>">
                   <div class="card-mine pt-4" style="height:300;min-height: 300px">
-                    <p class="display-6 font-weight-bold text-center" style="height: 25px"><?=  strlen($g->name)>22?substr($g->name, 0, 22)."...":$g->name; ?></p>
+                    <p class="display-6 font-weight-bold text-success text-center" style="height: 25px"><?=  strlen($g->name)>22?substr($g->name, 0, 22)."...":$g->name; ?></p>
                     <img src="<?= Yii::getAlias('@web') . '/'. $g->portada_out ?>" alt="<?= $g->name ?>" width='100%'>
                     <p class="font-weight-bold text-center pt-3"><?= substr($g->resumen, 0,150) ?>...</p>
                   </div>

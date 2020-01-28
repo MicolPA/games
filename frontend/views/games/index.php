@@ -28,6 +28,8 @@ $this->params['breadcrumbs'][] = $this->title;
     }
     .card{
         background: #262626;
+        min-height: 250px;
+        text-align: center;
     }
     .card:hover, .link-no:hover{
        /* background: #1a191f;*/
@@ -71,7 +73,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php if ($model): ?>
         
         <?php foreach ($model as $m): ?>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="card badge-item">
 
                   <a class='link-no' href="/frontend/web/games/descargar?id=<?= $m->id ?>">

@@ -41,7 +41,7 @@ AppAsset::register($this);
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="border-radius: 0px">
       <div class="container">
-        <ul class="pl-0"><li><a class="navbar-brand pt-4 title-home text-primary font-weight-bold" href="/"style="font-size: 16px !important">DESARROLLADORES DE IDEAS</a></li></ul>
+          <a class="navbar-brand pt-3 title-home text-primary font-weight-bold" href="/"style="font-size: 14px !important">DESARROLLADORES DE IDEAS</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
