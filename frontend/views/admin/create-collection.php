@@ -10,6 +10,10 @@
 	.admin-contenedor{
 		min-height: 400px
 	}
+
+	label{
+        color:#000000;
+    }
 </style>
 <div class="container p-4">
 

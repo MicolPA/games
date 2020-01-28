@@ -6,6 +6,7 @@ use Yii;
 use frontend\models\Games;
 use frontend\models\Category;
 use frontend\models\Platform;
+use frontend\models\Requests;
 use frontend\models\Collections;
 use frontend\models\CollectionsGames;
 use frontend\models\Requirements;
@@ -224,6 +225,13 @@ class AdminController extends \yii\web\Controller
             'sagas' => $sagas,
         ]);
 
+    }
+
+    public function actionVerSolicitudesAdmin()
+    {
+        return $this->render('lista-solicitudes-admin', [
+
+        ]);
     }
 
     public function actionObtenerJuegos(){

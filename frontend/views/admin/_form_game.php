@@ -9,7 +9,11 @@
     use frontend\models\RequirementsType;
 
 ?>
-
+<style type="text/css">
+    label{
+        color:#000000;
+    }
+</style>
 <div class="">
 
     <?php $form = ActiveForm::begin(['options' => ['autocomplete' => 'off'],], ['enctype' => 'multipart/form-data']); ?>

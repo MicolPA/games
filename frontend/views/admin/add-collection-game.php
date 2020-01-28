@@ -22,6 +22,9 @@
 	    color: white !important;
 	    margin-right: 1rem;
 	}	
+
+    .title{
+        color:#000000;
     }
 </style>
 <div class="container p-4">

@@ -30,6 +30,7 @@
               <th scope="col">Fecha</th>
               <th scope="col">Estado</th>
               <th scope="col">Comentario</th>
+              <th scope="col">Editar</th>
             </tr>
           </thead>
           <tbody>
@@ -41,6 +42,10 @@
                             <td><?php echo $requests['date']; ?></td>
                             <td><?php echo $requests['statusDescription']; ?></td>
                             <td><?php echo $requests['comment']; ?></td>
+                            <td>
+                              <a href="" class="btn btn-success">Editar</a>
+                              <a href="" class="btn btn-danger">Borrar</a>
+                            </td>
                         </tr>
                     <?php endforeach ?>
                 <?php endif ?>
