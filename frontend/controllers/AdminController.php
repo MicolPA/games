@@ -113,18 +113,18 @@ class AdminController extends \yii\web\Controller
             }
 
             $model->portada_out = UploadedFile::getInstance($model, 'portada_out');
-            $imagen = $path . $name . '-portada-out - Desarrolladores de Ideas.' . $model->portada_out->extension;
+            $imagen = $path . $name . '-portada-out-Desarrolladores-de-Ideas.' . $model->portada_out->extension;
             $model->portada_out->saveAs($imagen);
             $model->portada_out = $imagen;
 
             $model->portada_in = UploadedFile::getInstance($model, 'portada_in');
-            $imagen = $path . $name . '-portada - Desarrolladores de Ideas.' . $model->portada_in->extension;
+            $imagen = $path . $name . '-portada-Desarrolladores-de-Ideas.' . $model->portada_in->extension;
             $model->portada_in->saveAs($imagen);
             $model->portada_in = $imagen;
 
 
             $model->imagenes = UploadedFile::getInstance($model, 'imagenes');
-            $imagen = $path . '-portada. - Desarrolladores de Ideas' . $model->imagenes->extension;
+            $imagen = $path . '-portada.-Desarrolladores-de-Ideas' . $model->imagenes->extension;
             $model->imagenes->saveAs($imagen);
             $model->imagenes = $imagen;
             

@@ -28,14 +28,14 @@
 				<ul class="list-unstyled p-0 h3 mt-5"  style="font-family: 'Quicksand', sans-serif;">
 					<li><i class="fas fa-caret-right text-green"></i> <span class="font-weight-bold">Peso:</span> <?php echo $model->size ?></li>
 					<li><i class="fas fa-caret-right text-green"></i> <span class="font-weight-bold">Categoria:</span> 
-						<a class="btn-tag" href="/frontend/web/games/index?categoria=<?php echo $model->category->id ?>"><?php echo $model->category->name?></a>,
-						<a  class="btn-tag" href="/frontend/web/games/index?categoria=<?php echo $model->category_id2 ?>"><?php echo $model->category2->name?></a>
+						<a class="btn-tag text-white" href="/frontend/web/games/index?categoria=<?php echo $model->category->id ?>"><?php echo $model->category->name?></a>,
+						<a  class="btn-tag text-white" href="/frontend/web/games/index?categoria=<?php echo $model->category_id2 ?>"><?php echo $model->category2->name?></a>
 					</li>
 					<li><i class="fas fa-caret-right text-green"></i> <span class="font-weight-bold">Plataforma:</span> 
-						<a class="btn-tag" href="/frontend/web/games/index?plataforma=<?php echo $model->platform->id ?>"><?php echo $model->platform->name;?></a>
+						<a class="btn-tag text-white" href="/frontend/web/games/index?plataforma=<?php echo $model->platform->id ?>"><?php echo $model->platform->name;?></a>
 					</li>
 					<li><i class="fas fa-caret-right text-green"></i> <span class="font-weight-bold">Requisitos:</span> 
-						<a class="btn-tag" href="/frontend/web/games/index?requisitos=<?php echo $model->requirementsType->id ?>"><?php echo $model->requirementsType->name; ?></a>
+						<a class="btn-tag text-white" href="/frontend/web/games/index?requisitos=<?php echo $model->requirementsType->id ?>"><?php echo $model->requirementsType->name; ?></a>
 					</li>
 
 					<li><i class="fas fa-caret-right text-green"></i> <span class="font-weight-bold">Saga:</span><?php if ($collection): ?>
@@ -47,7 +47,7 @@
 				</ul>
 
 				<p class="display-4 mt-4 text-primary font-weight-b title" style="margin-top: 5rem !important">Requisitos Recomendados</p>
-				<table class="table table-responsive-lg h4">
+				<table class="table table-responsive-lg h4 text-white">
 				  <thead>
 				    <tr>
 				      <th scope="col"></th>
@@ -81,17 +81,17 @@
 				    </tr>
 				  </tbody>
 				</table>
-				<p class="display-4 mt-4 text-primary  title" style="margin-top: 5rem !important">Links de descarga <a href="#" onclick="javascript:reportarJuego(<?php echo $model->id; ?>)" class="btn btn-danger font-weight-bold" style='float: right;margin-top: 2rem'><i class="fas fa-exclamation-triangle" style="color:white"></i> Reportar Problema</a></p>
+				<p class="display-4 mt-4 text-peimary  title" style="margin-top: 5rem !important">Links de descarga <a href="#" onclick="javascript:reportarJuego(<?php echo $model->id; ?>)" class="btn btn-danger font-weight-bold" style='float: right;margin-top: 2rem'><i class="fas fa-exclamation-triangle" style="color:white"></i> Reportar Problema</a></p>
 
 				<div class="links">
-					<ul class="list-unstyled p-0 h3 mt-5 font-weight-normal">
+					<ul class="list-unstyled p-0 h3 mt-5 font-weight-normal text-white">
 						<?php if (count($links) == 1): ?>
-						<li><i class="fas fa-caret-right text-green"></i> <a class='btn-tag' href="/<?php echo $links[0] ?>" target='_blank'>Parte Única</a></li>
+						<li><i class="fas fa-caret-right text-green"></i> <a class='btn-tag text-white' href="/<?php echo $links[0] ?>" target='_blank'>Parte Única</a></li>
 						<?php else: ?>
 						<?php $count = 0 ?>
 						<?php for ($i=0;$i<count($links);$i++): ?>
 							<?php $count++; ?>
-						<li><i class="fas fa-caret-right text-green"></i> <a class='btn-tag' href="/<?php echo $links[$i] ?>" target='_blank'>Parte <?php echo $count ?></a></li>
+						<li><i class="fas fa-caret-right text-green"></i> <a class='btn-tag text-white' href="/<?php echo $links[$i] ?>" target='_blank'>Parte <?php echo $count ?></a></li>
 						<?php endFor ?>	
 						<?php endif ?>
 						

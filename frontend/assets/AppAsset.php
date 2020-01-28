@@ -12,9 +12,9 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/site.css',
+        'css/site.css?v=2',
         'css/bootstrap.css',
-        'css/main.css?v=6',
+        'css/main.css?v=8',
         'https://fonts.googleapis.com/css?family=Oswald',
         'css/fontawesome.min.css',
         'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css',

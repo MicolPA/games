@@ -14,7 +14,6 @@ nav{
 }
 .btn-tag{
   font-weight: bold;
-  color:black;
   font-size: 16px;
   border-bottom: 2px solid green;
 }
@@ -128,4 +127,18 @@ input[type=text], textarea {
 
 .tooltip {
   font-size: 20px;
+}
+
+.pagination{
+  display: inline-block; !important;
+}
+
+.pagination > .active > a{
+  background: #28a745 !important;
+  border-color: #28a745 !important;
+}
+
+.pagination > li > a{
+  background: #fff !important;
+  color: #000 !important;
 }
