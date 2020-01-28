@@ -48,33 +48,28 @@ function reportarJuego(id) {
 	contenedor.appendChild(inputError);
 
     swal({
-    	buttons: {
-    		cancel: {
-			    text: "Cancelar",
-			    value: true,
-			    visible: true,
-			    className: "btn btn-danger",
-			    closeModal: true,
-		 	 },
-			confirm: {
-			    text: "Enviar",
-		    	value: true,
-		    	visible: true,
-		    	className: "btn btn-primary",
-		    	closeModal: true
-		  }
-    	},
-        title: "¿Sucedio algo?",
-        text: "Escriba aqui una descripcio",
+    	title: "¿Sucedio algo?",
         content: contenedor,
+		showCancelButton: true,
+		confirmButtonColor: "#DD6B55",
+		confirmButtonText: "Yes, delete it!",
+		cancelButtonText: "No, cancel plx!",
+		closeOnConfirm: false,
+		closeOnCancel: true,
+        
     })
     .then((EnviarReporte) => {
 		if (EnviarReporte) {
 			var correo = $("#inputCorreo").val();
 			var error = $("#inputError").val();
 
-			completeReport(correo, error);
-			swal('Juego Reportado', 'Se ha reportado el juego satisfactoriamente, le enviaremos un correo cuando se corrija la falla.', 'success');
+			if (correo.length > 1 && error.length > 1) {
+				completeReport(correo, error);
+				swal('Juego Reportado', 'Se ha reportado el juego satisfactoriamente, le enviaremos un correo cuando se corrija la falla', 'success');
+			}else{
+				completeReport(correo, error);
+				swal('Error', 'Debe completar todos los campos antes de enviar el reporte.', 'error');
+			}
 
 			console.log(correo);
 			console.log(error);
@@ -87,7 +82,7 @@ function reportarJuego(id) {
 function completeReport(correo, msg){
 	report_id = $("#report_id").val();
 	$.ajax({
-        url: "/games/complete-report",
+        url: "frontend/web/games/complete-report",
         type: 'post',
         dataType: 'json',
         data: {
@@ -111,7 +106,7 @@ function saveReport(){
 	game = $("#game_id").val();
 	game_name = $("#game_name").val();
 	$.ajax({
-        url: "/games/save-report",
+        url: "frontend/web/games/save-report",
         type: 'post',
         dataType: 'json',
         data: {
