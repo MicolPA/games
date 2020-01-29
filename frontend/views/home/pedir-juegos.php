@@ -20,26 +20,18 @@
 <div class="container p-4 ">
 
     <div class="row" style="margin-top: 4rem;margin-bottom: 20px">
-        <div class="col-md-12 col-lg-12">
-            <h1 class="title display-3"><span class=" text-primary font-weight-bold">¿Quieres descargar un juego pero no lo ves en nuestra página?</span> </h1>
+        <div class="col-md-12 col-lg-12 p-0">
+            <h1 class="title display-2 font-weight-bold p-0">Solicitar Juegos </h1>
            <!--  <hr class="hr col-md-12 col-lg-12"></hr> -->
         </div>
     </div>
 
     <div class="row" style="margin-bottom: 8rem">
-        <div class="col-md-12">
-           <h1 class="display-4 text-danger font-weight-bold mb-4"></h1>
-            <p class="font-weight-bold mt-5 h2 text-success">¡¡Animate y pídelo!!!</p>
-            <p class="h1">Puedes enviarnos el nombre  del juego, la plataforma para el cual lo quieres (PC, PS2, PS3 o Wii) y tu email (para notificarte una vez que lo tengamos) e inmediatamente comenzaremos a buscar y subir el juego.</p>
-        </div>
-    </div>
+        
 
-    <div class="row">
-        <div class="col-md-12 col-lg-12 mb-5">
-            <h2 class="font-weight-bold display-4">Formulario de solicitud</h2>
-        </div>
-        <div class="col-md-12 col-lg-12">
-            <?php $form = ActiveForm::begin(['options' => ['autocomplete' => 'off'],], ['enctype' => 'multipart/form-data']); ?>
+        <div class="col-md-6 col-lg-6 p-4" style="background:#262626 !important ">
+            <h2 class="font-weight-bold h2 text-warning pb-4">Formulario de solicitud</h2>
+            <?php $form = ActiveForm::begin(['options' => ['autocomplete' => 'off'],], ['enctype' => 'multipart/form-data',]); ?>
 
                 <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
 
@@ -57,24 +49,27 @@
                 <?= $form->field($model, 'comment')->textarea(['rows' => 6, 'style' => 'font-size:14px']) ?>
 
                 <div class="form-group">
-                    <?= Html::submitButton('Pedir Juego', ['class' => 'btn btn-success btn-lg big-btn']) ?>
+                    <?= Html::submitButton('Pedir Juego', ['class' => 'btn btn-success btn-lg big-btn btn-block']) ?>
                 </div>
 
             <?php ActiveForm::end(); ?>
         </div>
-
-        <div class="col-md-6 col-lg-6">
-            
+        <div class="col-md-6 pl-4">
+           <h1 class="display-4 text-warning font-weight-bold mb-4 ml-4">¿Quieres descargar un juego pero no lo ves en nuestra página?</h1>
+            <p class="font-weight-bold mt-5 h2 text-success ml-4">¡¡Animate y pídelo!!!</p>
+            <p class="h1 ml-4">Puedes enviarnos el nombre  del juego, la plataforma para el cual lo quieres (PC, PS2, PS3 o Wii) y tu email (para notificarte una vez que lo tengamos) e inmediatamente comenzaremos a buscar y subir el juego.</p>
         </div>
+
+        
     </div>
 </div>
         
 
-<?php if(Yii::$app->session->hasFlash('fail1')):?>
+<?php if(Yii::$app->session->hasFlash('success')):?>
     <?php
-        $msj = Yii::$app->session->getFlash('fail1');
+        $msj = Yii::$app->session->getFlash('success');
         echo '<script type="text/javascript">';
-        echo "setTimeout(function () { swal('Solicitud enviada correctamente.','$msj','success');";
+        echo "setTimeout(function () { swal('Enviado!.','$msj','success');";
         echo '}, 1000);</script>';
     ?>
 <?php endif; ?>  
