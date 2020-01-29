@@ -29,11 +29,12 @@ AppAsset::register($this);
     <meta property="og:url" content="https://desarrolladoresideas.com/">
     <meta property="og:description" content="Descargas Juegos para PC, PS2, PS3, Wii totalmente gratis.">
     <meta property="og:type" content="article">
-    <!--     <meta property="og:image" content="http://desarrolladoresideas.com/frontend/web/images//logo.png">-->
+    <meta property="og:image" content="http://desarrolladoresideas.com/frontend/web/images/http://desarrolladoresideas.com/frontend/web/images/desarrolladores-ideas-logo.png.png">
+    
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="">
     <meta name="twitter:title" content="Desarrolladores de Ideas" />
-    <!--     <meta name="twitter:image" content="http://desarrolladoresideas.com/assets/background.jpg" /> -->
+    <meta name="twitter:image" content="http://desarrolladoresideas.com/frontend/web/images/desarrolladores-ideas-logo.png" />
     <meta name="twitter:url" content="http://desarrolladoresideas.com/" />
     <meta name="twitter:description" content="Descarga Juegos para PC, PS2, PS3, Wii totalmente gratis." />
 
