@@ -7,50 +7,77 @@
     use yii\grid\GridView;
     
     $this->title = 'Lista de Solicitudes';
-    $solicitudes = \frontend\models\Requests::find()->all();;
     
 ?>
 
+<style>
+  .table-responsive{
+    font-size: 14px;
+  }
+</style>
 
 <div class="container p-4 ">
 
     <div class="row">
-        <div class="col-md-12 col-lg-12">
+        <div class="col-md-12 col-lg-12 p-0" >
             <h3 class="title display-3"><span class=" font-weight-bold"><?= Html::encode($this->title) ?></span></h3>
             <hr class="hr col-md-12 col-lg-12"></hr>
         </div>
     </div>
 
     <div class="row">
-        <table class="table table-striped table-light">
-          <thead class="thead-light">
-            <tr>
-              <th scope="col">Nombre</th>
-              <th scope="col">Plataforma</th>
-              <th scope="col">Fecha</th>
-              <th scope="col">Estado</th>
-              <th scope="col">Comentario</th>
-              <th scope="col">Editar</th>
-            </tr>
-          </thead>
-          <tbody>
-                <?php if ($solicitudes): ?>
-                    <?php foreach ($solicitudes as $requests): ?>
-                        <tr>
-                            <td><?php echo $requests['name']; ?></td>
-                            <td><?php echo $requests['platform']; ?></td>
-                            <td><?php echo $requests['date']; ?></td>
-                            <td><?php echo $requests['statusDescription']; ?></td>
-                            <td><?php echo $requests['comment']; ?></td>
-                            <td>
-                              <a href="" class="btn btn-success">Editar</a>
-                              <a href="" class="btn btn-danger">Borrar</a>
-                            </td>
-                        </tr>
-                    <?php endforeach ?>
-                <?php endif ?>
-            </tbody>
-        </table>
+        <div class="col-md-12 table-responsive bg-white">
+          <?php echo $this->render('_search_request', ['model' => $model]); ?>
+          <?= GridView::widget([
+            'dataProvider' => $dataProvider,
+            'columns' => [
+                ['class' => 'yii\grid\SerialColumn'],
+
+                [
+                  'label' => 'Nombre',
+                  'attribute' => 'name',
+                ],
+                [
+                  'label' => 'Plafaforma',
+                  'attribute' => 'platform',
+                ],
+                'comment',
+                [
+                    'format'=>'html',
+                    'label' => 'Status',
+                    'attribute' => 'status',
+                    'class' => 'yii\grid\DataColumn', 
+                    'value' => function ($data) {
+
+                      if ($data->status==2) {
+                        return "<span class='text-success font-weight-bold'>$data->statusDescription</span>";
+                      }else{
+                      return "<span class='text-warning font-weight-bold'>$data->statusDescription</span>";
+
+                      }
+
+
+                    },
+                ],
+                [
+                  'label' => 'Correo',
+                  'attribute' => 'email',
+                ],
+                'date',
+                [
+                    'format'=>'html',
+                    'label' => 'Cambiar status',
+                    'class' => 'yii\grid\DataColumn', 
+                    'value' => function ($data) {
+                            return Html::a('Cambiar Status', ['/admin/cambiar-status-solicitud', 'id'=> $data->id], ['class' => 'btn btn-warning text-white btn-lg']);
+
+                    },
+                ],
+
+                //['class' => 'yii\grid\ActionColumn'],
+            ],
+        ]); ?>
+        </div>
     </div>
     
 </div>

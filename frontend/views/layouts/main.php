@@ -27,7 +27,12 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-
+<style>
+  footer{
+    background: #262626 !important;
+    border: 0px !important;  
+  }
+</style>
 <div class="wrap">
   <?php if (Yii::$app->user->isGuest): ?>
 
@@ -39,7 +44,7 @@ AppAsset::register($this);
   <?php endif ?>
 <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="border-radius: 0px">
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" style="border-radius: 0px">
       <div class="container">
           <a class="navbar-brand pt-3 title-home text-primary font-weight-bold" href="/"style="font-size: 14px !important">DESARROLLADORES DE IDEAS</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
@@ -86,7 +91,9 @@ AppAsset::register($this);
           </ul>
         </div>
       </div>
-    </nav>
+  </nav>
+
+  <div style="height: 80px">-</div>
 
 
       <!-- <?= Breadcrumbs::widget([

@@ -71,11 +71,10 @@ class AdminController extends \yii\web\Controller
 
         		case $g->platform_id == 3:
         			$juegos['ps3']++;
-                    exit();
         			break;
 
         		case 4:
-        			$juegos['ps4']++;
+        			$juegos['wii']++;
         			break;		
         	}
         }
@@ -229,9 +228,76 @@ class AdminController extends \yii\web\Controller
 
     public function actionVerSolicitudesAdmin()
     {
-        return $this->render('lista-solicitudes-admin', [
 
+        $query = Requests::find();
+        $model = new Requests();
+
+        $get = Yii::$app->request->get();
+
+        if ($get) {
+            
+            $model->load($get);
+           
+
+            $query->andFilterWhere(['status' => $model['status']])
+              ->andFilterWhere(['platform' => $model['platform']])
+              //->andFilterWhere(['like', 'name', $model['name']])
+              ->andFilterWhere(['like', 'name', $model['name']]);
+        }
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+            'sort'=> ['defaultOrder' => ['id' => 'ASC']],
+            'pagination'=>['pageSize' => '60'],
         ]);
+
+        return $this->render('lista-solicitudes-admin', [
+            'dataProvider' => $dataProvider,
+            'model' => $model,
+        ]);
+    }
+
+    public function actionCambiarStatusSolicitud($id){
+
+        $model = Requests::findOne($id);
+        $model->status = $model->status==1?2:1;
+        $model->statusDescription = $model->statusDescription=='Pendiente'?'Subido':'Pendiente';
+        $model->save();
+        Yii::$app->session->setFlash('sucess', "Status actualizado correctamente");
+        return $this->redirect(Yii::$app->request->referrer); 
+
+    }
+
+    public function actionListadoJuegos(){
+
+        $query = Games::find();
+        $model = new Games();
+
+        $get = Yii::$app->request->get();
+
+        if ($get) {
+            
+            $model->load($get);
+           
+
+            $query->andFilterWhere(['category' => $model['category']])
+              ->andFilterWhere(['platform_id' => $model['platform_id']])
+              ->andFilterWhere(['requirementsType_id' => $model['requirementsType_id']])
+              //->andFilterWhere(['like', 'name', $model['name']])
+              ->andFilterWhere(['like', 'name', $model['name']]);
+        }
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+            'sort'=> ['defaultOrder' => ['id' => 'ASC']],
+            'pagination'=>['pageSize' => '60'],
+        ]);
+
+        return $this->render('listado-juegos', [
+            'dataProvider' => $dataProvider,
+            'model' => $model,
+        ]);
+
     }
 
     public function actionObtenerJuegos(){
