@@ -22,7 +22,21 @@ AppAsset::register($this);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php $this->registerCsrfMetaTags() ?>
+
     <title><?= Html::encode($this->title) ?></title>
+    <meta property="og:title" content="Desarrolladores de Ideas">
+    <meta property="og:site_name" content="Desarrolladores de Ideas">
+    <meta property="og:url" content="https://desarrolladoresideas.com/">
+    <meta property="og:description" content="Descargas Juegos para PC, PS2, PS3, Wii totalmente gratis.">
+    <meta property="og:type" content="article">
+    <!--     <meta property="og:image" content="http://desarrolladoresideas.com/frontend/web/images//logo.png">-->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:title" content="Desarrolladores de Ideas" />
+    <!--     <meta name="twitter:image" content="http://desarrolladoresideas.com/assets/background.jpg" /> -->
+    <meta name="twitter:url" content="http://desarrolladoresideas.com/" />
+    <meta name="twitter:description" content="Descarga Juegos para PC, PS2, PS3, Wii totalmente gratis." />
+
     <?php $this->head() ?>
 </head>
 <body>
