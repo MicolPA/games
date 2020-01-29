@@ -24,12 +24,13 @@ AppAsset::register($this);
     <?php $this->registerCsrfMetaTags() ?>
 
     <title><?= Html::encode($this->title) ?></title>
+    <link rel="icon" type="image/png" href="<?= Yii::getAlias('@web') ?>/images/desarrolladores-ideas-logo.png">
     <meta property="og:title" content="Desarrolladores de Ideas">
     <meta property="og:site_name" content="Desarrolladores de Ideas">
     <meta property="og:url" content="https://desarrolladoresideas.com/">
     <meta property="og:description" content="Descargas Juegos para PC, PS2, PS3, Wii totalmente gratis.">
     <meta property="og:type" content="article">
-    <meta property="og:image" content="http://desarrolladoresideas.com/frontend/web/images/http://desarrolladoresideas.com/frontend/web/images/desarrolladores-ideas-logo.png">
+    <meta property="og:image" content="http://desarrolladoresideas.com/frontend/web/images/desarrolladores-ideas-logo.png">
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="">
@@ -38,7 +39,6 @@ AppAsset::register($this);
     <meta name="twitter:url" content="http://desarrolladoresideas.com/" />
     <meta name="twitter:description" content="Descarga Juegos para PC, PS2, PS3, Wii totalmente gratis." />
 
-        <link rel="icon" type="image/png" href="/frontend/web/images/desarrolladores-ideas-logo.png">
 
     <?php $this->head() ?>
 </head>
