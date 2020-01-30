@@ -88,6 +88,30 @@ class AdminController extends \yii\web\Controller
         ]);
     }
 
+    public function convertGameLinks($model){
+
+        $links = explode(',', $model->links);
+        $links_acortados = array();
+        $n = 0;
+
+        foreach ($links as $link) {
+            $n++;
+            $alias = str_replace(' ', '_', $model->name) . "_parte_$n";
+            $long_url = urlencode($link);
+            $api_token = '5f0e9dfdfb570f1efe01fa52c3b974c04dcc29e8';
+            $api_url = "https://uii.io/api?api={$api_token}&url={$long_url}&alias=$alias&format=text";
+            $result = @file_get_contents($api_url);
+
+            if($result){
+                array_push($links_acortados, $result);
+            }
+        }
+
+        return implode(',', $links_acortados);
+
+
+    }
+
     public function actionCreateGame()
     {
         $this->checkLogin();
@@ -107,24 +131,22 @@ class AdminController extends \yii\web\Controller
             $name = preg_replace("/[^a-zA-Z0-9_-]+/", '', $name);
             $name = strtolower($name);
 
-            $path = "images/$name/";
-            if (!file_exists($path)) {
-                mkdir($path, 0777, true);
-            }
+            $path = $this->getGamePath($model, $name);
+            $model->links = $this->convertGameLinks($model);
 
             $model->portada_out = UploadedFile::getInstance($model, 'portada_out');
-            $imagen = $path . $name . '-portada-out-Desarrolladores-de-Ideas.' . $model->portada_out->extension;
+            $imagen = $path . $name . '-portada-out-desarrolladores-de-Ideas.' . $model->portada_out->extension;
             $model->portada_out->saveAs($imagen);
             $model->portada_out = $imagen;
 
             $model->portada_in = UploadedFile::getInstance($model, 'portada_in');
-            $imagen = $path . $name . '-portada-Desarrolladores-de-Ideas.' . $model->portada_in->extension;
+            $imagen = $path . $name . '-portada-desarrolladores-de-Ideas.' . $model->portada_in->extension;
             $model->portada_in->saveAs($imagen);
             $model->portada_in = $imagen;
 
 
             $model->imagenes = UploadedFile::getInstance($model, 'imagenes');
-            $imagen = $path . '-portada.-Desarrolladores-de-Ideas' . $model->imagenes->extension;
+            $imagen = $path . '-portada.-desarrolladores-de-Ideas' . $model->imagenes->extension;
             $model->imagenes->saveAs($imagen);
             $model->imagenes = $imagen;
             
@@ -140,14 +162,28 @@ class AdminController extends \yii\web\Controller
             }
         }
 
-        // if ($model->load(Yii::$app->request->post()) && $model->save()) {
-        //     return $this->redirect(['view', 'id' => $model->id]);
-        // }
-
         return $this->render('create-game', [
             'model' => $model,
             'requirements' => $requirements,
         ]);
+    }
+
+    public function getGamePath($model, $name){
+
+        $plataforma = Platform::findOne($model->platform_id);
+        $consola = str_replace(' ', '-', strtolower($plataforma->name));
+
+        $path = "images/$consola";
+        if (!file_exists($path)) {
+            mkdir($path, 0777, true);
+        }
+
+        $path = "$path/$name/";
+        if (!file_exists($path)) {
+            mkdir($path, 0777, true);
+        }
+
+        return $path;
     }
 
     public function actionCreateCollection()
