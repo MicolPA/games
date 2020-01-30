@@ -63,7 +63,7 @@ AppAsset::register($this);
 
   <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" style="border-radius: 0px">
       <div class="container">
-          <a class="navbar-brand pt-3 title-home text-primary font-weight-bold" href="/"style="font-size: 14px !important">DESARROLLADORES DE IDEAS</a>
+          <a class="navbar-brand pt-3 title-home text-primary" href="/"style="font-size: 16px !important;margin-top: -0.2rem">DESARROLLADORES DE IDEAS</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -71,22 +71,23 @@ AppAsset::register($this);
         <div class="collapse navbar-collapse" id="navbarsExample07">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
+
               <a href="/frontend/web/games" class="nav-link">JUEGOS</a>
               <!-- <?//= Html::a('JUEGOS', ['/frontend/web/games'], ['class' => 'nav-link']) ?> -->
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item active dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CATEGORIAS</a>
               <?php 
                   $Category = \frontend\models\Category::find()->orderBy(['name' => SORT_ASC])->all();
               ?>
-              <div class="dropdown-menu" aria-labelledby="dropdown08">
+              <div class="dropdown-menu active" aria-labelledby="dropdown08">
                 <?php foreach ($Category as $cat): ?>
                   <a href="/frontend/web/games/index?categoria=<?php echo $cat->id ?>" class='dropdown-item'><?php echo $cat->name ?></a>
                  <!--  <?//= Html::a($cat->name,['/frontend/web/games/index', 'categoria'=>], ['class' => '']) ?> -->
                 <?php endforeach ?>
               </div>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown active">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">REQUISITOS</a>
               
               <div class="dropdown-menu" aria-labelledby="dropdown08">
@@ -95,13 +96,13 @@ AppAsset::register($this);
                 <a href="/frontend/web/games/index/?requisitos=3" class="dropdown-item">Requisitos Altos</a>
               </div>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a href="/frontend/web/home/pedir-juegos" class="nav-link">SOLICITAR JUEGOS</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="/frontend/web/site/contact" class="nav-link">CONTÁCTANOS</a>
-            </li>
-            <li class="nav-item">
+            </li> -->
+            <li class="nav-item active">
               <a class="nav-link text-success font-weight-bold" href="https://www.youtube.com/channel/UCkwlaKe50JTTaop2JLJCIbA" target='_blank' >CÓMO DESCARGAR</a>
             </li>
             
