@@ -45,18 +45,23 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1 class="title display-2"><span class="text-primary font-weight-bold title ">DESCARGAR JUEGOS</span> <span class="title"><?php echo $categoria?Category::findOne($categoria)['name']:''; ?></span> </h1>
     
     <div class="row">
-        <div class="col-md-12 mt-5 mb-4">
+        <div class="col-md-12 mt-5">
             <p class="h2 font-weight-bold">Elegir Plataforma</p>
         </div>
-        <div class="col-md-8 ">
-        <?php foreach ($plataformas as $p): ?>
-            <?php $disable = $p_selected==$p->id?'seleccionado':'' ?>
-            <?php $icon = "<i class='$p->icon' style = 'color:$p->color'></i> " ?>
-                <?= Html::a($icon.$p->name,['/games/index', 'plataforma' => $p->id], ['class' => "btn btn-lg text-dark bg-white btn-default btn-lg btn-games mr-5 $disable"]) ?>
+        <div class="col-md-8">
+            <div class="row">
+            <?php foreach ($plataformas as $p): ?>
+                <?php $disable = $p_selected==$p->id?'seleccionado':'' ?>
+                <?php $icon = "<i class='$p->icon' style = 'color:$p->color'></i> " ?>
+                <div class="col-md-3">
+                    <?= Html::a($icon.$p->name,['/games/index', 'plataforma' => $p->id], ['class' => "btn btn-lg text-dark bg-white btn-default btn-lg btn-games mt-3 mr-5 $disable", 'style' => 'min-width:100%']) ?>
+                </div>
 
-        <?php endforeach ?>
-         </div>
-        <div class="col-md-4" style="float: right;">
+            <?php endforeach ?>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-3 mt-3" style="float: right;">
             <?php $form = ActiveForm::begin(['method' => 'get'], ['class' => 'form-inline my-2 my-md-0']); ?>
               <div class="input-group">
                 <input type="text" name="name" class="form-control" placeholder="Búscar Juego" aria-label="Búscar Juego" aria-describedby="button-addon2" value="<?= isset($get['name'])?$get['name']:'' ?>">

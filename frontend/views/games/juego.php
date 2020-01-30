@@ -10,6 +10,9 @@
 	.card{
         background: #262626;
     }
+    #disqus_thread{
+    	width: 100%;
+    }
 </style>
 
 <div class="container">
@@ -123,11 +126,28 @@
 				</div>
 				<?php endif ?>
 
-				<div class="row" style="margin-top: 4rem">
+				<div class="row mb-4" style="margin-top: 4rem">
 					<div class="col-md-4"><a id='1' href="javascript:imgBigger(1)"><img src="<?php echo Yii::getAlias("@web") .'/'. $model->imagenes; ?>" class="d-block w-100" alt="<?php echo $model->name ?>" width='100%'></a></div>
 					<div class="col-md-4"><a href="javascript:imgBigger(2)" id="2"><img src="<?php echo Yii::getAlias("@web") .'/'. $model->portada_out; ?>" class="d-block w-100" alt="<?php echo $model->name ?>" width='100%'></a></div>
 					<div class="col-md-4"><a href="javascript:imgBigger(3)" id="3"><img src="<?php echo Yii::getAlias("@web") .'/'. $model->portada_in; ?>" class="d-block w-100" alt="<?php echo $model->name ?>" width='100%'></a></div>
 
+				</div>
+
+				<div class="row m-0 mt-5">
+					<div class="col-md-12 bg-dark">
+						<div id="disqus_thread" class="mt-4"></div>
+						<script>
+
+						(function() { // DON'T EDIT BELOW THIS LINE
+						var d = document, s = d.createElement('script');
+						s.src = 'https://desarrolladoresideas-com.disqus.com/embed.js';
+						s.setAttribute('data-timestamp', +new Date());
+						(d.head || d.body).appendChild(s);
+						})();
+						</script>
+						<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+					</div>
+					                            
 				</div>
 
 			</div>
