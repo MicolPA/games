@@ -25,7 +25,7 @@ class CollectionsGames extends \yii\db\ActiveRecord
     public static function tableName()
     {
         return 'collections_games';
-    }
+    } 
 
     /**
      * {@inheritdoc}
