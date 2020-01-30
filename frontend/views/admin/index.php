@@ -61,8 +61,8 @@ $this->params['breadcrumbs'][] = $this->title;
 		<div class="col-md-3 pl-0">
 			<a href="/frontend/web/admin/listado-juegos" class="no-link">
 				<div class="pt-1 text-center display-2 bg-dark text-white">
-				<p class="h3 pb-5 font-weight-bold">LISTADO DE JUEGOS</p>
-			</div>
+					<p class="h3 pb-5 font-weight-bold">LISTADO DE JUEGOS</p>
+				</div>
 			</a>
 		</div>
 		<div class="col-md-3 pl-0">

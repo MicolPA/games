@@ -177,7 +177,7 @@ class AdminController extends \yii\web\Controller
 
             if ($model->save()) {
                 Yii::$app->session->setFlash('success', "Saga registrada correctamente");
-                return $this->redirect(['collection']);
+                return $this->redirect(['create-collection']);
             }else{
                 print_r($model->errors);
             }
@@ -186,6 +186,32 @@ class AdminController extends \yii\web\Controller
         return $this->render('create-collection', [
             'model' => $model,
         ]);
+    }
+
+    public function actionAddGameSaga(){
+
+        $game_saga = null;
+        if (Yii::$app->request->isAjax) {
+            $post = Yii::$app->request->post();
+            if ($post) {
+                $game = Games::findOne($post['juego_id']);
+
+                if ($game) {
+                    $game_saga = new CollectionsGames();
+                    $game_saga->game_id = $game->id;
+                    $game_saga->game_name = $game->name;
+                    $game_saga->saga_id = $post['saga'];
+                    $game_saga->orden = $post['orden'];
+                    $game_saga->date = date("Y-m-d H:i:s");
+
+                    $game_saga->save();
+                    $game->in_collection = 1;
+                    $game->save();
+                }
+
+            }
+        }
+        return \yii\helpers\Json::encode($game_saga);
     }
 
     public function actionAddCollectionGame(){
@@ -278,8 +304,6 @@ class AdminController extends \yii\web\Controller
         if ($get) {
             
             $model->load($get);
-           
-
             $query->andFilterWhere(['category' => $model['category']])
               ->andFilterWhere(['platform_id' => $model['platform_id']])
               ->andFilterWhere(['requirementsType_id' => $model['requirementsType_id']])

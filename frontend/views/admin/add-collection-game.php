@@ -26,6 +26,10 @@
     .title{
         color:#000000;
     }
+
+    .h4{
+    	color: green;
+    }
 </style>
 <div class="container p-4">
 
@@ -46,6 +50,7 @@
 			</div>
 	        
 			<?php $form = ActiveForm::begin(['options' => ['autocomplete' => 'off'],], ['enctype' => 'multipart/form-data']); ?>
+			<label>Saga</label>
 			<select class="form-control" name="saga_id" id="saga_id">
 				<option value="">Seleccionar...</option>
 				<?php foreach ($sagas as $s): ?>
@@ -60,7 +65,7 @@
 			<div id="juegos" class=" mt-4">
 				
 			</div>
-			<div class="more" style="display: none">
+			<div class="more mt-4" style="display: none">
 				<div class="row">
 					<div class="col-md-8">
 						<select name="juego" id="juego_id" class="form-control">
@@ -81,7 +86,8 @@
 		    <input type="hidden" name="orden" id="orden_all">	
 		    <input type="hidden" name="name" id="name_all">	
 	        <div class="form-group" style="margin-top: 5rem;">
-	            <?= Html::submitButton('Crear', ['class' => 'btn big-btn btn-success btn-block btn-lg']) ?>
+	        	<a href="/frontend/web/admin" class="btn big-btn btn-success btn-block btn-lg">Terminar</a>
+	            <?//= Html::submitButton('Crear', ['class' => 'btn big-btn btn-success btn-block btn-lg']) ?>
 	        </div>
 		    <?php ActiveForm::end(); ?>
 		</div>
@@ -101,7 +107,7 @@
 	function obtenerJuegos(){
 
         $.ajax({
-            url: "obtener-juegos",
+            url: "/frontend/web/admin/obtener-juegos",
             type: 'post',
             dataType: 'json',
             data: {
@@ -109,6 +115,7 @@
             },
             success: function (data) {
             	console.log(data);
+            	$('#juego_id').empty();
                 $.each(data, function (key, value) {
                     $('#juego_id').append('<option value="' + value.id + '">' + value.name + '</option>');
                     
@@ -121,17 +128,16 @@
 
 		juego_id = $('#juego_id').val();
 		orden = $('#orden').val();
-		name = $('select[name="juego"] option:selected').val();
+		saga = $('#saga_id').val();
+		name = $('select[name="juego"] option:selected').text();
 
 
 		$("#juegos_all").val($("#juegos_all").val()+juego_id+",");
 		$("#orden_all").val($("#orden_all").val()+orden+",");
-		$("#name_all").val($("#name_all").val()+name+",");
 
 		console.log($("#orden_all").val());
 		console.log($("#juegos_all").val());
 		console.log($("#name_all").val());
-
 
 		nombre = document.createElement('p');
 		$(nombre).attr('class', 'h4');
@@ -144,13 +150,33 @@
 		$("#name").append(name);
 
         obtenerJuegos();
+        guardarJuego(juego_id, orden, saga);
+	}
+
+	function guardarJuego(juego_id, orden, saga){
+
+		$.ajax({
+            url: "/frontend/web/admin/add-game-saga",
+            type: 'post',
+            dataType: 'json',
+            data: {
+                _csrf: '<?=Yii::$app->request->getCsrfToken()?>',
+                juego_id: juego_id,
+                orden: orden,
+                saga: saga,
+            },
+            success: function (data) {
+            	console.log(data);
+            }
+        });
+
 	}
 
 	setTimeout(function(){
 
 		$("#saga_id").on('change', function(){
-
 		saga = $("#saga_id").val();
+		console.log("hola" + saga);
 			if (saga != '') {
 				$(".more").show();
 				obtenerJuegos();

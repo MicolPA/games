@@ -133,19 +133,19 @@ $this->title = 'Descargar Juegos Para PC, PS2, PS3 y Wii | Desarrolladores de Id
 
       <div class="row mt-5">
         <div class="col-md-12">
-          <h3 class="display-2 text-center">Últimos Juegos</h3>
-          <hr class="bg-primary" style="height: 2px;">
+          <h3 class="display-2 text-center">Últimas Sagas</h3>
+          <hr class="bg-warning" style="height: 2px;">
         </div>
       </div>
 
         <div class="row mt-5">
-            <?php foreach ($games as $g): ?>
+            <?php foreach ($collections as $collection): ?>
               <div class="col-lg-3 mt-5 mb-5 ">
-                <a class="no-link" href="/frontend/web/games/descargar/?id=<?= $g->id ?>" data-toggle="tooltip" data-placement="top" title="<?= $g->name ?>">
-                  <div class="card-mine pt-4" style="height:300;min-height: 300px">
+                <a class="no-link" href="/frontend/web/games/saga/?id=<?= $collection->id ?>" data-toggle="tooltip" data-placement="top" title="<?= $collection->name ?>">
+                  <div class="card-mine pt-4" style="height:250;min-height: 250px">
                     <p class="display-6 font-weight-bold text-center" style="height: 25px"><?=  strlen($g->name)>22?substr($g->name, 0, 22)."...":$g->name; ?></p>
-                    <img src="<?= Yii::getAlias('@web') . '/'. $g->portada_out ?>" alt="<?= $g->name ?>" width='100%'>
-                    <p class="font-weight-bold text-center pt-3"><?= substr($g->resumen, 0,150) ?>...</p>
+                    <img src="<?= Yii::getAlias('@web') . '/'. $collection->portada ?>" alt="<?= $collection->name ?>" width='100%'>
+                    <!-- <p class="font-weight-bold text-center pt-3"><?//= substr($g->resumen, 0,150) ?>...</p> -->
                   </div>
                 </a>
               </div>

@@ -1,7 +1,12 @@
 <?php 
     $games = \frontend\models\Games::find()->select(['platform_id', 'requirements_id', 'requirementsType_id', 'id', 'name', 'portada_in'])->distinct()->orderBy(['date' => SORT_DESC])->limit(4)->all();
-
 ?>
+
+<style>
+	.card{
+        background: #262626;
+    }
+</style>
 
 <div class="row">
 	<div class="col-md-12">

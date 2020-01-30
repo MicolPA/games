@@ -29,7 +29,7 @@ $plataformas = \frontend\models\Platform::find()->all();
     </div>
 
     <div class="col-md-2">
-       <?php  echo $form->field($model, 'requirementsType_id')->dropdownList(array(''=>'Seleccionar',1=>'Requisitos Bajos', 2=>'Requisitos Medios', 3=>'Requisitos Altos'))->label('Status') ?>
+       <?php  echo $form->field($model, 'requirementsType_id')->dropdownList(array(''=>'Seleccionar',1=>'Requisitos Bajos', 2=>'Requisitos Medios', 3=>'Requisitos Altos'))->label('Requisitos') ?>
     </div>
 
     <div class="col-md-2">

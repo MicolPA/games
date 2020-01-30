@@ -9,6 +9,7 @@ use yii\filters\AccessControl;
 use frontend\models\Requests;
 use frontend\models\Platform;
 use frontend\models\Games;
+use frontend\models\Collections;
 
 
 class HomeController extends \yii\web\Controller
@@ -16,6 +17,7 @@ class HomeController extends \yii\web\Controller
     public function actionIndex()
     {
         $games = Games::find()->orderBy(['date' => SORT_DESC])->limit(12)->all();
+        $collections = Collections::find()->orderBy(['date' => SORT_DESC])->limit(8)->all();
         $all_games = array();
         $model = new Requests();
 
@@ -26,6 +28,7 @@ class HomeController extends \yii\web\Controller
             'games' => $all_games,
             'ultimos_games' => $all_games,
             'model' => $model,
+            'collections' => $collections,
         ]);
     }
 

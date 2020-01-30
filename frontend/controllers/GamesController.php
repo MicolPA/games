@@ -88,8 +88,7 @@ class GamesController extends Controller
 
         $model = Games::findOne($id);
         $model2 = new Category();
-        // $collection = \frontend\models\CollectionsGames::find()->where(['game_id' => "$id"])->one();
-        $collection = null;
+        $collection = \frontend\models\CollectionsGames::find()->where(['game_id' => $id])->one();
         $links = explode(',', $model->links);
         //$requisitos = Requirements::find()->where
 
@@ -114,11 +113,16 @@ class GamesController extends Controller
         ]);
     }
 
-    /**
-     * Creates a new Games model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
+    public function actionSaga($id){
+
+      $model = Collections::findOne($id);
+      $games = CollectionsGames::find()->where(['saga_id' => $id])->all();
+      return $this->render('saga-detail', [
+          'model' => $model,
+          'games' => $games,
+      ]);
+
+    }
 
     public function actionSaveReport(){
 

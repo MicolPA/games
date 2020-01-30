@@ -1,5 +1,5 @@
 <?php 
-	$this->title = $model->name . ' | Desarolladores de Ideas';
+	$this->title = "Descargar " . $model->name . ' | Desarolladores de Ideas';
 
 ?>
 <style>
@@ -14,9 +14,8 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-12 mb-4">
-			<h1 class="mt-4 display-2 text-primary font-weight-bold title">Descargar <?php echo $model->name ?></h1>
-			
+		<div class="col-md-9 mb-4">
+			<h1 class="mt-4 display-3 text-white font-weight-bold title">Descargar <?php echo $model->name ?> para <?php echo $model->platform_id == 1? "PC":$model->platform->name ?></h1>
 		</div>
 	</div>
 	<div class="row">
@@ -46,10 +45,13 @@
 						<a class="btn-tag text-white" href="/frontend/web/games/index?requisitos=<?php echo $model->requirementsType->id ?>"><?php echo $model->requirementsType->name; ?></a>
 					</li>
 
-					<li><i class="fas fa-caret-right text-green"></i> <span class="font-weight-bold">Saga:</span><?php if ($collection): ?>
-						<a class="btn-tag" href="/frontend/web/games/index?saga=<?php echo $collection->saga_id; ?>"><?php echo $collection->saga->name; ?></a>
-					<?php endif ?>
+					<?php if ($collection): ?>
+					<li><i class="fas fa-caret-right text-green"></i> <span class="font-weight-bold">Saga:</span>
+						<?php if ($collection): ?>
+							<a class="btn-tag text-white" href="/frontend/web/games/saga?id=<?php echo $collection->saga_id; ?>"><?php echo $collection->saga->name; ?></a>
+						<?php endif ?>
 					</li>
+					<?php endif ?>
 					<li><i class="fas fa-caret-right text-green"></i> <span class="font-weight-bold">Fecha de subida:</span> <?php echo substr(str_replace('-', '/', $model->date), 0,10) ?></li>
 
 				</ul>
@@ -97,7 +99,7 @@
 				</div>
 				<div class="card p-3 pb-4">
 					<p class="display-4 text-warning title" style="">Links de descarga 
-					<hr>
+					<hr class="bg-white">
 					<div class="links">
 						<ul class="list-unstyled p-0 h3 font-weight-normal text-white">
 							<?php if (count($links) == 1): ?>
@@ -114,8 +116,10 @@
 				</div>
 
 				<?php if ($model->requirements->otros): ?>
-				<div class="col-md-12 bg-success mt-5">
-					<h3 class="font-weight-bold">Comentario</h3><?php echo $model->requirements->otros ?>
+				<div class="col-md-12 bg-dark mt-5 p-3 mb-5">
+					<h3 class="font-weight-bold">Comentario</h3>
+					<hr>
+					<p><?php echo $model->requirements->otros ?></p>
 				</div>
 				<?php endif ?>
 
