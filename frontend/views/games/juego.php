@@ -3,12 +3,12 @@
 
 ?>
 <style>
-	/*.swal-modal{
+	.swal-modal{
 		width: 70%;
 		padding:0px !important;
-	}*/
-	.card{
-        background: #262626;
+	}
+	.card, .bg-dark{
+        background: #262626 !important;
     }
     #disqus_thread{
     	width: 100%;
@@ -27,7 +27,7 @@
 			
 			<img src="<?php echo Yii::getAlias("@web") .'/'. $model->portada_in; ?>" class="d-block w-100" alt="<?php echo $model->name ?>" width='100%'>
 			<div class="mt-4">
-				<div class=" p-3">
+				<div class="pb-3 pt-3 pl-0">
 					<span class="display-4 text-primary font-weight-b title" >Descripción</span>
 					<hr>
 					<h2 class="font-weight-normal"><?php echo $model->resumen ?></h2>
@@ -119,10 +119,8 @@
 				</div>
 
 				<?php if ($model->requirements->otros): ?>
-				<div class="col-md-12 bg-dark mt-5 p-3 mb-5">
-					<h3 class="font-weight-bold">Comentario</h3>
-					<hr>
-					<p><?php echo $model->requirements->otros ?></p>
+				<div class="col-md-12 mt-5 mb-5 pt-3 pb-3 bg-dark" style="border:1px solid #d6a000">
+					<p class="h2 m-0"><?php echo $model->requirements->otros ?></p>
 				</div>
 				<?php endif ?>
 

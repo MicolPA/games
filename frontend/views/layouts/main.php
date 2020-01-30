@@ -39,6 +39,17 @@ AppAsset::register($this);
     <meta name="twitter:url" content="http://desarrolladoresideas.com/" />
     <meta name="twitter:description" content="Descarga Juegos para PC, PS2, PS3, Wii totalmente gratis." />
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84064273-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-84064273-2');
+    </script>
+
+
 
     <?php $this->head() ?>
 </head>
