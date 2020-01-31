@@ -106,12 +106,12 @@
 					<div class="links">
 						<ul class="list-unstyled p-0 h3 font-weight-normal text-white">
 							<?php if (count($links) == 1): ?>
-							<li><i class="fas fa-caret-right text-green"></i> <a class='btn-tag text-white' href="/<?php echo $links[0] ?>" target='_blank'>Parte Única</a></li>
+							<li><i class="fas fa-caret-right text-green"></i> <a class='btn-tag text-white' href="<?php echo $links[0] ?>" target='_blank'>Parte Única</a></li>
 							<?php else: ?>
 							<?php $count = 0 ?>
 							<?php for ($i=0;$i<count($links);$i++): ?>
 								<?php $count++; ?>
-							<li><i class="fas fa-caret-right text-green"></i> <a class='btn-tag text-white' href="/<?php echo $links[$i] ?>" target='_blank'>Parte <?php echo $count ?></a></li>
+							<li><i class="fas fa-caret-right text-green"></i> <a class='btn-tag text-white' href="<?php echo $links[$i] ?>" target='_blank'>Parte <?php echo $count ?></a></li>
 							<?php endFor ?>	
 							<?php endif ?>
 						</ul>
