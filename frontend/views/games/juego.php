@@ -25,7 +25,7 @@
 		<!-- col-md-9 begins -->
 		<div class="col-md-9">
 			
-			<img src="<?php echo Yii::getAlias("@web") .'/'. $model->portada_in; ?>" class="d-block w-100" alt="<?php echo $model->name ?>" width='100%'>
+			<img src="<?php echo Yii::getAlias("@web") .'/'. $model->portada_out; ?>" class="d-block w-100" alt="<?php echo $model->name ?>" width='100%'>
 			<div class="mt-4">
 				<div class="pb-3 pt-3 pl-0">
 					<span class="display-4 text-primary font-weight-b title" >Descripción</span>
@@ -60,6 +60,7 @@
 				</ul>
 				</div>
 
+				<?php if ($model->platform_id != 3): ?>
 				<p class="display-4 mt-4 text-primary font-weight-b title" style="margin-top: 5rem !important">Requisitos Recomendados</p>
 				<table class="table table-responsive-lg h4 text-white">
 				  <thead>
@@ -94,7 +95,8 @@
 				      <td><?php echo $model->requirements->discoDuro ?></td>
 				    </tr>
 				  </tbody>
-				</table>
+				</table>	
+				<?php endif ?>
 				<div class="row">
 					<div class="col-md-12 mb-4">
 						<a href="#" onclick="javascript:reportarJuego(<?php echo $model->id; ?>)" class="btn btn-danger btn-lg font-weight-bold" style='float: right;margin-top: 2rem'><i class="fas fa-exclamation-triangle" style="color:white"></i> Reportar Problema</a></p>
