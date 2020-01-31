@@ -95,16 +95,21 @@ class AdminController extends \yii\web\Controller
         $n = 0;
 
         foreach ($links as $link) {
+            echo $link . "<br>";
             $n++;
             $alias = str_replace(' ', '_', $model->name) . "_parte_$n";
             $long_url = urlencode($link);
             $api_token = '5f0e9dfdfb570f1efe01fa52c3b974c04dcc29e8';
-            $api_url = "https://uii.io/api?api={$api_token}&url={$long_url}&alias=$alias&format=text";
+            $api_url = "https://uii.io/api?api={$api_token}&url={$long_url}&format=text";
             $result = @file_get_contents($api_url);
+            echo $api_url . "<br>";
 
             if($result){
                 array_push($links_acortados, $result);
             }
+
+            print_r($result);
+
         }
 
         return implode(',', $links_acortados);
