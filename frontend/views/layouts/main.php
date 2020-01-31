@@ -60,6 +60,8 @@ AppAsset::register($this);
       gtag('config', 'UA-84064273-2');
     </script>
 
+    <?= $this->render('moneytizer', []); ?>
+
 
 
     <?php $this->head() ?>
