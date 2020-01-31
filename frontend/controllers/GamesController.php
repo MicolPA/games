@@ -66,7 +66,7 @@ class GamesController extends Controller
         $countQuery = clone $query;
         $pages = new \yii\data\Pagination(['totalCount' => $countQuery->count()]);
         $model = $query->offset($pages->offset)
-        ->limit(21)
+        ->limit(25)
         ->all();
 
         return $this->render('index', [
@@ -91,7 +91,7 @@ class GamesController extends Controller
 
         Yii::$app->view->params['description'] = "Descarga $model->name totalmente gratis para ".$model->platform->name . " - Desarrolladores de Ideas";
         Yii::$app->view->params['imagen_url'] = $_SERVER['HTTP_HOST'] . "/frontend/web/$model->portada_out";
-        
+
         $collection = \frontend\models\CollectionsGames::find()->where(['game_id' => $id])->one();
         $links = explode(',', $model->links);
 

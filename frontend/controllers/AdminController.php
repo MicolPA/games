@@ -360,6 +360,28 @@ class AdminController extends \yii\web\Controller
 
     }
 
+    public function actionCreateCategory()
+    {
+        $model = new Category();
+
+        if (Yii::$app->request->post()) {
+            $data = Yii::$app->request->post();
+            $model->load($data);
+            $model->date = new \yii\db\Expression('NOW()');
+
+            if ($model->save()) {
+                Yii::$app->session->setFlash('success', "Categoria registrada correctamente");
+                return $this->redirect(['create-category']);
+            }else{
+                print_r($model->errors);
+            }
+        }
+
+        return $this->render('create-category', [
+            'model' => $model,
+        ]);
+    }
+
     public function actionObtenerJuegos(){
 
         $datos = null;

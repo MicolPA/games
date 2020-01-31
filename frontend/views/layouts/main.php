@@ -125,7 +125,7 @@ AppAsset::register($this);
               <a href="/frontend/web/site/contact" class="nav-link">CONTÁCTANOS</a>
             </li> -->
             <li class="nav-item active">
-              <a class="nav-link text-success font-weight-bold" href="https://www.youtube.com/channel/UCkwlaKe50JTTaop2JLJCIbA" target='_blank' >CÓMO DESCARGAR</a>
+              <a class="nav-link text-success font-weight-bold" href="http://bit.ly/desarrolladoresyoutube" target='_blank' >CÓMO DESCARGAR</a>
             </li>
             
           </ul>
@@ -133,7 +133,7 @@ AppAsset::register($this);
       </div>
   </nav>
 
-  <div style="height: 80px">-</div>
+  <div style="height: 80px"></div>
 
 
       <!-- <?= Breadcrumbs::widget([

@@ -6,13 +6,6 @@
 ?>
 <div class="container">
 
-    <div class="row">
-    	<div class="col-md-12 text-right p-0" style="margin-bottom: 4rem"> 
-    		<?= Html::a('<i class="fas fa-arrow-left"></i> Atras',['/admin'], ['class' => 'btn btn-lg btn-dark']) ?>
-    	</div>
-        
-    </div>
-
 	<div class="row  bg-white shadow">
 		<div class="col-md-12 col-lg-12 p-4">
     

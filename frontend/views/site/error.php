@@ -1,9 +1,5 @@
 <?php
 
-/* @var $this yii\web\View */
-/* @var $name string */
-/* @var $message string */
-/* @var $exception Exception */
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
@@ -12,13 +8,6 @@ $this->title = $name;
 $plataformas = \frontend\models\Platform::find()->all();
 ?>
 <style>
-    .wrap{
-        background: #fff;
-        /*background-image: url(<?= Yii::getAlias('@web'); ?>/images/stock/stock-6.jpg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;*/
-    }
     nav, footer{
         display: none !important;
     }
@@ -69,12 +58,13 @@ $plataformas = \frontend\models\Platform::find()->all();
         <div class="container">
           <div class="col-md-12">
             <p class="h2 text-center">Descarga juegos de diferentes plataformas</p>
-          <div class="row mt-5">
+          <div class="row mt-5 bg-black pb-4">
 
             <?php foreach ($plataformas as $p): ?>
+              <?php $p->color = $p->id==1?"white":$p->color ?>
             <div class="col-md-3 mt-4">
               <a href="/frontend/web/games/index?plataforma=<?= $p->id ?>" class="no-link">
-                <div class="card-2 text-center" style="color:<?= $p->color ?>;border: 1px solid">
+                <div class="card-2 text-center" style="color:white;border: 1px solid <?= $p->color ?>">
                 <i class="<?= $p->icon ?> icon" style="font-size: 40px;color:<?= $p->color ?>"></i>
                 <p class="h1"><?= $p->name ?></p>
               </div>

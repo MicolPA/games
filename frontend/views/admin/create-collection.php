@@ -17,19 +17,11 @@
 </style>
 <div class="container p-4">
 
-	<div class="row m-auto" style="max-width: 600px">
-		<div class="col-md-12 text-right p-0" style="margin-bottom: 4rem"> 
-    		<?= Html::a('<i class="fas fa-arrow-left"></i> Atras',Yii::$app->request->referrer, ['class' => 'btn btn-lg btn-dark']) ?>
-    	</div>
-	</div>
-
     <div class="row bg-white shadow m-auto admin-contenedor" style="max-width: 600px">
-    	
-        
 
 		<div class="col-md-12 col-lg-12">
 
-	            <h1 class="title display-3 mb-5 mt-5">Crear Sagas</h1>
+	            <h1 class="title display-3 mb-5 mt-5 text-dark">Crear Sagas</h1>
 			 <?php $form = ActiveForm::begin(['options' => ['autocomplete' => 'off'],], ['enctype' => 'multipart/form-data']); ?>
 
 			    <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />

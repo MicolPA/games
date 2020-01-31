@@ -40,7 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
 		</div>
 		<div class="col-md-3 pl-0">
 			<a href="/frontend/web/admin/add-collection-game" class="no-link">
-				<div class="admin-card text-center display-2 bg-warning text-white">
+				<div class="admin-card text-center display-2 bg-success text-white">
 					<i class="fas fa-layer-group mb-3"></i>
 					<p class="h3 font-weight-bold">AGRUPAR JUEGOS</p>
 				</div>	
@@ -49,7 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
 		
 		<div class="col-md-3 p-0">
 			<a href="/frontend/web/admin/ver-solicitudes-admin" class="no-link">
-				<div class="admin-card text-center display-2 bg-success text-white">
+				<div class="admin-card text-center display-2 bg-info text-white">
 					<i class="fas fa-users mb-3"></i>
 					<p class="h3 font-weight-bold">VER SOLICITUDES</p>
 				</div>
@@ -69,6 +69,13 @@ $this->params['breadcrumbs'][] = $this->title;
 			<a href="/frontend/web/admin/listado-sagas" class="no-link">
 				<div class="pt-1 text-center display-2 bg-dark text-white">
 				<p class="h3 pb-5 font-weight-bold">LISTADO DE SAGAS</p>
+			</div>
+			</a>
+		</div>
+		<div class="col-md-3 pl-0">
+			<a href="/frontend/web/admin/create-category" class="no-link">
+				<div class="pt-1 text-center display-2 bg-dark text-white">
+				<p class="h3 pb-5 font-weight-bold">CREAR CATEGORIAS</p>
 			</div>
 			</a>
 		</div>

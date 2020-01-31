@@ -84,8 +84,11 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionLogin()
-    {
+    public function actionLogin($admin)
+    {   
+        if ($admin != '008') {
+            return $this->redirect(['/home/index']);
+        }
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }

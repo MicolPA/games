@@ -7,7 +7,6 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
-$this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <style>
@@ -44,8 +43,8 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="site-login" style="">
     <div class="row shadow align-items-center" style="width: 100% !important">
         <div class="col-md-4 shadow login">
-            <div class="icon-container">
-                <i class="fas fa-user-circle"></i>
+            <div class="icon-container text-success">
+                <i class="fas fa-user-lock"></i>
             </div>
             <?php $form = ActiveForm::begin(['id' => 'login-form','options' => ['autocomplete' => 'off']]); ?>
 

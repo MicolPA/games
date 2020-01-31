@@ -11,7 +11,10 @@
 <style>
     input, select{
         height: 50px !important;
-        font-size: 14px !important;
+        font-size: 18px !important;
+    }
+    textarea{
+        font-size: 18px !important;
     }
     .icon{
         font-size: 54px;

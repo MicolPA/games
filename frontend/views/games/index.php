@@ -7,9 +7,23 @@ use yii\widgets\ActiveForm;
 
 $plataformas = \frontend\models\Platform::find()->all();;
 $p_selected = isset($get['plataforma'])?$get['plataforma']:'';
-echo $this->title ;
+
 $this->title = 'Descargar Juegos Para PC, PS2, PS3 y Wii';
+if ($p_selected) {
+    $platform_name = \frontend\models\Platform::findOne($p_selected)['name'];
+    $this->title = "Descargar Juegos Para $platform_name | Desarrolladores de Ideas";
+}
+
+
+
 $this->params['breadcrumbs'][] = $this->title;
+
+$cat_name = '';
+
+if ($categoria) {
+    $cat_name = Category::findOne($categoria)['name'];
+    $this->title = "Descargar Juegos de $cat_name Para PC, PS2, PS3 y Wii | Desarrolladores de Ideas";
+}
 ?>
 
 <style>
@@ -42,7 +56,7 @@ $this->params['breadcrumbs'][] = $this->title;
 </style>
 <div class="container">
 
-    <h1 class="title display-2"><span class="text-primary font-weight-bold title ">DESCARGAR JUEGOS</span> <span class="title"><?php echo $categoria?Category::findOne($categoria)['name']:''; ?></span> </h1>
+    <h1 class="title display-2"><span class="text-primary font-weight-bold title ">DESCARGAR JUEGOS</span> <span class="title"><?php echo strtoupper($cat_name) ?></span> </h1>
     
     <div class="row">
         <div class="col-md-12 mt-5">

@@ -34,10 +34,21 @@ AppAsset::register($this);
 
   <?php if (!Yii::$app->user->isGuest): ?>
     
-    
   <?php endif ?>
-  <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
-
+      <div class=" navbar-dark bg-dark box-shadow">
+        <div class="container p-0">
+          <a href="/frontend/web/admin" class="navbar-brand d-flex align-items-center" style="font-size: 26px !important">
+            <i class="fas fa-users-cog mr-4"></i>
+            <strong>Admin</strong>
+          </a>
+          <?php if (!isset($no_show)): ?>
+            <div class="text-right">
+            <?= Html::a('<i class="fas fa-arrow-left"></i> Atras',Yii::$app->request->referrer, ['class' => 'btn btn-lg btn-success text-white mt-3']) ?>
+          </div>
+          <?php endif ?>
+          </button>
+        </div>
+      </div>
 
       <!-- <?= Breadcrumbs::widget([
           'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
