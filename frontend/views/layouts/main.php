@@ -60,7 +60,7 @@ AppAsset::register($this);
       gtag('config', 'UA-84064273-2');
     </script>
 
-    <?= $this->render('moneytizer', []); ?>
+    <script data-ad-client="ca-pub-9723976852944103" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
 
