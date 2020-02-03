@@ -1,5 +1,5 @@
 <?php 
-    $games = \frontend\models\Games::find()->select(['platform_id', 'requirements_id', 'requirementsType_id', 'id', 'name', 'portada_in'])->distinct()->orderBy(['date' => SORT_DESC])->limit(4)->all();
+    $games = \frontend\models\Games::find()->select(['platform_id', 'requirements_id', 'requirementsType_id', 'id', 'name', 'portada_out'])->distinct()->orderBy(['date' => SORT_DESC])->limit(4)->all();
 ?>
 
 <style>
@@ -22,7 +22,7 @@
                     <span class="notify-badge badge mt-5 bg-primary shadow"><?php echo $m->requirementsType['name'] ?></span>
                   <a class='link-no' href="/frontend/web/games/descargar?id=<?= $m->id ?>">
                     <!-- <span class="notify-badge badge" style="margin-top: 3rem"><?= $m->category['name'] ?></span> -->
-                    <img src="<?php echo Yii::getAlias("@web") .'/'. $m['portada_in']; ?>?v=2" class="card-img-top" alt="...">
+                    <img src="<?php echo Yii::getAlias("@web") .'/'. $m['portada_out']; ?>?v=2" class="card-img-top" alt="...">
                       <div class="card-body">
                         <h5 id="name" class="card-title mind-title text-white font-weight-bold link-no"><?php echo $m['name'] ?></h5>
                         <!-- <div class="row h4">

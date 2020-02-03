@@ -127,8 +127,8 @@
 				<?php endif ?>
 
 				<div class="row mb-4" style="margin-top: 4rem">
-					<div class="col-md-4"><a id='1' href="javascript:imgBigger(1)"><img src="<?php echo Yii::getAlias("@web") .'/'. $model->imagenes; ?>" class="d-block w-100" alt="<?php echo $model->name ?>" width='100%'></a></div>
 					<div class="col-md-4"><a href="javascript:imgBigger(2)" id="2"><img src="<?php echo Yii::getAlias("@web") .'/'. $model->portada_out; ?>" class="d-block w-100" alt="<?php echo $model->name ?>" width='100%'></a></div>
+					<div class="col-md-4"><a id='1' href="javascript:imgBigger(1)"><img src="<?php echo Yii::getAlias("@web") .'/'. $model->imagenes; ?>" class="d-block w-100" alt="<?php echo $model->name ?>" width='100%'></a></div>
 					<div class="col-md-4"><a href="javascript:imgBigger(3)" id="3"><img src="<?php echo Yii::getAlias("@web") .'/'. $model->portada_in; ?>" class="d-block w-100" alt="<?php echo $model->name ?>" width='100%'></a></div>
 
 				</div>
