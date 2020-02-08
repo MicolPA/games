@@ -1,5 +1,7 @@
 <?php 
-    $games = \frontend\models\Games::find()->select(['platform_id', 'requirements_id', 'requirementsType_id', 'id', 'name', 'portada_out'])->distinct()->orderBy(['date' => SORT_DESC])->limit(4)->all();
+    $games = \frontend\models\Games::find()->where(['<>', 'id', $model->id])->select(['platform_id', 'requirements_id', 'requirementsType_id', 'id', 'name', 'portada_out'])->distinct()->orderBy(['date' => SORT_DESC])->limit(4)->all();
+
+    $sagas = \frontend\models\Collections::find()->limit(4)->all();
 ?>
 
 <style>
@@ -7,6 +9,23 @@
         background: #262626;
     }
 </style>
+
+<div class="row mb-4">
+  <div class="col-md-12">
+    <p class="h2 mt-0 mb-3 font-weight-bold text-warning">Ultimas Sagas</p>
+  </div>
+  <?php foreach ($sagas as $saga): ?>
+    <div class="col-md-12 mb-4">
+      <div class="card badge-item">
+        <a class='link-no' href="/frontend/web/games/descargar?id=<?= $saga->id ?>">
+          <img src="<?php echo Yii::getAlias("@web") .'/'. $saga['portada']; ?>?v=2" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 id="name" class="card-title mind-title text-white font-weight-bold link-no">Saga <?php echo $saga['name'] ?></h5>
+            </div>
+      </div>
+    </div>
+  <?php endforeach ?>
+</div>
 
 <div class="row">
 	<div class="col-md-12">
