@@ -12,7 +12,7 @@
 
 <div class="row mb-4">
   <div class="col-md-12">
-    <p class="h2 mt-0 mb-3 font-weight-bold text-warning">Ultimas Sagas</p>
+    <p class="h1 mt-0 mb-3 font-weight-bold text-warning">Nuestras Sagas</p>
   </div>
   <?php foreach ($sagas as $saga): ?>
     <div class="col-md-12 mb-4">
