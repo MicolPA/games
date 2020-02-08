@@ -18,7 +18,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-9 mb-4">
-			<h1 class="mt-4 display-3 text-white font-weight-bold title">Descargar <?php echo $model->name ?> para <?php echo $model->platform_id == 1? "PC":$model->platform->name ?></h1>
+			<h1 class=" display-3 text-white font-weight-bold title">Descargar <?php echo $model->name ?> para <?php echo $model->platform_id == 1? "PC":$model->platform->name ?></h1>
 		</div>
 	</div>
 	<div class="row">
