@@ -133,6 +133,17 @@
 
 				</div>
 
+				<div class="row mb-4">
+					<div class="col-md-12">
+						<p class="h1 text-warning font-weight-bold display-4">Descarga los juegos a mayor velocidad</p>
+						<span class="h2">Aprende a descargar todos nuestros juegos a mayor velocidad y sin que se te cancelen las descargas.</span>
+						<hr>
+					</div>
+					<div class="col-md-12">
+						<iframe width="100%" height="400" src="https://www.youtube.com/embed/ZHnbPX8on-E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+
 				<div class="row m-0 mt-5">
 					<div class="col-md-12 bg-dark">
 						<div id="disqus_thread" class="mt-4"></div>
