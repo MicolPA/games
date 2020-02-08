@@ -17,7 +17,7 @@
   <?php foreach ($sagas as $saga): ?>
     <div class="col-md-12 mb-4">
       <div class="card badge-item">
-        <a class='link-no' href="/frontend/web/games/descargar?id=<?= $saga->id ?>">
+        <a class='link-no' href="/frontend/web/games/saga?id=<?= $saga->id ?>">
           <img src="<?php echo Yii::getAlias("@web") .'/'. $saga['portada']; ?>?v=2" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 id="name" class="card-title mind-title text-white font-weight-bold link-no">Saga <?php echo $saga['name'] ?></h5>
