@@ -30,7 +30,13 @@
 				<div class="pb-3 pt-3 pl-0">
 					<span class="display-4 text-primary font-weight-b title" >Descripción</span>
 					<hr>
-					<h2 class="font-weight-normal"><?php echo $model->resumen ?></h2>
+					<p class="font-weight-normal h2">Descargar <?php echo $model->name ?>. <?php echo $model->resumen ?></p>
+					<p class="font-weight-normal h3">
+					Descargar <?php echo $model->name ?>,
+					Descargar <?php echo $model->name ?> para <?php echo $model->platform_id == 1? "PC":$model->platform->name ?>,
+					Descargar <?php echo $model->name ?> Crack,
+					Descargar <?php echo $model->name ?> full en español
+					 </p>
 				</div>
 				<div class="card pr-3 pl-3 mt-5">
 					<span class="display-4 mt-3 text-warning font-weight-b title" >Información</span>
