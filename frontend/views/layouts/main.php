@@ -50,6 +50,10 @@ AppAsset::register($this);
     <meta name="twitter:url" content="<?= $url_actual ?>" />
     <meta name="twitter:description" content="<?= $description ?>" />
 
+    <?php if (isset($this->params['juegos'])): ?>
+      <?= $this->params['juegos'] ?>
+    <?php endif ?>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84064273-2"></script>
     <script>

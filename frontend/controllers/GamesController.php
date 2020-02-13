@@ -42,6 +42,9 @@ class GamesController extends Controller
      */
     public function actionIndex($categoria = null, $plataforma = null, $requisitos = null, $name = null, $saga = null)
     {
+        
+        Yii::$app->view->params['juegos'] = "<link rel='canonical' href='http://www.desarrolladoresideas.com/frontend/web/games'/>";
+        
         $get = Yii::$app->request->get();
         $query = Games::find()->orderBy(['date' => SORT_DESC]);
         $collection = Collections::find()->where(['id' => "$saga"])->one();
