@@ -18,7 +18,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-9 mb-4">
-			<h1 class="mt-4 display-3 text-white font-weight-bold title">Descargar <?php echo $model->name ?> para <?php echo $model->platform_id == 1? "PC":$model->platform->name ?></h1>
+			<h1 class=" display-3 text-white font-weight-bold title">Descargar <?php echo $model->name ?> para <?php echo $model->platform_id == 1? "PC":$model->platform->name ?></h1>
 		</div>
 	</div>
 	<div class="row">
@@ -30,7 +30,13 @@
 				<div class="pb-3 pt-3 pl-0">
 					<span class="display-4 text-primary font-weight-b title" >Descripción</span>
 					<hr>
-					<h2 class="font-weight-normal"><?php echo $model->resumen ?></h2>
+					<p class="font-weight-normal h2">Descargar <?php echo $model->name ?>. <?php echo $model->resumen ?></p>
+					<p class="font-weight-normal h3">
+					Descargar <?php echo $model->name ?>,
+					Descargar <?php echo $model->name ?> para <?php echo $model->platform_id == 1? "PC":$model->platform->name ?>,
+					Descargar <?php echo $model->name ?> Crack,
+					Descargar <?php echo $model->name ?> full en español
+					 </p>
 				</div>
 				<div class="card pr-3 pl-3 mt-5">
 					<span class="display-4 mt-3 text-warning font-weight-b title" >Información</span>
@@ -131,6 +137,17 @@
 					<div class="col-md-4"><a id='1' href="javascript:imgBigger(1)"><img src="<?php echo Yii::getAlias("@web") .'/'. $model->imagenes; ?>" class="d-block w-100" alt="<?php echo $model->name ?>" width='100%'></a></div>
 					<div class="col-md-4"><a href="javascript:imgBigger(3)" id="3"><img src="<?php echo Yii::getAlias("@web") .'/'. $model->portada_in; ?>" class="d-block w-100" alt="<?php echo $model->name ?>" width='100%'></a></div>
 
+				</div>
+
+				<div class="row mb-4">
+					<div class="col-md-12">
+						<p class="h1 text-warning font-weight-bold display-4">Descarga los juegos a mayor velocidad</p>
+						<span class="h2">Aprende a descargar todos nuestros juegos a mayor velocidad y sin que se te cancelen las descargas.</span>
+						<hr>
+					</div>
+					<div class="col-md-12">
+						<iframe width="100%" height="400" src="https://www.youtube.com/embed/ZHnbPX8on-E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
 				</div>
 
 				<div class="row m-0 mt-5">
