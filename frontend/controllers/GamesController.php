@@ -66,7 +66,7 @@ class GamesController extends Controller
         $countQuery = clone $query;
         $pages = new \yii\data\Pagination(['totalCount' => $countQuery->count()]);
         $model = $query->offset($pages->offset)
-        ->limit(25)
+        ->limit(28)
         ->all();
 
         return $this->render('index', [
