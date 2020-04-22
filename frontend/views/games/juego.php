@@ -29,8 +29,8 @@
 			<div class="mt-4">
 				<div class="mb-2">
 					<div style="width:100%;text-align:center;margin: 20px 0 0 0;">
-					<a href="https://vardes.xyz/r/?token=350d5db553b836aa394da6379df20bf3c3fb32b1&q=descargar-juego" class="btn btn-success btn-lg font-weight-bold" style="display: inline-block;margin-right: 20px;padding:5px;width:35%;">DESCARGA RÁPIDA</a>
-					<a href="https://vardes.xyz/r/?token=350d5db553b836aa394da6379df20bf3c3fb32b1&q=descargar-juego" class="btn btn-success btn-lg font-weight-bold" style="display: inline-block;margin-right: 20px;padding:5px;width:35%;">DESCARGA AQUÍ</a>
+					<a href="https://vardes.xyz/r/?token=350d5db553b836aa394da6379df20bf3c3fb32b1&q=descargar-juego" class="btn btn-success btn-lg font-weight-bold" style="display: inline-block;margin-right: 20px;padding:5px;width:35%;" target="_blank">DESCARGA RÁPIDA</a>
+					<a href="https://vardes.xyz/r/?token=350d5db553b836aa394da6379df20bf3c3fb32b1&q=descargar-juego" class="btn btn-success btn-lg font-weight-bold" style="display: inline-block;margin-right: 20px;padding:5px;width:35%;" target="_blank">DESCARGA AQUÍ</a>
 					</div>
 				</div>
 				<div class="pb-3 pt-3 pl-0">
