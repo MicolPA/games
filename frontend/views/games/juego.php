@@ -41,7 +41,7 @@
 					Descargar <?php echo $model->name ?>,
 					Descargar <?php echo $model->name ?> para <?php echo $model->platform_id == 1? "PC":$model->platform->name ?>,
 					Descargar <?php echo $model->name ?> Crack,
-					Descargar <?php echo $model->name ?> full en español
+					Descargar <?php echo $model->name ?> full en español.
 					 </p>
 				</div>
 				<div class="card pr-3 pl-3 mt-5">

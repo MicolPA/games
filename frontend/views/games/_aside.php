@@ -1,5 +1,5 @@
 <?php 
-    $games = \frontend\models\Games::find()->where(['<>', 'id', $model->id])->select(['platform_id', 'requirements_id', 'requirementsType_id', 'id', 'name', 'portada_out'])->distinct()->orderBy(['date' => SORT_DESC])->limit(4)->all();
+    $games = \frontend\models\Games::find()->where(['<>', 'id', $model['id']])->select(['platform_id', 'requirements_id', 'requirementsType_id', 'id', 'name', 'portada_out'])->distinct()->orderBy(['date' => SORT_DESC])->limit(4)->all();
 
     $sagas = \frontend\models\Collections::find()->limit(4)->all();
 ?>
