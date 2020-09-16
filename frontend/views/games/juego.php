@@ -1,5 +1,5 @@
 <?php 
-	$this->title = "Descargar " . $model->name . ' | Desarolladores de Ideas';
+	$this->title = "✅ DESCARGAR " . strtoupper($model->name) . ' | Desarolladores de Ideas';
 
 ?>
 <style>

@@ -92,7 +92,7 @@ class GamesController extends Controller
         $model = Games::findOne($id);
         $model2 = new Category();
 
-        Yii::$app->view->params['description'] = "Descarga $model->name totalmente gratis para ".$model->platform->name . " - Desarrolladores de Ideas";
+        Yii::$app->view->params['description'] = "✅ DESCARGAR $model->name totalmente gratis para ".$model->platform->name . " - Desarrolladores de Ideas";
         Yii::$app->view->params['imagen_url'] = $_SERVER['HTTP_HOST'] . "/frontend/web/$model->portada_out";
 
         $collection = \frontend\models\CollectionsGames::find()->where(['game_id' => $id])->one();

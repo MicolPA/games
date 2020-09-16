@@ -1,4 +1,4 @@
-<?php $this->title = "Descargar Activador (CRACK) de Camtasia Studio 9 2020 | Desarrolladores de Ideas" ?>
+<?php $this->title = "✅ DESCARGAR ACTIVADOR (CRACK) DE CAMTASIA STUDIO 9 2020 FULL Español  | Desarrolladores de Ideas" ?>
 
 <div class="container">
 	<div class="row">
