@@ -13,8 +13,13 @@ class ArticulosController extends \yii\web\Controller
 
     public function actionActivadorCrackCamtasia9(){
 
-
         return $this->render('camtasia-crack');
+
+    }
+
+    public function actionDescargarFilmora9CrackActivacion(){
+
+        return $this->render('filmora9');
 
     }
 

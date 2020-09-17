@@ -60,7 +60,7 @@
 		<!-- Aside -->
 
 		<div class="col-md-3">
-			<?= $this->render('/games/_aside', ['model' => null]); ?>
+			<?= $this->render('_aside', ['model' => null]); ?>
 		</div>
 	</div>
 </div>
