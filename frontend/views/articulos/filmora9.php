@@ -27,16 +27,54 @@
 				<br>
 				<span class="text-warning h1 mt-5">Información del programa</span>
 
+				
 				<p class="h3">Wondershare Filmora 9 full es un gran editor 2020 de vídeo para todas las personas creadores de contenido o que desean crear un vídeo con grandes efectos. Wondershare Filmora 9 crack viene con grandes efectos incluidos como lo son los Filtros, superposiciones, transiciones y títulos personalizados. Con filmora gratis Crear sin límites. Wondershare Filmora descarga mega Descubre infinitas maneras de expresarte. Consigue un aspecto refinado con efectos infinitos.</p>
 
-				<p class="h3"></p>
-
 				<div class="card p-3 pb-4 mt-5">
-					<p class="display-4 text-warning title" style="">Links de descarga 
+					<p class="display-4 text-warning title" style="">Link de descarga 
 					<hr class="bg-white">
 					<div class="links">
 						<ul class="list-unstyled p-0 h3 font-weight-normal text-white">
 							<li class="mb-5"><i class="fas fa-caret-right text-green"></i> <a class='btn-tag text-white' href="https://drive.google.com/file/d/1d4F4rh8pnvnMSBxRcDxXd-b4jAGmN0Kr/view?usp=sharing" target='_blank'>Intalador Filmora 9 en Español</a></li>
+						</ul>
+					</div>
+				</div>
+
+
+				<div class="card p-3 pb-4 mt-5">
+					<p class="display-4 text-warning title" style="">Extras
+					<hr class="bg-white">
+					<div class="links">
+						<ul class="list-unstyled p-0 h3 font-weight-normal text-white">
+							<li class="mb-5"><i class="fas fa-caret-right text-green"></i> 127.0.0.1 platform.wondershare.com <i class="fas fa-caret-left text-green"></i></li>
+						</ul>
+					</div>
+					<p class="display-4 text-warning title" style="">Claves y Codigos
+					<hr class="bg-white">
+					<div class="links">
+						<ul class="list-unstyled p-0 h3 font-weight-normal text-white">
+							<li class="mb-5"><i class="fas fa-caret-right text-green"></i> 
+								Licensed e-mail: Supportive@gmail.com
+								<br>Registration code: E38B100EC9407D06CF179305A04D4D24
+							</li>
+							<li class="mb-5"><i class="fas fa-caret-right text-green"></i> 
+								Licensed e-mail: c2943267@drdrb.com
+								<br>Registration code: D772BE0279AFE60AF0E1D2109CA89A19
+							</li>
+							<li class="mb-5"><i class="fas fa-caret-right text-green"></i> 
+								Licensed e-mail: c2942163@drdrb.com
+								<br>Registration code: 35706E040C63EE00E377911BB9A3B301
+							</li>
+							<li class="mb-5"><i class="fas fa-caret-right text-green"></i> 
+								Licensed e-mail: c2941690@drdrb.com
+								<br>Registration code: 510B3C20A9E54E0FF1D2FC28BAD1220E
+							</li>
+							<li class="mb-5"><i class="fas fa-caret-right text-green"></i> 
+								EXTRAS:
+								<br>FB4A2A2133BE301E09E0EC144BD6560C
+								<br>99B06F10F71F290E52050B0C7CE37A23
+								<br>EDDD1C143FDAD8261D16F50E12B7A723
+							</li>
 						</ul>
 					</div>
 				</div>
