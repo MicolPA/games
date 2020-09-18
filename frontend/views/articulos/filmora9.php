@@ -35,7 +35,7 @@
 					<hr class="bg-white">
 					<div class="links">
 						<ul class="list-unstyled p-0 h3 font-weight-normal text-white">
-							<li class="mb-5"><i class="fas fa-caret-right text-green"></i> <a class='btn-tag text-white' href="https://drive.google.com/file/d/1d4F4rh8pnvnMSBxRcDxXd-b4jAGmN0Kr/view?usp=sharing" target='_blank'>Intalador Filmora 9 en Español</a></li>
+							<li class="mb-5"><i class="fas fa-caret-right text-green"></i> <a class='btn-tag text-white' href="https://drive.google.com/file/d/1d4F4rh8pnvnMSBxRcDxXd-b4jAGmN0Kr/view?usp=sharing" target='_blank'>Instalador Filmora 9 en Español</a></li>
 						</ul>
 					</div>
 				</div>
