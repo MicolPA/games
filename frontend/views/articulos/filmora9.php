@@ -20,7 +20,7 @@
 
 				
 
-				<div class="bg-success p-4" style="display: none">
+				<div class="bg-success p-4" >
 					<iframe width="100%" height="515" src="https://www.youtube.com/embed/w5pLeQ0h3xo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 
