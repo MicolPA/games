@@ -9,7 +9,7 @@
 	<div class="row mt-5">
 		<div class="col-md-9">
 			<h2 class="h3 text-warning mb-5">Descargar Wondershare Filmora 9 Full en español Crack 2020 Actualizado</h2>
-			<img class="mb-5" src="<?php echo Yii::getAlias("@web") .'/images/articulos/descargar-wondershare-filmora-9-crack-incluido-activador.jpg'?>" class="d-block w-100" alt="Descargar Wondershare Filmora 9 Full Crack 9.5.2.10" width='100%'>
+			<img class="mb-5" src="<?php echo Yii::getAlias("@web") .'/images/articulos/descargar-wondershare-filmora-9-crack-incluido-activador-2.jpg'?>" class="d-block w-100" alt="Descargar Wondershare Filmora 9 Full Crack 9.5.2.10" width='100%'>
 
 			<div class="mt-4">
 				<p class="h3">Aquí les muestro el instalador de Wondershare Filmora 9 Full en Español, ultima versión, activación incluida.</p>
@@ -21,7 +21,7 @@
 				
 
 				<div class="bg-success p-4" style="display: none">
-					<iframe width="100%" height="515" src="https://www.youtube.com/embed/jxgMg48OdPE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<iframe width="100%" height="515" src="https://www.youtube.com/embed/w5pLeQ0h3xo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 
 				<br>
