@@ -18,7 +18,7 @@
 				<p class="h3 mb-4 font-weight-bold bg-warning p-3">Sigue todos los pasos para completar la instalacíón.</p>
 
 				<div class="bg-success p-4">
-					<iframe width="100%" height="515" src="https://www.youtube.com/embed/jxgMg48OdPE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<iframe src="https://player.vimeo.com/video/463425881" width="100%" height="515" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 				</div>
 
 				<br>
