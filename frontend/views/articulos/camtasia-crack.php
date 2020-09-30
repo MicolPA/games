@@ -17,7 +17,7 @@
 				<!-- <p class="h3">Youtube suele eliminar los videos de crack de Camtasia Studio, todo lo que tenga que ver con su activación, por tal motivo decidí hacer un tutorial con imagenes aquí en la web, así podrán verlo sin problemas.</p> -->
 				<p class="h3 mb-4 font-weight-bold bg-warning p-3">Sigue todos los pasos para completar la instalacíón.</p>
 
-				<div class="bg-success p-4">
+				<div class="">
 					<iframe src="https://player.vimeo.com/video/463425881" width="100%" height="515" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 				</div>
 
