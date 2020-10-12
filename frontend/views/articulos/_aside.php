@@ -70,6 +70,9 @@
           </a>
           
         </div>
+        <p class="mt-5">
+          <div class="g-ytsubscribe" data-channelid="UCkwlaKe50JTTaop2JLJCIbA" data-layout="full" data-count="default"></div>
+        </p>
     </div>
 </div>
 

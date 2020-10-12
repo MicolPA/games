@@ -55,6 +55,10 @@
                 </div>
 		</div>
 	<?php endforeach ?>
+  <p class="mt-5">
+      <script src="https://apis.google.com/js/platform.js"></script>
+      <div class="g-ytsubscribe" data-channelid="UCkwlaKe50JTTaop2JLJCIbA" data-layout="full" data-count="default"></div>
+    </p>
 </div>
 
 <!-- <img class="mb-4" src="<?php echo Yii::getAlias("@web");?>/images/banner1.png" class="d-block w-100"  width='100%'> -->
