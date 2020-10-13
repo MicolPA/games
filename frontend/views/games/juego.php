@@ -150,7 +150,29 @@
 					<div class="col-md-4"><a href="javascript:imgBigger(3)" id="3"><img src="<?php echo Yii::getAlias("@web") .'/'. $model->portada_in; ?>" class="d-block w-100" alt="<?php echo $model->name ?>" width='100%'></a></div>
 
 				</div>
-
+				<?php if ($model->platform->id == 2): ?>
+				<div class="row mb-4">
+					<div class="col-md-12">
+						<p class="h1 text-warning font-weight-bold display-4">Aprende a Emular juegos de PS2 en tu PC</p>
+						<span class="h2">Descargar e Instalar Emulador de PS2 Para PC +  Bios y Configuración.</span>
+						<hr>
+					</div>
+					<div class="col-md-12">
+						<iframe width="100%" height="400" src="https://www.youtube.com/embed/mpjdhhNEQyc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+				<?php elseif ($model->platform->id == 4): ?>
+				 <div class="row mb-4">
+					<div class="col-md-12">
+						<p class="h1 text-warning font-weight-bold display-4">Aprende a Emular juegos de Wii en tu PC</p>
+						<span class="h2">Descargar e Instalar Emulador Dolphin para PC.</span>
+						<hr>
+					</div>
+					<div class="col-md-12">
+						<iframe width="100%" height="400" src="https://www.youtube.com/embed/QS7j2VM-nes" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>   
+				<?php else: ?>
 				<div class="row mb-4">
 					<div class="col-md-12">
 						<p class="h1 text-warning font-weight-bold display-4">Descarga los juegos a mayor velocidad</p>
@@ -160,7 +182,10 @@
 					<div class="col-md-12">
 						<iframe width="100%" height="400" src="https://www.youtube.com/embed/ZHnbPX8on-E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
-				</div>
+				</div>	
+				<?php endif ?>
+
+				
 
 				<div class="row m-0 mt-5">
 					<div class="col-md-12 bg-dark">
