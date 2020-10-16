@@ -3,6 +3,7 @@
 /* @var $this yii\web\View */
 
 $this->title = 'Descargar Juegos Para PC, PS2, PS3 y Wii | Desarrolladores de Ideas';
+
 ?>
 
 <style>
@@ -21,24 +22,39 @@ $this->title = 'Descargar Juegos Para PC, PS2, PS3 y Wii | Desarrolladores de Id
       <div class="carousel-inner">
       	<div class="carousel-item active" >
           <img class="d-block w-100" src="<?php echo Yii::getAlias('@web') ?>/<?php echo $games[0]->portada_out ?>?v=2" alt="<?php echo $games[0]->name ?>">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 class="display-2 text-shadow"><?php echo $games[0]->name ?></h5>
+          <div class="carousel-caption d-none d-md-block text-center mb-5">
+            <a href="/frontend/web/games/descargar?id=<?= $games[0]->id ?>" class="no-link text-white">
+              <p class="display-1 font-weight-bold mb-lg-5 pb-lg-5" style="text-shadow: 6px 2px 5px #000">Descargar <?php echo $games[0]->name ?></p>
+            </a>
+            <!-- <div class="row">
+              <div class="col-md-6 bg-dark rounded mb-3">
+                <p class="display-2 text-shadow font-weight-bold"><?php //echo $games[0]->name ?></p>
+              </div>
+              <div class="col-md-8 rounded pl-0">
+                <a href="" class="btn btn-success big-btn">Descargar Juego</a>
+                <a href="" class="btn btn-warning big-btn text-white">Descargar Juego</a>
+                 <p class="display-4 text-shadow font-weight-bold "><?php //echo substr($games[0]->resumen, 0,50) . " ..."; ?></p>
+              </div>
+            </div> -->
           </div>
  
         </div>
         <div class="carousel-item">
           <img class="d-block w-100" src="<?php echo Yii::getAlias('@web') ?>/<?php echo $games[1]->portada_out ?>" alt="<?php echo $games[1]->name ?>">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 class="display-2 text-shadow"><?php echo $games[1]->name ?></h5>
+          <div class="carousel-caption d-none d-md-block text-center mb-5">
+            <a href="/frontend/web/games/descargar?id=<?= $games[1]->id ?>" class="no-link text-white">
+              <p class="display-1 font-weight-bold mb-lg-5 pb-lg-5" style="text-shadow: 6px 2px 5px #000">Descargar <?php echo $games[1]->name ?></p>
+            </a>
             <!-- <p class="h3"><?php //echo $games[1]->resumen ?></p> -->
           </div>
  
         </div>
         <div class="carousel-item">
           <img class="d-block w-100" src="<?php echo Yii::getAlias('@web') ?>/<?php echo $games[2]->portada_out ?>" alt="<?php echo $games[2]->name ?>">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 class="display-2 text-shadow"><?php echo $games[2]->name ?></h5>
-            <!-- <p class="h3"><?php //echo $games[2]->resumen ?></p> -->
+          <div class="carousel-caption d-none d-md-block text-center mb-5">
+            <a href="/frontend/web/games/descargar?id=<?= $games[2]->id ?>" class="no-link text-white">
+              <p class="display-1 font-weight-bold mb-lg-5 pb-lg-5" style="text-shadow: 6px 2px 5px #000">Descargar <?php echo $games[2]->name ?></p>
+            </a>
           </div>
  
         </div>
