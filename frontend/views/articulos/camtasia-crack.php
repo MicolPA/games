@@ -13,7 +13,8 @@
 			<img class="mb-5" src="<?php echo Yii::getAlias("@web") .'/images/articulos/camtasia-studio-9-full-activador-crack.png'?>" class="d-block w-100" alt="Descargar Activador (CRACK) de Camtasia Studio 9 2020" width='100%'>
 
 			<div class="mt-4">
-				<p class="h3">Aquí les muestro el Activador de Camtasia Studio 9 2020. Si aún no tienen Camtasia instalado pueden descargarlo debajo también, ya está portable el programa, significa que no hay que instalarlo, solo descargarlo y ejecutarlo.</p>
+				<p class="h3">Aquí les muestro el Activador de Camtasia Studio 9 2020. ✅ Si aún no tienen Camtasia instalado pueden descargarlo debajo también, ya está portable el programa, significa que no hay que instalarlo, solo descargarlo y ejecutarlo.</p>
+				<h2>✅ Descargar camtasia gratis con crack en español</h2>
 				<!-- <p class="h3">Youtube suele eliminar los videos de crack de Camtasia Studio, todo lo que tenga que ver con su activación, por tal motivo decidí hacer un tutorial con imagenes aquí en la web, así podrán verlo sin problemas.</p> -->
 				<p class="h3 mb-4 font-weight-bold bg-warning p-3">Sigue todos los pasos para completar la instalacíón.</p>
 
